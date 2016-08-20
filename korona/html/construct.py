@@ -6,7 +6,7 @@
 from __future__ import absolute_import
 
 from .attributes import TAG_ATTRIBUTES
-from ..templates.html import anchor_tag
+from ..templates.html import anchor_tag, abbr_tag
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
@@ -30,6 +30,7 @@ class A(object):
         shape (str): Specifies the shape of a link.
         target(str): Specifies where to open the linked document.
         type (str): Specifies the media type of the linked document.
+        text (str): Anchor tag text. (Ex. <a>text</a>
     """
     def __init__(self,
                  charset=None,
@@ -42,7 +43,8 @@ class A(object):
                  rev=None,
                  shape=None,
                  target=None,
-                 type=None):
+                 type=None,
+                 text=None):
         self.tag = 'a'
 
         # Series of validation methods for validating all the attribute values
@@ -70,7 +72,8 @@ class A(object):
                        'rev': rev,
                        'shape': shape,
                        'target': target,
-                       'type': type}
+                       'type': type,
+                       'text': text}
 
     def construct_tag(self):
         """Returns the constructed anchor tag <a></a>."""
@@ -158,3 +161,18 @@ class A(object):
                                  'should be one of these: {values}'
                                  .format(attribute_name=attribute_name,
                                          values=','.join(attribute_values)))
+
+
+class Abbr(object):
+    """Class for constructing abbr tag.
+
+    Args:
+        text (str): Abbr tag text. (Ex. <abbr>text</abbr>
+    """
+    def __init__(self, text=None):
+        self.tag = 'abbr'
+        self.values = {'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed abbr tag <abbr></abbr>."""
+        return abbr_tag.render(self.values)

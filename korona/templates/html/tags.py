@@ -13,5 +13,11 @@ anchor_tag = env.from_string("""
    {% if target -%} target="{{ target }}" {% endif -%}
    {% if shape -%} shape="{{ shape }}" {% endif -%}
    {% if coords -%} coords="{{ coords }}" {% endif -%}
-   {% if download -%} download="{{ download }}" {% endif -%}></a>
+   {% if download -%} download="{{ download }}" {% endif -%}>
+   {% if text -%} {{ text }} {% endif -%}
+</a>
+""")
+
+abbr_tag = env.from_string("""
+<abbr>{% if text -%} {{ text }}{% endif -%}</abbr>
 """)

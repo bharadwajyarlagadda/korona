@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 import pytest
 
-from korona.html.construct import A
-from korona.templates.html import anchor_tag
+from korona.html.construct import A, Abbr
+from korona.templates.html import anchor_tag, abbr_tag
 from korona.lib.utils import validate_tag
 
 from .fixtures import parametrize
@@ -30,7 +32,8 @@ def test_validate_invalid_tags(tag, error, error_msg):
       'rel': 'nofollow',
       'rev': 'nofollow',
       'target': '_blank',
-      'type': 'text/html'})
+      'type': 'text/html'}),
+    ({'href': 'www.google.com', 'text': 'google'})
 ])
 def test_construct_anchor_tag(attributes):
     """Test for validating whether the anchor tag is constructed correctly or
@@ -103,3 +106,15 @@ def test_construct_anchor_tag_error(attributes, exception, error_msg):
         A(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'text': None})
+])
+def test_construct_abbr_tag(attributes):
+    """Test for validating whether the abbr tag is constructed correctly or
+    not.
+    """
+    abbr = Abbr(**attributes)
+    assert abbr.construct_tag() == abbr_tag.render(attributes)
