@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 TAGS = [
     # HTML tags that will be supported as part of korona
