@@ -2,8 +2,16 @@
 
 import pytest
 
-from korona.html.construct import A, Abbr
-from korona.templates.html import anchor_tag, abbr_tag
+from korona.html.construct import (
+    A,
+    Abbr,
+    Acronym
+)
+from korona.templates.html import (
+    anchor_tag,
+    abbr_tag,
+    acronym_tag
+)
 from korona.lib.utils import validate_tag
 
 from .fixtures import parametrize
@@ -118,3 +126,15 @@ def test_construct_abbr_tag(attributes):
     """
     abbr = Abbr(**attributes)
     assert abbr.construct_tag() == abbr_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'text': None})
+])
+def test_construct_acronym_tag(attributes):
+    """Test for validating whether the acronym tag is constructed correctly or
+    not.
+    """
+    acronym = Acronym(**attributes)
+    assert acronym.construct_tag() == acronym_tag.render(attributes)

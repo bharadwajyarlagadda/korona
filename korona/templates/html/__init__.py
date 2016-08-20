@@ -2,5 +2,6 @@
 
 from .tags import (
     anchor_tag,
-    abbr_tag
+    abbr_tag,
+    acronym_tag
 )

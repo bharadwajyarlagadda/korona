@@ -21,3 +21,7 @@ anchor_tag = env.from_string("""
 abbr_tag = env.from_string("""
 <abbr>{% if text -%} {{ text }}{% endif -%}</abbr>
 """)
+
+acronym_tag = env.from_string("""
+<acronym>{% if text -%} {{ text }}{% endif -%}</acronym>
+""")
