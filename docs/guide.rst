@@ -42,3 +42,26 @@ korona can build an anchor tag.
     assert anchor_tag1 == anchor_tag2
 
 
+<abbr>
+------
+
+korona builds an <abbr> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Abbr
+
+    attributes = {'text': 'WHO'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    abbreviate1 = Abbr(**attributes)
+    # You can also pass in the attributes as args.
+    abbreviate2 = Abbr(text='WHO')
+    abbreviate_tag1 = abbreviate1.construct_tag()
+    abbreviate_tag2 = abbreviate2.construct_tag()
+
+    assert abbreviate_tag1 == '<abbr>WHO</abbr>'
+
+
+.. note:: korona only support ``text`` attribute for ``<abbr>`` tag.
+
