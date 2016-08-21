@@ -6,13 +6,15 @@ from korona.html.construct import (
     A,
     Abbr,
     Acronym,
-    B
+    B,
+    Base
 )
 from korona.templates.html import (
     anchor_tag,
     abbr_tag,
     acronym_tag,
-    bold_tag
+    bold_tag,
+    base_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -152,3 +154,31 @@ def test_construct_bold_tag(attributes):
     """
     bold = B(**attributes)
     assert bold.construct_tag() == bold_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'href': 'www.google.com'}),
+    ({'target': 'abc'}),
+    ({'href': 'www.google.com', 'target': 'abc'})
+])
+def test_construct_base_tag(attributes):
+    """Test for validating whether the base tag is constructed correctly or
+    not.
+    """
+    base = Base(**attributes)
+    assert base.construct_tag() == base_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'href': 123}, ValueError, 'value should be string'),
+    ({'target': 123}, ValueError, 'value should be string'),
+    ({'href': None, 'target': None},
+     AttributeError,
+     'either a href attribute or a target attribute, or both')
+])
+def test_construct_base_tag_error(attributes, exception, error_msg):
+    """Test for validating base tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Base(**attributes)
+
+    assert error_msg in str(exc)

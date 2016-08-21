@@ -87,5 +87,18 @@ TAG_ATTRIBUTES = {
                                'document.',
                 'values': None
             }
+        },
+    'base':
+        {
+            'href': {
+                'description': 'Specifies the base URL for all relative URLs '
+                               'in the page',
+                'values': None
+            },
+            'target': {
+                'description': 'Specifies the default target for all '
+                               'hyperlinks and forms in the page',
+                'values': None
+            }
         }
 }

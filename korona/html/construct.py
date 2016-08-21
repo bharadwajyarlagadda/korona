@@ -10,7 +10,8 @@ from ..templates.html import (
     anchor_tag,
     abbr_tag,
     acronym_tag,
-    bold_tag
+    bold_tag,
+    base_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -211,3 +212,40 @@ class B(object):
     def construct_tag(self):
         """Returns the constructed bold tag <b></b>."""
         return bold_tag.render(self.values)
+
+
+class Base(object):
+    """Class for constructing base tag.
+
+    Args:
+        href (str): Specifies the base URL for all relative URLs in the page.
+        target (str): Specifies the default target for all hyperlinks and
+            forms in the page.
+    """
+    def __init__(self, href=None, target=None):
+        # TODO: Add in the main api method where it can check that there
+        # should be only one base tag in the whole html document.
+        self.tag = 'base'
+        self.validate_values(href=href, target=target)
+        self.values = {'href': href, 'target': target}
+
+    def construct_tag(self):
+        """Returns the constructed base tag <base>."""
+        return base_tag.render(self.values)
+
+    def validate_values(self, href, target):
+        """Validates the following:
+            - Either of href or target attribute value is given.
+            - CHeck whether both href and target attribute values are strings
+                or not.
+        """
+        if not href and not target:
+            raise AttributeError('<base>: base tag must have either a href '
+                                 'attribute or a target attribute, or both.')
+
+        if href and not isinstance(href, str):
+            raise ValueError('<base>: href attribute value should be string')
+
+        if target and not isinstance(target, str):
+            raise ValueError('<base>: target attribute value should be '
+                             'string')

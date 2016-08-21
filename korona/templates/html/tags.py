@@ -29,3 +29,8 @@ acronym_tag = env.from_string("""
 bold_tag = env.from_string("""
 <b>{% if text -%} {{ text }} {% endif -%}</b>
 """)
+
+base_tag = env.from_string("""
+<base {% if href -%} href="{{ href }}" {% endif -%}
+      {% if target -%} target="{{ target }}" {% endif -%}>
+""")
