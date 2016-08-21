@@ -1,14 +1,14 @@
 User's Guide
 ============
 
-korona helps you to build html pages.
+Korona helps you to build html pages.
 
-korona also helps you to build individual html tags.
+Korona also helps you to build individual html tags.
 
 <a>
 ---
 
-korona supports some of the anchor tag attributes like:
+Korona supports some of the anchor tag attributes like:
 
 - ``charset``
 - ``coords``
@@ -23,7 +23,7 @@ korona supports some of the anchor tag attributes like:
 - ``type``
 - ``text`` (The text as in <a>{text}</a>)
 
-korona can build an anchor tag.
+Korona can build an anchor tag.
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ korona can build an anchor tag.
 <abbr>
 ------
 
-korona builds an <abbr> tag.
+Korona builds an <abbr> tag.
 
 .. code-block:: python
 
@@ -61,7 +61,31 @@ korona builds an <abbr> tag.
     abbreviate_tag2 = abbreviate2.construct_tag()
 
     assert abbreviate_tag1 == '<abbr>WHO</abbr>'
+    assert abbreviate_tag1 == abbreviate_tag2
 
 
-.. note:: korona only support ``text`` attribute for ``<abbr>`` tag.
+.. note:: korona only supports ``text`` attribute for ``<abbr>`` tag.
 
+<acronym>
+---------
+
+Korona builds an <acronym> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Acronym
+
+    attributes = {'text': 'ASAP'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    acronym1 = Acronym(**attributes)
+    # You can also pass in the attributes as args.
+    acronym2 = Acronym(text='ASAP')
+    acronym_tag1 = acronym1.construct_tag()
+    acronym_tag2 = acronym2.construct_tag()
+
+    assert acronym_tag1 == '<acronym>ASAP</acronym>'
+    assert acronym_tag1 == acronym_tag2
+
+
+.. note:: korona only supports ``text`` attribute for ``<acronym>`` tag for now.
