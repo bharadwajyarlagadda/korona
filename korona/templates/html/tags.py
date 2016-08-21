@@ -36,8 +36,8 @@ area_tag = env.from_string("""
       {% if media %} media="{{ media }}" {% endif -%}
       {% if rel %} rel="{{ rel }}" {% endif -%}
       {% if nohref %} nohref {% endif -%}
-      {% if download %} download="{{ download }}" {% endif -%}>
-      {% if target %} target="{{ target }}" {% endif -%}
+      {% if download %} download="{{ download }}" {% endif -%}
+      {% if target %} target="{{ target }}" {% endif -%}>
 """)
 
 bold_tag = env.from_string("""
