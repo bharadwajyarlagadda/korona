@@ -9,18 +9,18 @@ korona also helps you to build individual html tags.
 ---
 
 korona supports some of the anchor tag attributes like:
-    # ``charset``
-    # ``coords``
-    # ``download``
-    # ``href``
-    # ``hreflang``
-    # ``name``
-    # ``rel``
-    # ``rev``
-    # ``shape``
-    # ``target``
-    # ``type``
-    # ``text`` (The text as in <a>{text}</a>)
+- ``charset``
+- ``coords``
+- ``download``
+- ``href``
+- ``hreflang``
+- ``name``
+- ``rel``
+- ``rev``
+- ``shape``
+- ``target``
+- ``type``
+- ``text`` (The text as in <a>{text}</a>)
 
 korona can build an anchor tag.
 
