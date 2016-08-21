@@ -9,7 +9,8 @@ from .attributes import TAG_ATTRIBUTES
 from ..templates.html import (
     anchor_tag,
     abbr_tag,
-    acronym_tag
+    acronym_tag,
+    bold_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -195,3 +196,18 @@ class Acronym(object):
     def construct_tag(self):
         """Returns the constructed acronym tag <acronym></acronym>."""
         return acronym_tag.render(self.values)
+
+
+class B(object):
+    """Class for constructing bold tag.
+
+    Args:
+        text (str): Bold tag text. (Ex. <b>text</b>)
+    """
+    def __init__(self, text=None):
+        self.tag = 'b'
+        self.values = {'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed bold tag <b></b>."""
+        return bold_tag.render(self.values)

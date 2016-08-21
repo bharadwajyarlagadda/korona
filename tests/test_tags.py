@@ -5,12 +5,14 @@ import pytest
 from korona.html.construct import (
     A,
     Abbr,
-    Acronym
+    Acronym,
+    B
 )
 from korona.templates.html import (
     anchor_tag,
     abbr_tag,
-    acronym_tag
+    acronym_tag,
+    bold_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -138,3 +140,15 @@ def test_construct_acronym_tag(attributes):
     """
     acronym = Acronym(**attributes)
     assert acronym.construct_tag() == acronym_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'text': None})
+])
+def test_construct_bold_tag(attributes):
+    """Test for validating whether the bold tag is constructed correctly or
+    not.
+    """
+    bold = B(**attributes)
+    assert bold.construct_tag() == bold_tag.render(attributes)

@@ -25,3 +25,7 @@ abbr_tag = env.from_string("""
 acronym_tag = env.from_string("""
 <acronym>{% if text -%} {{ text }}{% endif -%}</acronym>
 """)
+
+bold_tag = env.from_string("""
+<b>{% if text -%} {{ text }}{% endif -%}</b>
+""")
