@@ -26,6 +26,20 @@ acronym_tag = env.from_string("""
 <acronym>{% if text -%} {{ text }} {% endif -%}</acronym>
 """)
 
+area_tag = env.from_string("""
+<area {% if shape %} shape="{{ shape }}" {% endif -%}
+      {% if coords %} coords="{{ coords }}" {% endif -%}
+      {% if href %} href="{{ href }}" {% endif -%}
+      {% if type %} type="{{ type }}" {% endif -%}
+      {% if hreflang %} hreflang="{{ hreflang }}" {% endif -%}
+      {% if alt %} alt="{{ alt }}" {% endif -%}
+      {% if media %} media="{{ media }}" {% endif -%}
+      {% if rel %} rel="{{ rel }}" {% endif -%}
+      {% if nohref %} nohref {% endif -%}
+      {% if download %} download="{{ download }}" {% endif -%}>
+      {% if target %} target="{{ target }}" {% endif -%}
+""")
+
 bold_tag = env.from_string("""
 <b>{% if text -%} {{ text }} {% endif -%}</b>
 """)
