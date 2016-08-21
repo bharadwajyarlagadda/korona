@@ -9,6 +9,7 @@ korona also helps you to build individual html tags.
 ---
 
 korona supports some of the anchor tag attributes like:
+
 - ``charset``
 - ``coords``
 - ``download``
@@ -39,4 +40,5 @@ korona can build an anchor tag.
 
     assert anchor_tag1 == '<a charset="UTF-8" href="www.google.com" hreflang="en" >google</a>'
     assert anchor_tag1 == anchor_tag2
+
 
