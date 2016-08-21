@@ -9,7 +9,7 @@ Links
 =====
 
 - Project: https://github.com/bharadwajyarlagadda/korona
-- Documentation: TBD
+- Documentation: http://korona.readthedocs.io
 - TravisCI: https://travis-ci.org/bharadwajyarlagadda/korona
 
 

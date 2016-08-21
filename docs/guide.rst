@@ -112,3 +112,26 @@ Korona can build <b> tag.
     assert bold_tag1 == '<b>example</b>'
     assert bold_tag1 == bold_tag2
 
+
+<base>
+------
+
+Korona can build <base> tag.
+
+.. code-block:: python
+
+    from koron.html.construct import Base
+
+    attributes = {'href': 'www.google.com', 'target': 'example'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    base1 = Base(**attributes)
+    # You can also pass in the attributes as args.
+    base2 = Base(href='www.google.com', target='example')
+
+    base_tag1 = base1.construct_tag()
+    base_tag2 = base2.construct_tag()
+
+    assert base_tag1 == '<base href="www.google.com" target="example" >'
+    assert base_tag1 == base_tag2
+
