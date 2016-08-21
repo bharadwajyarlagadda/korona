@@ -89,3 +89,26 @@ Korona builds an <acronym> tag.
 
 
 .. note:: korona only supports ``text`` attribute for ``<acronym>`` tag for now.
+
+<b>
+---
+
+Korona can build <b> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import B
+
+    attributes = {'text': 'example'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    bold1 = B(**attributes)
+    # You can also pass in the attributes as args.
+    bold2 = B(text='example')
+
+    bold_tag1 = bold1.construct_tag()
+    bold_tag2 = bold2.construct_tag()
+
+    assert bold_tag1 == '<b>example</b>'
+    assert bold_tag1 == bold_tag2
+
