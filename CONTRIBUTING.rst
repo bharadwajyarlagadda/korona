@@ -57,9 +57,9 @@ Get Started!
 Ready to contribute? Here's how to set up ``korona`` for local development.
 
 1. Fork the ``korona`` repo on GitHub.
-2. Clone your fork locally::
+2. Pull your fork locally::
 
-    $ git clone git@github.com:bharadwajyarlagadda/korona.git
+    $ git clone git@github.com:<username>/korona.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development::
 

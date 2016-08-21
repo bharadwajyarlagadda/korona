@@ -7,6 +7,8 @@ TAG_ATTRIBUTES = {
     # Some of the attributes have confined values. We will mention all the
     # confined values in a list for that particular attribute. In other words,
     # the attribute values should be one of them.
+
+    # TODO: Add default values for the respective tag attributes if any.
     'a':
         {
             'charset': {
