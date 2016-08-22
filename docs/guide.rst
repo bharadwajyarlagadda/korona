@@ -90,6 +90,42 @@ Korona builds an <acronym> tag.
 
 .. note:: korona only supports ``text`` attribute for ``<acronym>`` tag for now.
 
+<area>
+------
+
+Korona supports some of the anchor tag attributes like:
+
+- ``alt``
+- ``coords``
+- ``download``
+- ``href``
+- ``hreflang``
+- ``media``
+- ``nohref``
+- ``rel``
+- ``shape``
+- ``target``
+- ``type``
+
+Korona can build an <area> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Area
+
+    attributes = {'href': 'www.example.com', 'hreflang': 'en', 'alt': 'example'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    area1 = Area(**attributes)
+    # You can also pass in the attributes as args.
+    area2 = Area(href='www.example.com', hreflang='en', alt='example')
+
+    area_tag1 = area1.construct_tag()
+    area_tag2 = area2.construct_tag()
+
+    assert area_tag1 == '<area href="www.example.com" hreflang="en" alt="example" >
+    assert area_tag1 == area_tag2
+
 <b>
 ---
 
