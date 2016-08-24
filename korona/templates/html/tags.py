@@ -50,6 +50,6 @@ base_tag = env.from_string("""
 """)
 
 canvas_tag = env.from_string("""
-<canvas {% if height %} height="{{ height }}" {% endif -%}
-        {% if width %} width="{{ width }}" {% endif -%}></canvas>
+<canvas {% if height -%} height="{{ height }}" {% endif -%}
+        {% if width -%} width="{{ width }}" {% endif -%}></canvas>
 """)
