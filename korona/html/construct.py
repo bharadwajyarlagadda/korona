@@ -418,6 +418,12 @@ class Base(object):
 
 
 class Canvas(object):
+    """Class for constructing canvas tag.
+
+    Args:
+        height (str): Specifies the height of the canvas.
+        width (str): Specifies the width of the canvas.
+    """
     def __init__(self, height=None, width=None):
         # TODO: Possible add the canvas text attribute.
         self.validate_string(height)
