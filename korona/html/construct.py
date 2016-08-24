@@ -12,7 +12,8 @@ from ..templates.html import (
     acronym_tag,
     area_tag,
     bold_tag,
-    base_tag
+    base_tag,
+    canvas_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -414,3 +415,23 @@ class Base(object):
         if target and not isinstance(target, str):
             raise ValueError('<base>: target attribute value should be '
                              'string')
+
+
+class Canvas(object):
+    def __init__(self, height=None, width=None):
+        # TODO: Possible add the canvas text attribute.
+        self.validate_string(height)
+        self.validate_string(width)
+        self.values = {'height': height, 'width': width}
+
+    def construct_tag(self):
+        return canvas_tag.render(self.values)
+
+    def validate_string(self, value):
+        """Validates whether the given value is a string or not."""
+        if not value:
+            return
+
+        # If the attribute value is not a string raise a ValueError.
+        if not isinstance(value, str):
+            raise ValueError('<canvas>: {0} should be a string'.format(value))

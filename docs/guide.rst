@@ -64,7 +64,7 @@ Korona builds an <abbr> tag.
     assert abbreviate_tag1 == abbreviate_tag2
 
 
-.. note:: korona only supports ``text`` attribute for ``<abbr>`` tag.
+.. note:: korona only supports ``text`` attribute for ``<abbr>`` tag for now.
 
 <acronym>
 ---------
@@ -171,3 +171,26 @@ Korona can build <base> tag.
     assert base_tag1 == '<base href="www.google.com" target="example" >'
     assert base_tag1 == base_tag2
 
+<canvas>
+--------
+
+Korona can build <canvas> tag.
+
+.. code-block:: python
+
+    from koron.html.construct import Canvas
+
+    attributes = {'height': '100', 'width': '200'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    canvas1 = Canvas(**attributes)
+    # You can also pass in the attributes as args.
+    canvas2 = Canvas(height='100', width='200')
+
+    canvas_tag1 = canvas1.construct_tag()
+    canvas_tag2 = canvas2.construct_tag()
+
+    assert canvas_tag1 == '<canvas height="100" width="200" ></canvas>'
+    assert canvas_tag1 == canvas_tag2
+
+.. note:: korona doesn't support canvas ``text`` for now.

@@ -8,7 +8,8 @@ from korona.html.construct import (
     Acronym,
     Area,
     B,
-    Base
+    Base,
+    Canvas
 )
 from korona.templates.html import (
     anchor_tag,
@@ -16,7 +17,8 @@ from korona.templates.html import (
     acronym_tag,
     area_tag,
     bold_tag,
-    base_tag
+    base_tag,
+    canvas_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -282,5 +284,33 @@ def test_construct_base_tag_error(attributes, exception, error_msg):
     """Test for validating base tag's attributes."""
     with pytest.raises(exception) as exc:
         Base(**attributes)
+
+    assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'height': '100'}),
+    ({'width': '200'}),
+    ({'height': '100', 'width': '200'})
+])
+def test_construct_canvas_tag(attributes):
+    """Test for validating whether the canvas tag is constructed correctly or
+    not.
+    """
+    canvas = Canvas(**attributes)
+    assert canvas.construct_tag() == canvas_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'height': 123}, ValueError, 'should be a string'),
+    ({'width': 123}, ValueError, 'should be a string'),
+    ({'height': None, 'width': 123},
+     ValueError,
+     'should be a string')
+])
+def test_construct_canvas_tag_error(attributes, exception, error_msg):
+    """Test for validating canvas tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Canvas(**attributes)
 
     assert error_msg in str(exc)
