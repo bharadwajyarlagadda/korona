@@ -48,3 +48,8 @@ base_tag = env.from_string("""
 <base {% if href -%} href="{{ href }}" {% endif -%}
       {% if target -%} target="{{ target }}" {% endif -%}>
 """)
+
+canvas_tag = env.from_string("""
+<canvas {% if height %} height="{{ height }}" {% endif -%}
+        {% if width %} width="{{ width }}" {% endif -%}></canvas>
+""")

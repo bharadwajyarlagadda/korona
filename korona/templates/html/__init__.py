@@ -6,5 +6,6 @@ from .tags import (
     acronym_tag,
     area_tag,
     bold_tag,
-    base_tag
+    base_tag,
+    canvas_tag
 )
