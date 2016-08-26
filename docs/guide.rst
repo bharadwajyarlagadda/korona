@@ -194,3 +194,25 @@ Korona can build <canvas> tag.
     assert canvas_tag1 == canvas_tag2
 
 .. note:: korona doesn't support canvas ``text`` for now.
+
+<caption>
+---------
+
+Korona can build <caption> tag.
+
+.. code-block:: python
+
+    from koron.html.construct import Caption
+
+    attributes = {'align': 'top', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    caption1 = Caption(**attributes)
+    # You can also pass in the attributes as args.
+    caption2 = Caption(align='top', text='abcd')
+
+    caption_tag1 = caption1.construct_tag()
+    caption_tag2 = caption2.construct_tag()
+
+    assert caption_tag1 == '<caption align="top" >abcd</caption>'
+    assert caption_tag1 == caption_tag2
