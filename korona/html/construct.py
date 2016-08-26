@@ -13,7 +13,8 @@ from ..templates.html import (
     area_tag,
     bold_tag,
     base_tag,
-    canvas_tag
+    canvas_tag,
+    caption_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -431,6 +432,7 @@ class Canvas(object):
         self.values = {'height': height, 'width': width}
 
     def construct_tag(self):
+        """Returns the constructed base tag <canvas>."""
         return canvas_tag.render(self.values)
 
     def validate_string(self, value):
@@ -441,3 +443,50 @@ class Canvas(object):
         # If the attribute value is not a string raise a ValueError.
         if not isinstance(value, str):
             raise ValueError('<canvas>: {0} should be a string'.format(value))
+
+
+class Caption(object):
+    """Class for constructing caption tag.
+
+    Args:
+        align (str): Defines the alignment of the caption
+        text (str): Specifies the caption text.
+    """
+    def __init__(self, align=None, text=None):
+        self.tag = 'caption'
+        self.validate_string(value=text)
+        self.validate_values(attribute_name='align', value=align)
+        self.values = {'align': align, 'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed base tag <caption>."""
+        return caption_tag.render(self.values)
+
+    def validate_string(self, value):
+        """Validates whether the given value is a string or not."""
+        if not value:
+            return
+
+        # If the attribute value is not a string raise a ValueError.
+        if not isinstance(value, str):
+            raise ValueError('<caption>: {0} should be a string'.format(value))
+
+    def validate_values(self, attribute_name, value):
+        """Validates whether the given attribute value is a valid value or not.
+        Some of the attributes have confined values. Even if we give some
+        other value, the html output would not be correct.
+        """
+        if not value:
+            return
+
+        if not isinstance(value, str):
+            raise ValueError('<caption>: {0} should be a string value.'
+                             .format(attribute_name))
+
+        attribute_values = TAG_ATTRIBUTES[self.tag][attribute_name]['values']
+
+        if value not in attribute_values:
+            raise AttributeError('<caption>: {attribute_name} attribute '
+                                 'values should be one of these: {values}'
+                                 .format(attribute_name=attribute_name,
+                                         values=','.join(attribute_values)))

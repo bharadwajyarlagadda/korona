@@ -9,7 +9,8 @@ from korona.html.construct import (
     Area,
     B,
     Base,
-    Canvas
+    Canvas,
+    Caption
 )
 from korona.templates.html import (
     anchor_tag,
@@ -18,7 +19,8 @@ from korona.templates.html import (
     area_tag,
     bold_tag,
     base_tag,
-    canvas_tag
+    canvas_tag,
+    caption_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -312,5 +314,33 @@ def test_construct_canvas_tag_error(attributes, exception, error_msg):
     """Test for validating canvas tag's attributes."""
     with pytest.raises(exception) as exc:
         Canvas(**attributes)
+
+    assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'align': 'top'}),
+    ({'text': 'abcd'}),
+    ({'align': 'bottom', 'text': 'abcd'})
+])
+def test_construct_caption_tag(attributes):
+    """Test for validating whether the caption tag is constructed correctly or
+    not.
+    """
+    caption = Caption(**attributes)
+    assert caption.construct_tag() == caption_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'align': 123}, ValueError, 'should be a string'),
+    ({'text': 123}, ValueError, 'should be a string'),
+    ({'align': 'abcd', 'text': 'abcd'},
+     AttributeError,
+     'attribute values should be one of these')
+])
+def test_construct_caption_tag_error(attributes, exception, error_msg):
+    """Test for validating caption tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Caption(**attributes)
 
     assert error_msg in str(exc)
