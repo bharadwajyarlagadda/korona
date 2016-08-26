@@ -164,5 +164,12 @@ TAG_ATTRIBUTES = {
                                'hyperlinks and forms in the page',
                 'values': None
             }
+        },
+    'caption':
+        {
+            'align': {
+                'description': 'Defines the alignment of the caption',
+                'values': ['left', 'right', 'top', 'bottom']
+            }
         }
 }
