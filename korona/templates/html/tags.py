@@ -53,3 +53,8 @@ canvas_tag = env.from_string("""
 <canvas {% if height -%} height="{{ height }}" {% endif -%}
         {% if width -%} width="{{ width }}" {% endif -%}></canvas>
 """)
+
+caption_tag = env.from_string("""
+<caption {% if align -%} align="{{ align }}" {% endif -%}>
+         {% if text -%} "{{ text }}" {% endif -%}</caption>
+""")
