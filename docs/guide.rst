@@ -216,3 +216,25 @@ Korona can build <caption> tag.
 
     assert caption_tag1 == '<caption align="top" >abcd</caption>'
     assert caption_tag1 == caption_tag2
+
+<cite>
+------
+
+Korona can build <cite> tag.
+
+.. code-block:: python
+
+    from koron.html.construct import Cite
+
+    attributes = {'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    cite1 = Cite(**attributes)
+    # You can also pass in the attributes as args.
+    cite2 = Cite(text='abcd')
+
+    cite_tag1 = cite1.construct_tag()
+    cite_tag2 = cite2.construct_tag()
+
+    assert cite_tag1 == '<cite>abcd </cite>'
+    assert cite_tag1 == cite_tag2
