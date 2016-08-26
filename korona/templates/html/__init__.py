@@ -8,5 +8,6 @@ from .tags import (
     bold_tag,
     base_tag,
     canvas_tag,
-    caption_tag
+    caption_tag,
+    cite_tag
 )

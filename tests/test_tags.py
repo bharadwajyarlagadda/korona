@@ -10,7 +10,8 @@ from korona.html.construct import (
     B,
     Base,
     Canvas,
-    Caption
+    Caption,
+    Cite
 )
 from korona.templates.html import (
     anchor_tag,
@@ -20,7 +21,8 @@ from korona.templates.html import (
     bold_tag,
     base_tag,
     canvas_tag,
-    caption_tag
+    caption_tag,
+    cite_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -333,7 +335,6 @@ def test_construct_caption_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 123}, ValueError, 'should be a string'),
-    ({'text': 123}, ValueError, 'should be a string'),
     ({'align': 'abcd', 'text': 'abcd'},
      AttributeError,
      'attribute values should be one of these')
@@ -344,3 +345,14 @@ def test_construct_caption_tag_error(attributes, exception, error_msg):
         Caption(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abcd'}),
+])
+def test_construct_cite_tag(attributes):
+    """Test for validating whether the citation tag is constructed correctly or
+    not.
+    """
+    cite = Cite(**attributes)
+    assert cite.construct_tag() == cite_tag.render(attributes)

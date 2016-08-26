@@ -5,6 +5,7 @@
 
 from __future__ import absolute_import
 
+from ..lib.utils import validate_tag_attribute_value
 from .attributes import TAG_ATTRIBUTES
 from ..templates.html import (
     anchor_tag,
@@ -14,7 +15,8 @@ from ..templates.html import (
     bold_tag,
     base_tag,
     canvas_tag,
-    caption_tag
+    caption_tag,
+    cite_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -427,49 +429,31 @@ class Canvas(object):
     """
     def __init__(self, height=None, width=None):
         # TODO: Possible add the canvas text attribute.
-        self.validate_string(height)
-        self.validate_string(width)
+        self.tag = 'canvas'
+        validate_tag_attribute_value(tag=self.tag, value=height)
+        validate_tag_attribute_value(tag=self.tag, value=width)
         self.values = {'height': height, 'width': width}
 
     def construct_tag(self):
-        """Returns the constructed base tag <canvas>."""
+        """Returns the constructed canvas tag <canvas>."""
         return canvas_tag.render(self.values)
-
-    def validate_string(self, value):
-        """Validates whether the given value is a string or not."""
-        if not value:
-            return
-
-        # If the attribute value is not a string raise a ValueError.
-        if not isinstance(value, str):
-            raise ValueError('<canvas>: {0} should be a string'.format(value))
 
 
 class Caption(object):
     """Class for constructing caption tag.
 
     Args:
-        align (str): Defines the alignment of the caption
+        align (str): Defines the alignment of the caption.
         text (str): Specifies the caption text.
     """
     def __init__(self, align=None, text=None):
         self.tag = 'caption'
-        self.validate_string(value=text)
         self.validate_values(attribute_name='align', value=align)
         self.values = {'align': align, 'text': text}
 
     def construct_tag(self):
-        """Returns the constructed base tag <caption>."""
+        """Returns the constructed caption tag <caption>."""
         return caption_tag.render(self.values)
-
-    def validate_string(self, value):
-        """Validates whether the given value is a string or not."""
-        if not value:
-            return
-
-        # If the attribute value is not a string raise a ValueError.
-        if not isinstance(value, str):
-            raise ValueError('<caption>: {0} should be a string'.format(value))
 
     def validate_values(self, attribute_name, value):
         """Validates whether the given attribute value is a valid value or not.
@@ -490,3 +474,18 @@ class Caption(object):
                                  'values should be one of these: {values}'
                                  .format(attribute_name=attribute_name,
                                          values=','.join(attribute_values)))
+
+
+class Cite(object):
+    """Class for constructing cite tag.
+
+    Args:
+        text (str): Specifies the citation text.
+    """
+    def __init__(self, text):
+        self.tag = 'cite'
+        self.values = {'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed cite tag <cite>."""
+        return cite_tag.render(self.values)
