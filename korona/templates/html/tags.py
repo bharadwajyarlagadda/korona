@@ -56,5 +56,9 @@ canvas_tag = env.from_string("""
 
 caption_tag = env.from_string("""
 <caption {% if align -%} align="{{ align }}" {% endif -%}>
-         {% if text -%} "{{ text }}" {% endif -%}</caption>
+         {% if text -%} {{ text }} {% endif -%}</caption>
+""")
+
+cite_tag = env.from_string("""
+<cite>{% if text -%} {{ text }} {% endif -%}</cite>
 """)
