@@ -61,7 +61,7 @@ button_tag = env.from_string("""
         {% if formnovalidate -%} formnovalidate {% endif -%}
         {% if disabled -%} disabled {% endif -%}
         {% if autofocus -%} autofocus {% endif -%}>
-        {% if text -%} "{{ text }}" {% endif -%}</button>
+        {% if text -%} {{ text }} {% endif -%}</button>
 """)
 
 canvas_tag = env.from_string("""
