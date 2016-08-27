@@ -171,6 +171,32 @@ Korona can build <base> tag.
     assert base_tag1 == '<base href="www.google.com" target="example" >'
     assert base_tag1 == base_tag2
 
+<button>
+--------
+
+Korona can build <button> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Button
+
+    attributes = {'name': 'HTML1',
+                  'type': 'submit',
+                  'value': 'HTML1',
+                  'text': 'HTML1'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    button1 = Button(**attributes)
+    # You can also pass in the attributes as args.
+    button2 = Button(name='HTML1', type='submit', value='HTML1', text='HTML1')
+
+    button_tag1 = button1.construct_tag()
+    button_tag2 = button2.construct_tag()
+
+    assert button_tag1 == '<button name="HTML1" type="submit" value="HTML1" >HTML1</button>'
+    assert button_tag1 == button_tag2
+
+
 <canvas>
 --------
 
