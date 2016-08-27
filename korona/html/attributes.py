@@ -165,6 +165,64 @@ TAG_ATTRIBUTES = {
                 'values': None
             }
         },
+    'button':
+        {
+            'autofocus': {
+                'description': 'Specifies that a button should automatically '
+                               'get focus when the page loads',
+                'values': None
+            },
+            'disabled': {
+                'description': 'Specifies that a button should be disabled',
+                'values': None
+            },
+            'form': {
+                'description': 'Specifies one or more forms the button '
+                               'belongs to',
+                'values': None
+            },
+            'formaction': {
+                'description': 'Specifies where to send the form-data when a '
+                               'form is submitted. Only for type "submit"',
+                'values': None
+            },
+            'formenctype': {
+                'description': 'Specifies how form-data should be encoded '
+                               'before sending it to a server. Only for '
+                               'type "submit"',
+                'values': ['application/x-www-form-urlencoded',
+                           'multipart/form-data',
+                           'text/plain']
+            },
+            'formmethod': {
+                'description': 'Specifies how to send the form-data (which '
+                               'HTTP method to use). Only for type "submit"',
+                'values': ['get', 'post']
+            },
+            'formnovalidate': {
+                'description': 'Specifies that the form-data should not be '
+                               'validated on submission. Only for type '
+                               '"submit"',
+                'values': None
+            },
+            'formtarget': {
+                'description': 'Specifies where to display the response after '
+                               'submitting the form. Only for type "submit"',
+                'values': None
+            },
+            'name': {
+                'description': 'Specifies a name for the button',
+                'values': None
+            },
+            'type': {
+                'description': 'Specifies the type of button',
+                'values': ['button', 'reset', 'submit']
+            },
+            'value': {
+                'descirption': 'Specifies an initial value for the button',
+                'values': None
+            }
+        },
     'caption':
         {
             'align': {
