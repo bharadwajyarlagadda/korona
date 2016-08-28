@@ -84,11 +84,32 @@ Korona builds an <acronym> tag.
     acronym_tag1 = acronym1.construct_tag()
     acronym_tag2 = acronym2.construct_tag()
 
-    assert acronym_tag1 == '<acronym>ASAP</acronym>'
+    assert acronym_tag1 == '<acronym>ASAP </acronym>'
     assert acronym_tag1 == acronym_tag2
 
 
 .. note:: korona only supports ``text`` attribute for ``<acronym>`` tag for now.
+
+<address>
+---------
+
+Korona builds an <address> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Address
+
+    attributes = {'text': 'abcd@yahoo.com'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    address1 = Address(**attributes)
+    # You can also pass in the attributes as args.
+    address2 = Address(text='abcd@yahoo.com')
+    address_tag1 = address1.construct_tag()
+    address_tag2 = address2.construct_tag()
+
+    assert address_tag1 == '<address>abcd@yahoo.com </address>'
+    assert address_tag1 == address_tag2
 
 <area>
 ------
@@ -145,7 +166,7 @@ Korona can build <b> tag.
     bold_tag1 = bold1.construct_tag()
     bold_tag2 = bold2.construct_tag()
 
-    assert bold_tag1 == '<b>example</b>'
+    assert bold_tag1 == '<b>example </b>'
     assert bold_tag1 == bold_tag2
 
 
