@@ -66,7 +66,7 @@ class A(object):
         validate_tag_attribute_value(tag=self.tag, value=charset)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        # Validate href link
+        # TODO: Validate href link
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.validate_values(href=href, attribute_name='rel', value=rel)
         self.validate_values(href=href, attribute_name='rev', value=rev)
@@ -247,7 +247,7 @@ class Area(object):
         self.validate_alt(href=href, attribute_name='alt', value=alt)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        # Add validation for href link
+        # TODO: Add validation for href link
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.pre_validate(href=href, attribute_name='media', value=media)
         self.validate_values(href=href, attribute_name='rel', value=rel)
@@ -402,6 +402,7 @@ class Base(object):
         # TODO: Add in the main api method where it can check that there
         # should be only one base tag in the whole html document.
         self.tag = 'base'
+        # TODO: Add validation for href link.
         self.validate_values(href=href, target=target)
         self.values = {'href': href, 'target': target}
 
@@ -412,7 +413,7 @@ class Base(object):
     def validate_values(self, href, target):
         """Validates the following:
             - Either of href or target attribute value is given.
-            - CHeck whether both href and target attribute values are strings
+            - Check whether both href and target attribute values are strings
                 or not.
         """
         if not href and not target:
