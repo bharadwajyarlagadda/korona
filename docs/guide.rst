@@ -147,6 +147,28 @@ Korona can build an <area> tag.
     assert area_tag1 == '<area href="www.example.com" hreflang="en" alt="example" >
     assert area_tag1 == area_tag2
 
+<article>
+---------
+
+Korona can build an <article> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Article
+
+    attributes = {'text': '<p>Hi there</p>'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    article1 = Article(**attributes)
+    # You can also pass in the attributes as args.
+    article2 = Article(text='<p>Hi there</p>')
+    article_tag1 = article1.construct_tag()
+    article_tag2 = article2.construct_tag()
+
+    assert article_tag1 == '<article><p>Hi there</p> </article>'
+    assert article_tag1 == article_tag2
+
+
 <b>
 ---
 

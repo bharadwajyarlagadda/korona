@@ -13,6 +13,7 @@ v0.1.0
   - <acronym></acronym>
   - <address></address>
   - <area>
+  - <article></article>
   - <b></b>
   - <base>
   - <button></button>
