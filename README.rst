@@ -17,7 +17,7 @@ Features
 ========
 
 - Supported on Python 2.7 and Python 3.3+
-- Avoid writing HTML code.
+- With this package, you can avoid writing direct HTML code.
 
 
 .. |travis| image:: https://img.shields.io/travis/bharadwajyarlagadda/korona/master.svg?style=flat-square
