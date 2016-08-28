@@ -2,7 +2,7 @@
 
 from .environment import env
 
-anchor_tag = env.from_string("""
+anchor_tag = env.from_string("""\
 <a {% if name -%} name="{{ name }}" {% endif -%}
    {% if rel -%} rel="{{ rel }}" {% endif -%}
    {% if rev -%} rev="{{ rev }}" {% endif -%}
@@ -14,23 +14,23 @@ anchor_tag = env.from_string("""
    {% if shape -%} shape="{{ shape }}" {% endif -%}
    {% if coords -%} coords="{{ coords }}" {% endif -%}
    {% if download -%} download="{{ download }}" {% endif -%}>
-   {% if text -%} {{ text }} {% endif -%}
+   {%- if text -%} {{ text }} {%- endif -%}
 </a>
 """)
 
-abbr_tag = env.from_string("""
-<abbr>{% if text -%} {{ text }} {% endif -%}</abbr>
+abbr_tag = env.from_string("""\
+<abbr>{%- if text -%} {{ text }} {%- endif -%}</abbr>
 """)
 
-acronym_tag = env.from_string("""
-<acronym>{% if text -%} {{ text }} {% endif -%}</acronym>
+acronym_tag = env.from_string("""\
+<acronym>{%- if text -%} {{ text }} {%- endif -%}</acronym>
 """)
 
-address_tag = env.from_string("""
-<address>{% if text -%} {{ text }} {% endif -%}</address>
+address_tag = env.from_string("""\
+<address>{%- if text -%} {{ text }} {%- endif -%}</address>
 """)
 
-area_tag = env.from_string("""
+area_tag = env.from_string("""\
 <area {% if shape -%} shape="{{ shape }}" {% endif -%}
       {% if coords -%} coords="{{ coords }}" {% endif -%}
       {% if href -%} href="{{ href }}" {% endif -%}
@@ -44,20 +44,20 @@ area_tag = env.from_string("""
       {% if target -%} target="{{ target }}" {% endif -%}>
 """)
 
-article_tag = env.from_string("""
-<article>{% if text -%} {{ text }} {% endif -%}</article>
+article_tag = env.from_string("""\
+<article>{%- if text -%} {{ text }} {%- endif -%}</article>
 """)
 
-bold_tag = env.from_string("""
-<b>{% if text -%} {{ text }} {% endif -%}</b>
+bold_tag = env.from_string("""\
+<b>{%- if text -%} {{ text }} {%- endif -%}</b>
 """)
 
-base_tag = env.from_string("""
+base_tag = env.from_string("""\
 <base {% if href -%} href="{{ href }}" {% endif -%}
       {% if target -%} target="{{ target }}" {% endif -%}>
 """)
 
-button_tag = env.from_string("""
+button_tag = env.from_string("""\
 <button {% if name -%} name="{{ name }}" {% endif -%}
         {% if type -%} type="{{ type }}" {% endif -%}
         {% if value -%} value="{{ value }}" {% endif -%}
@@ -69,19 +69,19 @@ button_tag = env.from_string("""
         {% if formnovalidate -%} formnovalidate {% endif -%}
         {% if disabled -%} disabled {% endif -%}
         {% if autofocus -%} autofocus {% endif -%}>
-        {% if text -%} {{ text }} {% endif -%}</button>
+        {%- if text -%} {{ text }} {%- endif -%}</button>
 """)
 
-canvas_tag = env.from_string("""
+canvas_tag = env.from_string("""\
 <canvas {% if height -%} height="{{ height }}" {% endif -%}
         {% if width -%} width="{{ width }}" {% endif -%}></canvas>
 """)
 
-caption_tag = env.from_string("""
+caption_tag = env.from_string("""\
 <caption {% if align -%} align="{{ align }}" {% endif -%}>
-         {% if text -%} {{ text }} {% endif -%}</caption>
+         {%- if text -%} {{ text }} {%- endif -%}</caption>
 """)
 
-cite_tag = env.from_string("""
-<cite>{% if text -%} {{ text }} {% endif -%}</cite>
+cite_tag = env.from_string("""\
+<cite>{%- if text -%} {{ text }} {%- endif -%}</cite>
 """)
