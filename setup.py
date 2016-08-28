@@ -33,7 +33,7 @@ setup(
     long_description=readme + '\n\n' + changelog,
     packages=find_packages(exclude=['tests', 'tasks']),
     install_requires=requirements,
-    keywords='',
+    keywords='make html built html create html korona html maker html build',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
