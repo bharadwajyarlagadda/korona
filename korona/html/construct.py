@@ -11,6 +11,7 @@ from ..templates.html import (
     anchor_tag,
     abbr_tag,
     acronym_tag,
+    address_tag,
     area_tag,
     bold_tag,
     base_tag,
@@ -206,6 +207,21 @@ class Acronym(object):
     def construct_tag(self):
         """Returns the constructed acronym tag <acronym></acronym>."""
         return acronym_tag.render(self.values)
+
+
+class Address(object):
+    """Class for constructing address tag.
+
+    Args:
+        text (str): Address tag text. (Ex. <address>text</address>)
+    """
+    def __init__(self, text=None):
+        self.tag = 'address'
+        self.values = {'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed address tag <address></address>."""
+        return address_tag.render(self.values)
 
 
 class Area(object):

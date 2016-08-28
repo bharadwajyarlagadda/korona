@@ -6,6 +6,7 @@ from korona.html.construct import (
     A,
     Abbr,
     Acronym,
+    Address,
     Area,
     B,
     Base,
@@ -18,6 +19,7 @@ from korona.templates.html import (
     anchor_tag,
     abbr_tag,
     acronym_tag,
+    address_tag,
     area_tag,
     bold_tag,
     base_tag,
@@ -154,6 +156,19 @@ def test_construct_acronym_tag(attributes):
     """
     acronym = Acronym(**attributes)
     assert acronym.construct_tag() == acronym_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'text': None}),
+    ({'text': '<p>Hi there</p>'})
+])
+def test_construct_address_tag(attributes):
+    """Test for validating whether the address tag is constructed correctly or
+    not.
+    """
+    address = Address(**attributes)
+    assert address.construct_tag() == address_tag.render(attributes)
 
 
 @parametrize('attributes', [
