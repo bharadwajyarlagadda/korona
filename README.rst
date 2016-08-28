@@ -11,7 +11,7 @@ Links
 
 - Project: https://github.com/bharadwajyarlagadda/korona
 - Documentation: http://korona.readthedocs.io
-- Pypi: https://pypi.python.org/pypi/korona/0.1.0
+- Pypi: https://pypi.python.org/pypi/korona
 - TravisCI: https://travis-ci.org/bharadwajyarlagadda/korona
 
 Features
