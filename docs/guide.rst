@@ -21,7 +21,7 @@ Korona supports some of the anchor tag attributes like:
 - ``shape``
 - ``target``
 - ``type``
-- ``text`` (The text as in <a>{text}</a>)
+- ``text`` (text as in <a>{text}</a>)
 
 Korona can build an anchor tag.
 
@@ -45,7 +45,7 @@ Korona can build an anchor tag.
 <abbr>
 ------
 
-Korona builds an <abbr> tag.
+Korona can build an <abbr> tag.
 
 .. code-block:: python
 
@@ -60,7 +60,7 @@ Korona builds an <abbr> tag.
     abbreviate_tag1 = abbreviate1.construct_tag()
     abbreviate_tag2 = abbreviate2.construct_tag()
 
-    assert abbreviate_tag1 == '<abbr>WHO</abbr>'
+    assert abbreviate_tag1 == '<abbr>WHO </abbr>'
     assert abbreviate_tag1 == abbreviate_tag2
 
 
@@ -69,7 +69,7 @@ Korona builds an <abbr> tag.
 <acronym>
 ---------
 
-Korona builds an <acronym> tag.
+Korona can build an <acronym> tag.
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Korona builds an <acronym> tag.
 <address>
 ---------
 
-Korona builds an <address> tag.
+Korona can build an <address> tag.
 
 .. code-block:: python
 
@@ -114,7 +114,7 @@ Korona builds an <address> tag.
 <area>
 ------
 
-Korona supports some of the anchor tag attributes like:
+Korona supports some of the area tag attributes like:
 
 - ``alt``
 - ``coords``
@@ -216,6 +216,21 @@ Korona can build <base> tag.
 
 <button>
 --------
+
+Korona supports some of the button tag attributes like:
+
+- ``autofocus``
+- ``disabled``
+- ``form``
+- ``formaction``
+- ``formenctype``
+- ``formmethod``
+- ``formnovalidate``
+- ``formtarget``
+- ``name``
+- ``type``
+- ``value``
+- ``text`` (text as in <button>{text}</button>)
 
 Korona can build <button> tag.
 
