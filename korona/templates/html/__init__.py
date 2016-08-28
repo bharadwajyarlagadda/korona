@@ -6,6 +6,7 @@ from .tags import (
     acronym_tag,
     address_tag,
     area_tag,
+    article_tag,
     bold_tag,
     base_tag,
     button_tag,

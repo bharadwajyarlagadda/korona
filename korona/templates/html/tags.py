@@ -44,6 +44,10 @@ area_tag = env.from_string("""
       {% if target -%} target="{{ target }}" {% endif -%}>
 """)
 
+article_tag = env.from_string("""
+<article>{% if text -%} {{ text }} {% endif -%}</article>
+""")
+
 bold_tag = env.from_string("""
 <b>{% if text -%} {{ text }} {% endif -%}</b>
 """)
