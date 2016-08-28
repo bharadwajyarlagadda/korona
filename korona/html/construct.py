@@ -13,6 +13,7 @@ from ..templates.html import (
     acronym_tag,
     address_tag,
     area_tag,
+    article_tag,
     bold_tag,
     base_tag,
     button_tag,
@@ -383,6 +384,21 @@ class Area(object):
                                  'should be one of these: {values}'
                                  .format(attribute_name=attribute_name,
                                          values=','.join(attribute_values)))
+
+
+class Article(object):
+    """Class for constructing article tag.
+
+    Args:
+        text (str): Article tag text. (Ex. <article>text</article>)
+    """
+    def __init__(self, text=None):
+        self.tag = 'article'
+        self.values = {'text': text}
+
+    def construct_tag(self):
+        """Returns the constructed article tag <article></article>."""
+        return article_tag.render(self.values)
 
 
 class B(object):

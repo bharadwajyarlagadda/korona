@@ -8,6 +8,7 @@ from korona.html.construct import (
     Acronym,
     Address,
     Area,
+    Article,
     B,
     Base,
     Button,
@@ -21,6 +22,7 @@ from korona.templates.html import (
     acronym_tag,
     address_tag,
     area_tag,
+    article_tag,
     bold_tag,
     base_tag,
     button_tag,
@@ -267,6 +269,19 @@ def test_construct_area_tag_error(attributes, exception, error_msg):
         Area(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'text': None}),
+    ({'text': '<p>Hi there</p>'})
+])
+def test_construct_article_tag(attributes):
+    """Test for validating whether the article tag is constructed correctly or
+    not.
+    """
+    article = Article(**attributes)
+    assert article.construct_tag() == article_tag.render(attributes)
 
 
 @parametrize('attributes', [
