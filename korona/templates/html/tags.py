@@ -26,6 +26,10 @@ acronym_tag = env.from_string("""
 <acronym>{% if text -%} {{ text }} {% endif -%}</acronym>
 """)
 
+address_tag = env.from_string("""
+<address>{% if text -%} {{ text }} {% endif -%}</address>
+""")
+
 area_tag = env.from_string("""
 <area {% if shape -%} shape="{{ shape }}" {% endif -%}
       {% if coords -%} coords="{{ coords }}" {% endif -%}
