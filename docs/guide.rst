@@ -8,6 +8,8 @@ Korona also helps you to build individual html tags.
 <a>
 ---
 
+.. versionadded:: 0.1.0
+
 Korona supports some of the anchor tag attributes like:
 
 - ``charset``
@@ -45,6 +47,8 @@ Korona can build an anchor tag.
 <abbr>
 ------
 
+.. versionadded:: 0.1.0
+
 Korona can build an <abbr> tag.
 
 .. code-block:: python
@@ -68,6 +72,8 @@ Korona can build an <abbr> tag.
 
 <acronym>
 ---------
+
+.. versionadded:: 0.1.0
 
 Korona can build an <acronym> tag.
 
@@ -93,6 +99,8 @@ Korona can build an <acronym> tag.
 <address>
 ---------
 
+.. versionadded:: 0.1.0
+
 Korona can build an <address> tag.
 
 .. code-block:: python
@@ -113,6 +121,8 @@ Korona can build an <address> tag.
 
 <area>
 ------
+
+.. versionadded:: 0.1.0
 
 Korona supports some of the area tag attributes like:
 
@@ -150,6 +160,8 @@ Korona can build an <area> tag.
 <article>
 ---------
 
+.. versionadded:: 0.1.0
+
 Korona can build an <article> tag.
 
 .. code-block:: python
@@ -171,6 +183,8 @@ Korona can build an <article> tag.
 
 <b>
 ---
+
+.. versionadded:: 0.1.0
 
 Korona can build <b> tag.
 
@@ -195,6 +209,8 @@ Korona can build <b> tag.
 <base>
 ------
 
+.. versionadded:: 0.1.0
+
 Korona can build <base> tag.
 
 .. code-block:: python
@@ -216,6 +232,8 @@ Korona can build <base> tag.
 
 <button>
 --------
+
+.. versionadded:: 0.1.0
 
 Korona supports some of the button tag attributes like:
 
@@ -258,6 +276,8 @@ Korona can build <button> tag.
 <canvas>
 --------
 
+.. versionadded:: 0.1.0
+
 Korona can build <canvas> tag.
 
 .. code-block:: python
@@ -282,6 +302,8 @@ Korona can build <canvas> tag.
 <caption>
 ---------
 
+.. versionadded:: 0.1.0
+
 Korona can build <caption> tag.
 
 .. code-block:: python
@@ -303,6 +325,8 @@ Korona can build <caption> tag.
 
 <cite>
 ------
+
+.. versionadded:: 0.1.0
 
 Korona can build <cite> tag.
 
