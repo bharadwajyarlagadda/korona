@@ -94,7 +94,6 @@ def test_construct_anchor_tag_coords(attributes):
 @parametrize('attributes,exception,error_msg', [
     ({'rel': 1}, AttributeError, 'only used when href attribute is set.'),
     ({'type': 1}, AttributeError, 'only used when href attribute is set.'),
-    ({'href': 'abc', 'type': 1}, ValueError, 'should be a string'),
     ({'charset': 1}, ValueError, 'should be a string'),
     ({'rel': 1, 'href': 'www.google.com'}, ValueError, 'should be a string'),
     ({'shape': 'circle', 'coords': [1, 2, 3, 4]},
@@ -244,9 +243,6 @@ def test_construct_area_tag_coords(attributes):
     ({'href': 'abc', 'alt': 'abc', 'download': 123},
      ValueError,
      'should be a string'),
-    ({'href': 123, 'alt': 'abc'},
-     ValueError,
-     'should be a string'),
     ({'href': 'www.google.com', 'alt': 'abc', 'rel': 'abc'},
      AttributeError,
      'attribute values should be one of these'),
@@ -259,9 +255,6 @@ def test_construct_area_tag_coords(attributes):
     ({'href': 'abc'},
      AttributeError,
      'attribute is required if the href attribute is present'),
-    ({'href': 'www.google.com', 'alt': 123},
-     ValueError,
-     'should be a string')
 ])
 def test_construct_area_tag_error(attributes, exception, error_msg):
     """Test for validating area tag's attributes."""

@@ -63,16 +63,14 @@ class A(object):
 
         # Series of validation methods for validating all the attribute values
         # given.
-        self.validate_string(value=charset)
+        validate_tag_attribute_value(tag=self.tag, value=charset)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        self.validate_string(value=href)
+        # Validate href link
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
-        self.validate_string(value=name)
         self.validate_values(href=href, attribute_name='rel', value=rel)
         self.validate_values(href=href, attribute_name='rev', value=rev)
         self.validate_values(href=href, attribute_name='shape', value=shape)
-        self.validate_string(value=target)
         self.pre_validate(href=href, attribute_name='type', value=type)
 
         # Assign all the values in a dictionary.
@@ -92,15 +90,6 @@ class A(object):
     def construct_tag(self):
         """Returns the constructed anchor tag <a></a>."""
         return anchor_tag.render(self.values)
-
-    def validate_string(self, value):
-        """Validates whether the given value is a string or not."""
-        if not value:
-            return
-
-        # If the attribute value is not a string raise a ValueError.
-        if not isinstance(value, str):
-            raise ValueError('<a>: {0} should be a string'.format(value))
 
     def get_coords(self, shape, coords):
         """Returns coordinates after a series of validations.
@@ -150,9 +139,6 @@ class A(object):
             raise AttributeError('<a>: {0} attribute is only used when '
                                  'href attribute is set.'
                                  .format(attribute_name))
-
-        if not isinstance(value, str):
-            raise ValueError('<a>: {0} should be a string'.format(value))
 
     def validate_values(self, href, attribute_name, value):
         """Validates whether the given attribute value is a valid value or not.
@@ -261,12 +247,12 @@ class Area(object):
         self.validate_alt(href=href, attribute_name='alt', value=alt)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        self.validate_string(value=href)
+        # Add validation for href link
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.pre_validate(href=href, attribute_name='media', value=media)
         self.validate_values(href=href, attribute_name='rel', value=rel)
         self.validate_values(href=href, attribute_name='shape', value=shape)
-        self.pre_validate(href=href, attribute_name='targte', value=target)
+        self.pre_validate(href=href, attribute_name='target', value=target)
         self.pre_validate(href=href, attribute_name='type', value=type)
         self.values = {'alt': alt,
                        'coords': coordinates,
@@ -284,15 +270,6 @@ class Area(object):
         """Returns the constructed area tag <area></area>."""
         return area_tag.render(self.values)
 
-    def validate_string(self, value):
-        """Validates whether the given value is a string or not."""
-        if not value:
-            return
-
-        # If the attribute value is not a string raise a ValueError.
-        if not isinstance(value, str):
-            raise ValueError('<area>: {0} should be a string'.format(value))
-
     def validate_alt(self, href, attribute_name, value):
         """Validates area's alt attribute."""
         if href and not value:
@@ -304,9 +281,6 @@ class Area(object):
             raise AttributeError('<area>: {0} attribute is only used when '
                                  'href attribute is set.'
                                  .format(attribute_name))
-
-        if value and not isinstance(value, str):
-            raise ValueError('<area>: {0} should be a string'.format(value))
 
     def pre_validate(self, href, attribute_name, value):
         """Validates whether an attribute is dependant on another attribute or
