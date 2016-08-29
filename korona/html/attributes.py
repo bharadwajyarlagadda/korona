@@ -286,5 +286,38 @@ TAG_ATTRIBUTES = {
                 'description': 'Defines the alignment of the caption',
                 'values': ['left', 'right', 'top', 'bottom']
             }
+        },
+    'col':
+        {
+            'align': {
+                'description': 'Specifies the alignment of the content related'
+                               ' to a <col> element',
+                'values': ['left', 'right', 'center', 'justify', 'char']
+            },
+            'char': {
+                'description': 'Specifies the alignment of the content related'
+                               ' to a <col> element to a character',
+                'values': None
+            },
+            'charoff': {
+                'description': 'Specifies the number of characters the content'
+                               ' will be aligned from the character specified '
+                               'by the char attribute',
+                'values': None
+            },
+            'span': {
+                'description': 'Specifies the number of columns a <col> '
+                               'element should span',
+                'values': None
+            },
+            'valign': {
+                'description': 'Specifies the vertical alignment of the '
+                               'content related to a <col> element',
+                'values': ['top', 'middle', 'bottom', 'baseline']
+            },
+            'width': {
+                'description': 'Specifies the width of a <col> element',
+                'values': None
+            }
         }
 }
