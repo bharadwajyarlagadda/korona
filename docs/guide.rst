@@ -326,6 +326,15 @@ Korona can build <cite> tag.
 <col>
 -----
 
+Korona supports some of the col tag attributes like:
+
+- ``align``
+- ``char``
+- ``charoff``
+- ``span``
+- ``valign``
+- ``width``
+
 Korona can build <col> tag.
 
 .. code-block:: python
@@ -344,4 +353,35 @@ Korona can build <col> tag.
 
     assert col_tag1 == '<col align="char" char="." charoff="2" >'
     assert col_tag1 == col_tag2
+
+<colgroup>
+----------
+
+Korona supports some of the colgroup tag attributes like:
+
+- ``align``
+- ``char``
+- ``charoff``
+- ``span``
+- ``valign``
+- ``width``
+
+Korona can build <colgroup> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import ColGroup
+
+    attributes = {'align': 'char', 'char': '.', 'charoff': '2'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    colgroup1 = ColGroup(**attributes)
+    # You can also pass in the attributes as args.
+    colgroup2 = ColGroup(align='char', char='.', charoff='2')
+
+    colgroup_tag1 = colgroup1.construct()
+    colgroup_tag2 = colgroup2.construct()
+
+    assert colgroup_tag1 == '<colgroup align="char" char="." charoff="2" ></colgroup>'
+    assert colgroup_tag1 == colgroup_tag2
 
