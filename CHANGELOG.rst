@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.2.0-alpha
+------------
+
+- Added classes for building some of the tags:
+
+  - <colgroup></colgroup>
+  - <dd></dd>
 
 v0.1.0
 ------
