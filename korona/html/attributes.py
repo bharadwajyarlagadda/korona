@@ -319,5 +319,36 @@ TAG_ATTRIBUTES = {
                 'description': 'Specifies the width of a <col> element',
                 'values': None
             }
+        },
+    'colgroup':
+        {
+            'align': {
+                'description': 'Aligns the content in a column group',
+                'values': ['left', 'right', 'center', 'justify', 'char']
+            },
+            'char': {
+                'description': 'Aligns the content in a column group to a '
+                               'character',
+                'values': None
+            },
+            'charoff': {
+                'description': 'Sets the number of characters the content '
+                               'will be aligned from the character specified '
+                               'by the char attribute',
+                'values': None
+            },
+            'span': {
+                'description': 'Specifies the number of columns a column '
+                               'group should span',
+                'values': None
+            },
+            'valign': {
+                'description': 'Vertical aligns the content in a column group',
+                'values': ['top', 'middle', 'bottom', 'baseline']
+            },
+            'width': {
+                'description': 'Specifies the width of a column group',
+                'values': None
+            }
         }
 }
