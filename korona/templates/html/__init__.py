@@ -12,5 +12,6 @@ from .tags import (
     button_tag,
     canvas_tag,
     caption_tag,
-    cite_tag
+    cite_tag,
+    col_tag
 )
