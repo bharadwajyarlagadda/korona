@@ -24,7 +24,8 @@ from ..templates.html import (
     caption_tag,
     cite_tag,
     col_tag,
-    colgroup_tag
+    colgroup_tag,
+    dd_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -779,3 +780,20 @@ class ColGroup(object):
             raise AttributeError('<colgroup>: The charoff attribute can only '
                                  'be used if the char attribute is specified '
                                  'and the align attribute is set to "char".')
+
+
+class DD(object):
+    """Class for constructing dd tag.
+
+    Args:
+        text (str): Specifies the dd text.
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, text=None):
+        self.tag = 'dd'
+        self.values = {'text': text}
+
+    def construct(self):
+        """Returns the constructed dd tag <dd>."""
+        return dd_tag.render(self.values)

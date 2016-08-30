@@ -16,7 +16,8 @@ from korona.html.construct import (
     Caption,
     Cite,
     Col,
-    ColGroup
+    ColGroup,
+    DD
 )
 from korona.templates.html import (
     anchor_tag,
@@ -32,7 +33,8 @@ from korona.templates.html import (
     caption_tag,
     cite_tag,
     col_tag,
-    colgroup_tag
+    colgroup_tag,
+    dd_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -511,3 +513,13 @@ def test_construct_colgroup_tag_error(attributes, exception, error_msg):
         ColGroup(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'})
+])
+def test_construct_dd_tag(attributes):
+    """Test for validating whether the dd tag is constructed correctly or not.
+    """
+    dd = DD(**attributes)
+    assert dd.construct() == dd_tag.render(attributes)
