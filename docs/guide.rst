@@ -37,8 +37,8 @@ Korona can build an anchor tag.
     anchor1 = A(**attributes)
     # You can also pass in the attributes as args.
     anchor2 = A(charset='UTF-8', href='www.google.com', hreflang='en', text='google')
-    anchor_tag1 = anchor1.construct_tag()
-    anchor_tag2 = anchor2.construct_tag()
+    anchor_tag1 = anchor1.construct()
+    anchor_tag2 = anchor2.construct()
 
     assert anchor_tag1 == '<a charset="UTF-8" href="www.google.com" hreflang="en" >google</a>'
     assert anchor_tag1 == anchor_tag2
@@ -61,8 +61,8 @@ Korona can build an <abbr> tag.
     abbreviate1 = Abbr(**attributes)
     # You can also pass in the attributes as args.
     abbreviate2 = Abbr(text='WHO')
-    abbreviate_tag1 = abbreviate1.construct_tag()
-    abbreviate_tag2 = abbreviate2.construct_tag()
+    abbreviate_tag1 = abbreviate1.construct()
+    abbreviate_tag2 = abbreviate2.construct()
 
     assert abbreviate_tag1 == '<abbr>WHO </abbr>'
     assert abbreviate_tag1 == abbreviate_tag2
@@ -87,8 +87,8 @@ Korona can build an <acronym> tag.
     acronym1 = Acronym(**attributes)
     # You can also pass in the attributes as args.
     acronym2 = Acronym(text='ASAP')
-    acronym_tag1 = acronym1.construct_tag()
-    acronym_tag2 = acronym2.construct_tag()
+    acronym_tag1 = acronym1.construct()
+    acronym_tag2 = acronym2.construct()
 
     assert acronym_tag1 == '<acronym>ASAP </acronym>'
     assert acronym_tag1 == acronym_tag2
@@ -113,8 +113,8 @@ Korona can build an <address> tag.
     address1 = Address(**attributes)
     # You can also pass in the attributes as args.
     address2 = Address(text='abcd@yahoo.com')
-    address_tag1 = address1.construct_tag()
-    address_tag2 = address2.construct_tag()
+    address_tag1 = address1.construct()
+    address_tag2 = address2.construct()
 
     assert address_tag1 == '<address>abcd@yahoo.com </address>'
     assert address_tag1 == address_tag2
@@ -151,8 +151,8 @@ Korona can build an <area> tag.
     # You can also pass in the attributes as args.
     area2 = Area(href='www.example.com', hreflang='en', alt='example')
 
-    area_tag1 = area1.construct_tag()
-    area_tag2 = area2.construct_tag()
+    area_tag1 = area1.construct()
+    area_tag2 = area2.construct()
 
     assert area_tag1 == '<area href="www.example.com" hreflang="en" alt="example" >
     assert area_tag1 == area_tag2
@@ -174,8 +174,8 @@ Korona can build an <article> tag.
     article1 = Article(**attributes)
     # You can also pass in the attributes as args.
     article2 = Article(text='<p>Hi there</p>')
-    article_tag1 = article1.construct_tag()
-    article_tag2 = article2.construct_tag()
+    article_tag1 = article1.construct()
+    article_tag2 = article2.construct()
 
     assert article_tag1 == '<article><p>Hi there</p> </article>'
     assert article_tag1 == article_tag2
@@ -199,8 +199,8 @@ Korona can build <b> tag.
     # You can also pass in the attributes as args.
     bold2 = B(text='example')
 
-    bold_tag1 = bold1.construct_tag()
-    bold_tag2 = bold2.construct_tag()
+    bold_tag1 = bold1.construct()
+    bold_tag2 = bold2.construct()
 
     assert bold_tag1 == '<b>example </b>'
     assert bold_tag1 == bold_tag2
@@ -224,8 +224,8 @@ Korona can build <base> tag.
     # You can also pass in the attributes as args.
     base2 = Base(href='www.google.com', target='example')
 
-    base_tag1 = base1.construct_tag()
-    base_tag2 = base2.construct_tag()
+    base_tag1 = base1.construct()
+    base_tag2 = base2.construct()
 
     assert base_tag1 == '<base href="www.google.com" target="example" >'
     assert base_tag1 == base_tag2
@@ -266,8 +266,8 @@ Korona can build <button> tag.
     # You can also pass in the attributes as args.
     button2 = Button(name='HTML1', type='submit', value='HTML1', text='HTML1')
 
-    button_tag1 = button1.construct_tag()
-    button_tag2 = button2.construct_tag()
+    button_tag1 = button1.construct()
+    button_tag2 = button2.construct()
 
     assert button_tag1 == '<button name="HTML1" type="submit" value="HTML1" >HTML1</button>'
     assert button_tag1 == button_tag2
@@ -291,8 +291,8 @@ Korona can build <canvas> tag.
     # You can also pass in the attributes as args.
     canvas2 = Canvas(height='100', width='200')
 
-    canvas_tag1 = canvas1.construct_tag()
-    canvas_tag2 = canvas2.construct_tag()
+    canvas_tag1 = canvas1.construct()
+    canvas_tag2 = canvas2.construct()
 
     assert canvas_tag1 == '<canvas height="100" width="200" ></canvas>'
     assert canvas_tag1 == canvas_tag2
@@ -317,8 +317,8 @@ Korona can build <caption> tag.
     # You can also pass in the attributes as args.
     caption2 = Caption(align='top', text='abcd')
 
-    caption_tag1 = caption1.construct_tag()
-    caption_tag2 = caption2.construct_tag()
+    caption_tag1 = caption1.construct()
+    caption_tag2 = caption2.construct()
 
     assert caption_tag1 == '<caption align="top" >abcd</caption>'
     assert caption_tag1 == caption_tag2
@@ -341,8 +341,8 @@ Korona can build <cite> tag.
     # You can also pass in the attributes as args.
     cite2 = Cite(text='abcd')
 
-    cite_tag1 = cite1.construct_tag()
-    cite_tag2 = cite2.construct_tag()
+    cite_tag1 = cite1.construct()
+    cite_tag2 = cite2.construct()
 
     assert cite_tag1 == '<cite>abcd </cite>'
     assert cite_tag1 == cite_tag2
