@@ -13,5 +13,6 @@ from .tags import (
     canvas_tag,
     caption_tag,
     cite_tag,
-    col_tag
+    col_tag,
+    colgroup_tag
 )

@@ -94,3 +94,12 @@ col_tag = env.from_string("""\
      {% if valign -%} valign="{{ valign }}" {% endif -%}
      {% if width -%} width="{{ width }}" {% endif -%}>
 """)
+
+colgroup_tag = env.from_string("""\
+<colgroup {% if span -%} span="{{ span }}" {% endif -%}
+          {% if align -%} align="{{ align }}" {% endif -%}
+          {% if char -%} char="{{ char }}" {% endif -%}
+          {% if charoff -%} charoff="{{ charoff }}" {% endif -%}
+          {% if valign -%} valign="{{ valign }}" {% endif -%}
+          {% if width -%} width="{{ width }}" {% endif -%}></colgroup>
+""")
