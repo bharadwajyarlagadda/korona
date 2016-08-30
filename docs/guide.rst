@@ -199,7 +199,7 @@ Korona can build <base> tag.
 
 .. code-block:: python
 
-    from koron.html.construct import Base
+    from korona.html.construct import Base
 
     attributes = {'href': 'www.google.com', 'target': 'example'}
 
@@ -262,7 +262,7 @@ Korona can build <canvas> tag.
 
 .. code-block:: python
 
-    from koron.html.construct import Canvas
+    from korona.html.construct import Canvas
 
     attributes = {'height': '100', 'width': '200'}
 
@@ -286,7 +286,7 @@ Korona can build <caption> tag.
 
 .. code-block:: python
 
-    from koron.html.construct import Caption
+    from korona.html.construct import Caption
 
     attributes = {'align': 'top', 'text': 'abcd'}
 
@@ -308,7 +308,7 @@ Korona can build <cite> tag.
 
 .. code-block:: python
 
-    from koron.html.construct import Cite
+    from korona.html.construct import Cite
 
     attributes = {'text': 'abcd'}
 
@@ -322,3 +322,26 @@ Korona can build <cite> tag.
 
     assert cite_tag1 == '<cite>abcd </cite>'
     assert cite_tag1 == cite_tag2
+
+<col>
+-----
+
+Korona can build <col> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Col
+
+    attributes = {'align': 'char', 'char': '.', 'charoff': '2'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    col1 = Col(**attributes)
+    # You can also pass in the attributes as args.
+    col2 = Col(align='char', char='.', charoff='2')
+
+    col_tag1 = col1.construct()
+    col_tag2 = col2.construct()
+
+    assert col_tag1 == '<col align="char" char="." charoff="2" >'
+    assert col_tag1 == col_tag2
+
