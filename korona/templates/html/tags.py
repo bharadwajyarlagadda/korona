@@ -103,3 +103,7 @@ colgroup_tag = env.from_string("""\
           {% if valign -%} valign="{{ valign }}" {% endif -%}
           {% if width -%} width="{{ width }}" {% endif -%}></colgroup>
 """)
+
+dd_tag = env.from_string("""\
+<dd>{% if text -%} {{ text }} {% endif -%}</dd>
+""")

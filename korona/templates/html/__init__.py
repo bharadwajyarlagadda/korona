@@ -14,5 +14,6 @@ from .tags import (
     caption_tag,
     cite_tag,
     col_tag,
-    colgroup_tag
+    colgroup_tag,
+    dd_tag
 )
