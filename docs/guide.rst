@@ -385,3 +385,25 @@ Korona can build <colgroup> tag.
     assert colgroup_tag1 == '<colgroup align="char" char="." charoff="2" ></colgroup>'
     assert colgroup_tag1 == colgroup_tag2
 
+<dd>
+----
+
+Korona can build <dd> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import DD
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    dd1 = DD(**attributes)
+    # You can also pass in the attributes as args.
+    dd2 = DD(text='abc')
+
+    dd_tag1 = dd1.construct()
+    dd_tag2 = dd2.construct()
+
+    assert dd_tag1 == '<dd>abc </dd>'
+    assert dd_tag1 == dd_tag2
+
