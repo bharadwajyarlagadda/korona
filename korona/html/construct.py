@@ -49,6 +49,10 @@ class A(object):
         target(str): Specifies where to open the linked document.
         type (str): Specifies the media type of the linked document.
         text (str): Anchor tag text. (Ex. <a>text</a>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self,
                  charset=None,
@@ -175,6 +179,10 @@ class Abbr(object):
 
     Args:
         text (str): Abbr tag text. (Ex. <abbr>text</abbr>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text=None):
         self.tag = 'abbr'
@@ -190,6 +198,10 @@ class Acronym(object):
 
     Args:
         text (str): Acronym tag text. (Ex. <acronym>text</acronym>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text=None):
         self.tag = 'acronym'
@@ -205,6 +217,10 @@ class Address(object):
 
     Args:
         text (str): Address tag text. (Ex. <address>text</address>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text=None):
         self.tag = 'address'
@@ -234,6 +250,10 @@ class Area(object):
         shape (str): Specifies the shape of the area.
         target(str): Specifies where to open the target URL.
         type (str): Specifies the media type of the target URL.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self,
                  alt=None,
@@ -369,6 +389,10 @@ class Article(object):
 
     Args:
         text (str): Article tag text. (Ex. <article>text</article>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text=None):
         self.tag = 'article'
@@ -384,6 +408,10 @@ class B(object):
 
     Args:
         text (str): Bold tag text. (Ex. <b>text</b>)
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text=None):
         self.tag = 'b'
@@ -401,6 +429,10 @@ class Base(object):
         href (str): Specifies the base URL for all relative URLs in the page.
         target (str): Specifies the default target for all hyperlinks and
             forms in the page.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, href=None, target=None):
         # TODO: Add in the main api method where it can check that there
@@ -453,6 +485,10 @@ class Button(object):
         name (str): Specifies a name for the button.
         type (str): Specifies the type of button.
         value (str): Specifies an initial value for the button.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self,
                  autofocus=False,
@@ -548,6 +584,10 @@ class Canvas(object):
     Args:
         height (str): Specifies the height of the canvas.
         width (str): Specifies the width of the canvas.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, height=None, width=None):
         # TODO: Possible add the canvas text attribute.
@@ -567,6 +607,10 @@ class Caption(object):
     Args:
         align (str): Defines the alignment of the caption.
         text (str): Specifies the caption text.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, align=None, text=None):
         self.tag = 'caption'
@@ -585,6 +629,10 @@ class Cite(object):
 
     Args:
         text (str): Specifies the citation text.
+
+    .. versionadded:: 0.1.0
+    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
+        construct.
     """
     def __init__(self, text):
         self.tag = 'cite'
@@ -610,6 +658,8 @@ class Col(object):
         valign (str): Specifies the vertical alignment of the content related
             to a <col> element.
         width (str): Specifies the width of a <col> element.
+
+    .. versionadded:: 0.2.0-alpha
     """
     def __init__(self,
                  align=None,
