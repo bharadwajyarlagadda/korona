@@ -5,7 +5,10 @@
 
 from __future__ import absolute_import
 
-from ..lib.utils import validate_tag_attribute_value
+from ..lib.utils import (
+    validate_tag_attribute_value,
+    validate_attribute_values
+)
 from .attributes import TAG_ATTRIBUTES
 from ..templates.html import (
     anchor_tag,
@@ -19,7 +22,8 @@ from ..templates.html import (
     button_tag,
     canvas_tag,
     caption_tag,
-    cite_tag
+    cite_tag,
+    col_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -87,7 +91,7 @@ class A(object):
                        'type': type,
                        'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed anchor tag <a></a>."""
         return anchor_tag.render(self.values)
 
@@ -176,7 +180,7 @@ class Abbr(object):
         self.tag = 'abbr'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed abbr tag <abbr></abbr>."""
         return abbr_tag.render(self.values)
 
@@ -191,7 +195,7 @@ class Acronym(object):
         self.tag = 'acronym'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed acronym tag <acronym></acronym>."""
         return acronym_tag.render(self.values)
 
@@ -206,7 +210,7 @@ class Address(object):
         self.tag = 'address'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed address tag <address></address>."""
         return address_tag.render(self.values)
 
@@ -266,7 +270,7 @@ class Area(object):
                        'target': target,
                        'type': type}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed area tag <area></area>."""
         return area_tag.render(self.values)
 
@@ -370,7 +374,7 @@ class Article(object):
         self.tag = 'article'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed article tag <article></article>."""
         return article_tag.render(self.values)
 
@@ -385,7 +389,7 @@ class B(object):
         self.tag = 'b'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed bold tag <b></b>."""
         return bold_tag.render(self.values)
 
@@ -406,7 +410,7 @@ class Base(object):
         self.validate_values(href=href, target=target)
         self.values = {'href': href, 'target': target}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed base tag <base>."""
         return base_tag.render(self.values)
 
@@ -497,7 +501,7 @@ class Button(object):
                        'value': value,
                        'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed base tag <button>."""
         return button_tag.render(self.values)
 
@@ -552,7 +556,7 @@ class Canvas(object):
         validate_tag_attribute_value(tag=self.tag, value=width)
         self.values = {'height': height, 'width': width}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed canvas tag <canvas>."""
         return canvas_tag.render(self.values)
 
@@ -566,32 +570,14 @@ class Caption(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'caption'
-        self.validate_values(attribute_name='align', value=align)
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='align',
+                                  value=align)
         self.values = {'align': align, 'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed caption tag <caption>."""
         return caption_tag.render(self.values)
-
-    def validate_values(self, attribute_name, value):
-        """Validates whether the given attribute value is a valid value or not.
-        Some of the attributes have confined values. Even if we give some
-        other value, the html output would not be correct.
-        """
-        if not value:
-            return
-
-        if not isinstance(value, str):
-            raise ValueError('<caption>: {0} should be a string value.'
-                             .format(attribute_name))
-
-        attribute_values = TAG_ATTRIBUTES[self.tag][attribute_name]['values']
-
-        if value not in attribute_values:
-            raise AttributeError('<caption>: {attribute_name} attribute '
-                                 'values should be one of these: {values}'
-                                 .format(attribute_name=attribute_name,
-                                         values=','.join(attribute_values)))
 
 
 class Cite(object):
@@ -604,6 +590,74 @@ class Cite(object):
         self.tag = 'cite'
         self.values = {'text': text}
 
-    def construct_tag(self):
+    def construct(self):
         """Returns the constructed cite tag <cite>."""
         return cite_tag.render(self.values)
+
+
+class Col(object):
+    """Class for constructing col tag.
+
+    Args:
+        align (str): Specifies the alignment of the content related to a <col>
+            element.
+        char (str): Specifies the alignment of the content related to a <col>
+            element to a character.
+        charoff (int/str): Specifies the number of characters the content
+            will be aligned from the character specified by the char attribute.
+        span (int/str): Specifies the number of columns a <col> element should
+            span.
+        valign (str): Specifies the vertical alignment of the content related
+            to a <col> element.
+        width (str): Specifies the width of a <col> element.
+    """
+    def __init__(self,
+                 align=None,
+                 char=None,
+                 charoff=None,
+                 span=None,
+                 valign=None,
+                 width=None):
+        self.tag = 'col'
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='align',
+                                  value=align)
+        self.validate_char_attribute(align=align, value=char)
+        self.validate_charoff_attribute(align=align, char=char, value=charoff)
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='valign',
+                                  value=valign)
+        self.values = {'align': align,
+                       'char': char,
+                       'charoff': charoff,
+                       'span': span,
+                       'valign': valign,
+                       'width': width}
+
+    def construct(self):
+        """Returns the constructed col tag <col>."""
+        return col_tag.render(self.values)
+
+    def validate_char_attribute(self, align, value):
+        """Validates char attribute. The char attribute can only be used if
+        the align attribute is set to "char".
+        """
+        if not value:
+            return
+
+        if value and align != 'char':
+            raise AttributeError('<col>: The char attribute can only be used '
+                                 'if the align attribute is set to "char".')
+
+    def validate_charoff_attribute(self, align, char, value):
+        """Validates charoff attribute. The charoff attribute can only be
+        used if the char attribute is specified and the align attribute is
+        set to "char".
+        """
+        if not value:
+            return
+
+        if value and (not char or align != 'char'):
+            raise AttributeError('<col>: The charoff attribute can only be '
+                                 'used if the char attribute is specified and '
+                                 'the align attribute is set to "char".')

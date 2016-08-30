@@ -14,7 +14,8 @@ from korona.html.construct import (
     Button,
     Canvas,
     Caption,
-    Cite
+    Cite,
+    Col
 )
 from korona.templates.html import (
     anchor_tag,
@@ -28,7 +29,8 @@ from korona.templates.html import (
     button_tag,
     canvas_tag,
     caption_tag,
-    cite_tag
+    cite_tag,
+    col_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -66,7 +68,7 @@ def test_construct_anchor_tag(attributes):
     not.
     """
     anchor = A(**attributes)
-    assert anchor.construct_tag() == anchor_tag.render(attributes)
+    assert anchor.construct() == anchor_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -88,7 +90,7 @@ def test_construct_anchor_tag_coords(attributes):
         attributes['coords'] = (','.join(str(coord)
                                          for coord in attributes['coords']))
 
-    assert anchor.construct_tag() == anchor_tag.render(attributes)
+    assert anchor.construct() == anchor_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -144,7 +146,7 @@ def test_construct_abbr_tag(attributes):
     not.
     """
     abbr = Abbr(**attributes)
-    assert abbr.construct_tag() == abbr_tag.render(attributes)
+    assert abbr.construct() == abbr_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -156,7 +158,7 @@ def test_construct_acronym_tag(attributes):
     not.
     """
     acronym = Acronym(**attributes)
-    assert acronym.construct_tag() == acronym_tag.render(attributes)
+    assert acronym.construct() == acronym_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -169,7 +171,7 @@ def test_construct_address_tag(attributes):
     not.
     """
     address = Address(**attributes)
-    assert address.construct_tag() == address_tag.render(attributes)
+    assert address.construct() == address_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -189,7 +191,7 @@ def test_construct_area_tag(attributes):
     not.
     """
     area = Area(**attributes)
-    assert area.construct_tag() == area_tag.render(attributes)
+    assert area.construct() == area_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -211,7 +213,7 @@ def test_construct_area_tag_coords(attributes):
         attributes['coords'] = (','.join(str(coord)
                                          for coord in attributes['coords']))
 
-    assert area.construct_tag() == area_tag.render(attributes)
+    assert area.construct() == area_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -274,7 +276,7 @@ def test_construct_article_tag(attributes):
     not.
     """
     article = Article(**attributes)
-    assert article.construct_tag() == article_tag.render(attributes)
+    assert article.construct() == article_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -286,7 +288,7 @@ def test_construct_bold_tag(attributes):
     not.
     """
     bold = B(**attributes)
-    assert bold.construct_tag() == bold_tag.render(attributes)
+    assert bold.construct() == bold_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -299,7 +301,7 @@ def test_construct_base_tag(attributes):
     not.
     """
     base = Base(**attributes)
-    assert base.construct_tag() == base_tag.render(attributes)
+    assert base.construct() == base_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -336,7 +338,7 @@ def test_construct_button_tag(attributes):
     not.
     """
     button = Button(**attributes)
-    assert button.construct_tag() == button_tag.render(attributes)
+    assert button.construct() == button_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -385,7 +387,7 @@ def test_construct_canvas_tag(attributes):
     not.
     """
     canvas = Canvas(**attributes)
-    assert canvas.construct_tag() == canvas_tag.render(attributes)
+    assert canvas.construct() == canvas_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -413,7 +415,7 @@ def test_construct_caption_tag(attributes):
     not.
     """
     caption = Caption(**attributes)
-    assert caption.construct_tag() == caption_tag.render(attributes)
+    assert caption.construct() == caption_tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -438,4 +440,38 @@ def test_construct_cite_tag(attributes):
     not.
     """
     cite = Cite(**attributes)
-    assert cite.construct_tag() == cite_tag.render(attributes)
+    assert cite.construct() == cite_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'align': 'char'}),
+    ({'align': 'char', 'char': '.'}),
+    ({'align': 'char', 'char': '.', 'charoff': '2'}),
+    ({'align': 'left', 'span': '2'}),
+    ({'align': 'right', 'valign': 'top'}),
+    ({'width': '130'})
+])
+def test_construct_col_tag(attributes):
+    """Test for validating whether the col tag is constructed correctly or
+    not.
+    """
+    col = Col(**attributes)
+    assert col.construct() == col_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'char': '.'}, AttributeError, 'The char attribute can only be used'),
+    ({'charoff': '2'}, AttributeError, 'The charoff attribute can only be'),
+    ({'char': '.', 'charoff': '2'},
+     AttributeError,
+     'The char attribute can only be used'),
+    ({'align': 'left', 'charoff': '2'},
+     AttributeError,
+     'The charoff attribute can only be')
+])
+def test_construct_col_tag_error(attributes, exception, error_msg):
+    """Test for validating col tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Col(**attributes)
+
+    assert error_msg in str(exc)
