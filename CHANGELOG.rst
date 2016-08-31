@@ -8,6 +8,7 @@ v0.2.0-alpha
 
   - <colgroup></colgroup>
   - <dd></dd>
+  - <del></del>
 
 v0.1.0
 ------
