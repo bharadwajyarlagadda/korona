@@ -407,3 +407,28 @@ Korona can build <dd> tag.
     assert dd_tag1 == '<dd>abc </dd>'
     assert dd_tag1 == dd_tag2
 
+<del>
+-----
+
+Korona supports some of the del tag attributes like:
+
+- ``cite``
+- ``datetime``
+
+.. code-block:: python
+
+    from korona.html.construct import Del
+
+    attributes = {'cite': 'www.abcd.com', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    del1 = Del(**attributes)
+    # You can also pass in the attributes as args.
+    del2 = Del(cite='www.abcd.com', text='abcd')
+
+    del_tag1 = del1.construct()
+    del_tag2 = del2.construct()
+
+    assert del_tag1 == '<del cite="www.abcd.com" >abcd</del>'
+    assert del_tag1 == del_tag2
+
