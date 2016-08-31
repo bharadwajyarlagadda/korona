@@ -25,7 +25,8 @@ from ..templates.html import (
     cite_tag,
     col_tag,
     colgroup_tag,
-    dd_tag
+    dd_tag,
+    del_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -797,3 +798,26 @@ class DD(object):
     def construct(self):
         """Returns the constructed dd tag <dd>."""
         return dd_tag.render(self.values)
+
+
+class Del(object):
+    """Class for constructing del tag.
+
+    Args:
+        cite (str): Specifies a URL to a document that explains the reason
+            why the text was deleted.
+        datetime (datetime): Specifies the date and time of when the text was
+            deleted.
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, cite=None, datetime=None, text=None):
+        self.tag = 'del'
+        # TODO: If possible, add validation for attribute cite
+        self.values = {'cite': cite,
+                       'datetime': datetime,
+                       'text': text}
+
+    def construct(self):
+        """Returns the constructed del tag <del>."""
+        return del_tag.render(self.values)

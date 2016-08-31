@@ -17,7 +17,8 @@ from korona.html.construct import (
     Cite,
     Col,
     ColGroup,
-    DD
+    DD,
+    Del
 )
 from korona.templates.html import (
     anchor_tag,
@@ -34,7 +35,8 @@ from korona.templates.html import (
     cite_tag,
     col_tag,
     colgroup_tag,
-    dd_tag
+    dd_tag,
+    del_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -523,3 +525,15 @@ def test_construct_dd_tag(attributes):
     """
     dd = DD(**attributes)
     assert dd.construct() == dd_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'cite': 'www.abcd.com'}),
+    ({'datetime': '2014-11-15T22:55:03Z'}),
+    ({'datetime': '2015-11-15T22:55:03Z', 'text': 'abcd'})
+])
+def test_construct_del_tag(attributes):
+    """Test for validating whether the del tag is constructed correctly or not.
+    """
+    del_ = Del(**attributes)
+    assert del_.construct() == del_tag.render(attributes)
