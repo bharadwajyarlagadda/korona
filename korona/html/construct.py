@@ -26,7 +26,8 @@ from ..templates.html import (
     col_tag,
     colgroup_tag,
     dd_tag,
-    del_tag
+    del_tag,
+    details_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -821,3 +822,24 @@ class Del(object):
     def construct(self):
         """Returns the constructed del tag <del>."""
         return del_tag.render(self.values)
+
+
+class Details(object):
+    """Class for constructing details tag.
+
+    Args:
+        open (bool): Specifies that the details should be visible (open) to
+            the user.
+        text (str): Specifies the details text. (As in
+            <details>{text}</details>)
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, open=False, text=None):
+        self.tag = 'details'
+        self.values = {'open': open,
+                       'text': text}
+
+    def construct(self):
+        """Returns the constructed details tag <details>."""
+        return details_tag.render(self.values)

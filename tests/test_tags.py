@@ -18,7 +18,8 @@ from korona.html.construct import (
     Col,
     ColGroup,
     DD,
-    Del
+    Del,
+    Details
 )
 from korona.templates.html import (
     anchor_tag,
@@ -36,7 +37,8 @@ from korona.templates.html import (
     col_tag,
     colgroup_tag,
     dd_tag,
-    del_tag
+    del_tag,
+    details_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -537,3 +539,16 @@ def test_construct_del_tag(attributes):
     """
     del_ = Del(**attributes)
     assert del_.construct() == del_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'open': True}),
+    ({'text': 'abcd'}),
+    ({'open': True, 'text': 'abcd'})
+])
+def test_construct_details_tag(attributes):
+    """Test for validating whether the details tag is constructed correctly or
+    not.
+    """
+    details = Details(**attributes)
+    assert details.construct() == details_tag.render(attributes)
