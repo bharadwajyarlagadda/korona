@@ -113,3 +113,8 @@ del_tag = env.from_string("""\
      {% if datetime -%} datetime="{{ datetime }}" {% endif -%}>
      {%- if text -%} {{ text }} {%- endif -%}</del>
 """)
+
+details_tag = env.from_string("""\
+<details {% if open -%} open {% endif -%}>
+         {%- if text -%} {{ text}} {%- endif -%}</details>
+""")
