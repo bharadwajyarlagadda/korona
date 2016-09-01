@@ -415,6 +415,8 @@ Korona supports some of the del tag attributes like:
 - ``cite``
 - ``datetime``
 
+Korona can build <del> tag.
+
 .. code-block:: python
 
     from korona.html.construct import Del
@@ -431,4 +433,26 @@ Korona supports some of the del tag attributes like:
 
     assert del_tag1 == '<del cite="www.abcd.com" >abcd</del>'
     assert del_tag1 == del_tag2
+
+<details>
+---------
+
+Korona supports ``open`` attribute for ``<details>`` tag. Korona can help you build ``<details>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Details
+
+    attributes = {'open': True, 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    details1 = Details(**attributes)
+    # You can also pass in the attributes as args.
+    details2 = Details(open=True, text='abcd')
+
+    details_tag1 = details1.construct()
+    details_tag2 = details2.construct()
+
+    assert details_tag1 == '<details open >abcd</details>
+    assert details_tag1 == details_tag2
 
