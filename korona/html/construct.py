@@ -29,7 +29,8 @@ from ..templates.html import (
     del_tag,
     details_tag,
     dialog_tag,
-    div_tag
+    div_tag,
+    dl_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -884,3 +885,20 @@ class Div(object):
     def construct(self):
         """Returns the constructed div tag <div>."""
         return div_tag.render(self.values)
+
+
+class DL(object):
+    """Class for constructing dl tag.
+
+    Args:
+        text (str): Specifies the dl text. (As in <dl>{text}</dl>)
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, text=None):
+        self.tag = 'dl'
+        self.values = {'text': text}
+
+    def construct(self):
+        """Returns the constructed dl tag <dl>."""
+        return dl_tag.render(self.values)
