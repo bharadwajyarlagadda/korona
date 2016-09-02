@@ -500,3 +500,25 @@ Korona supports ``align`` attribute for ``<div>`` tag. Korona can help you build
     assert div_tag1 == '<div align="left" >abcd</div>
     assert div_tag1 == dialog_tag2
 
+<dd>
+----
+
+Korona can build <dl> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import DL
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    dl1 = DL(**attributes)
+    # You can also pass in the attributes as args.
+    dl2 = DL(text='abc')
+
+    dl_tag1 = dl1.construct()
+    dl_tag2 = dl2.construct()
+
+    assert dl_tag1 == '<dl>abc</dl>'
+    assert dl_tag1 == dl_tag2
+
