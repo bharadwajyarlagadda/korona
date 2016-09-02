@@ -132,3 +132,7 @@ div_tag = env.from_string("""\
 dl_tag = env.from_string("""\
 <dl>{%- if text -%} {{ text }} {%- endif -%}</dl>
 """)
+
+dt_tag = env.from_string("""\
+<dt>{%- if text -%} {{ text }} {%- endif -%}</dt>
+""")

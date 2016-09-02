@@ -20,5 +20,6 @@ from .tags import (
     details_tag,
     dialog_tag,
     div_tag,
-    dl_tag
+    dl_tag,
+    dt_tag
 )
