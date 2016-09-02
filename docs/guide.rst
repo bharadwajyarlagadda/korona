@@ -478,3 +478,25 @@ Korona supports ``open`` attribute for ``<dialog>`` tag. Korona can help you bui
     assert dialog_tag1 == '<dialog open >abcd</dialog>
     assert dialog_tag1 == dialog_tag2
 
+<div>
+-----
+
+Korona supports ``align`` attribute for ``<div>`` tag. Korona can help you build ``<div>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Div
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    div1 = Div(**attributes)
+    # You can also pass in the attributes as args.
+    div2 = Div(align='left', text='abcd')
+
+    div_tag1 = div1.construct()
+    div_tag2 = div2.construct()
+
+    assert div_tag1 == '<div align="left" >abcd</div>
+    assert div_tag1 == dialog_tag2
+
