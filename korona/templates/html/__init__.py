@@ -21,5 +21,6 @@ from .tags import (
     dialog_tag,
     div_tag,
     dl_tag,
-    dt_tag
+    dt_tag,
+    embed_tag
 )

@@ -136,3 +136,10 @@ dl_tag = env.from_string("""\
 dt_tag = env.from_string("""\
 <dt>{%- if text -%} {{ text }} {%- endif -%}</dt>
 """)
+
+embed_tag = env.from_string("""\
+<embed {% if src -%} src="{{ src }}" {% endif -%}
+       {% if type -%} type="{{ type }}" {% endif -%}
+       {% if width -%} width="{{ width }}" {% endif -%}
+       {% if height -%} height="{{ height }}" {% endif -%}>
+""")
