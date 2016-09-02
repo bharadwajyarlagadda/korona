@@ -10,6 +10,7 @@ v0.2.0-alpha
   - <dd></dd>
   - <del></del>
   - <details></details>
+  - <dialog></dialog>
 
 v0.1.0
 ------
