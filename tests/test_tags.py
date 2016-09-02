@@ -19,7 +19,8 @@ from korona.html.construct import (
     ColGroup,
     DD,
     Del,
-    Details
+    Details,
+    Dialog
 )
 from korona.templates.html import (
     anchor_tag,
@@ -38,7 +39,8 @@ from korona.templates.html import (
     colgroup_tag,
     dd_tag,
     del_tag,
-    details_tag
+    details_tag,
+    dialog_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -552,3 +554,16 @@ def test_construct_details_tag(attributes):
     """
     details = Details(**attributes)
     assert details.construct() == details_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'open': True}),
+    ({'text': 'abcd'}),
+    ({'open': True, 'text': 'abcd'})
+])
+def test_construct_dialog_tag(attributes):
+    """Test for validating whether the dialog tag is constructed correctly or
+    not.
+    """
+    dialog = Dialog(**attributes)
+    assert dialog.construct() == dialog_tag.render(attributes)

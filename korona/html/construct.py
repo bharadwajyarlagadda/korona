@@ -27,7 +27,8 @@ from ..templates.html import (
     colgroup_tag,
     dd_tag,
     del_tag,
-    details_tag
+    details_tag,
+    dialog_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -843,3 +844,24 @@ class Details(object):
     def construct(self):
         """Returns the constructed details tag <details>."""
         return details_tag.render(self.values)
+
+
+class Dialog(object):
+    """Class for constructing dialog tag.
+
+    Args:
+        open (bool): Specifies that the dialog element is active and that the
+            user can interact with it.
+        text (str): Specifies the details text. (As in
+            <dialog>{text}</dialog>)
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, open=False, text=None):
+        self.tag = 'dialog'
+        self.values = {'open': open,
+                       'text': text}
+
+    def construct(self):
+        """Returns the constructed dialog tag <dialog>."""
+        return dialog_tag.render(self.values)
