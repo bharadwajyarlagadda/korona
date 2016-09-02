@@ -12,6 +12,7 @@ v0.2.0-alpha
   - <details></details>
   - <dialog></dialog>
   - <div></div>
+  - <dl></dl>
 
 Caveats:
 
