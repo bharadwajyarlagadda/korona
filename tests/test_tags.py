@@ -22,7 +22,8 @@ from korona.html.construct import (
     Details,
     Dialog,
     Div,
-    DL
+    DL,
+    DT
 )
 from korona.templates.html import (
     anchor_tag,
@@ -44,7 +45,8 @@ from korona.templates.html import (
     details_tag,
     dialog_tag,
     div_tag,
-    dl_tag
+    dl_tag,
+    dt_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -606,3 +608,13 @@ def test_construct_dl_tag(attributes):
     """
     dl = DL(**attributes)
     assert dl.construct() == dl_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'})
+])
+def test_construct_dt_tag(attributes):
+    """Test for validating whether the dt tag is constructed correctly or not.
+    """
+    dt = DT(**attributes)
+    assert dt.construct() == dt_tag.render(attributes)
