@@ -18,5 +18,6 @@ from .tags import (
     dd_tag,
     del_tag,
     details_tag,
-    dialog_tag
+    dialog_tag,
+    div_tag
 )

@@ -123,3 +123,8 @@ dialog_tag = env.from_string("""\
 <dialog {% if open -%} open {% endif -%}>
         {%- if text -%} {{ text }} {%- endif -%}</dialog>
 """)
+
+div_tag = env.from_string("""\
+<div {% if align -%} align="{{ align }}" {% endif -%}>
+     {%- if text -%} {{ text }} {%- endif -%}</div>
+""")
