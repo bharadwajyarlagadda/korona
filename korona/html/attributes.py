@@ -350,5 +350,13 @@ TAG_ATTRIBUTES = {
                 'description': 'Specifies the width of a column group',
                 'values': None
             }
+        },
+    'div':
+        {
+            'align': {
+                'description': 'Specifies the alignment of the content inside '
+                               'a <div> element',
+                'values': ['left', 'right', 'center', 'justify']
+            }
         }
 }
