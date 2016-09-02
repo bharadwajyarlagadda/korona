@@ -11,6 +11,12 @@ v0.2.0-alpha
   - <del></del>
   - <details></details>
   - <dialog></dialog>
+  - <div></div>
+
+Caveats:
+
+- Korona has no ability to construct inner tags. (For ex. <address><p>Hi There</p></address>)
+- Korona will be added with constructing the inner tags in the next release.
 
 v0.1.0
 ------
@@ -30,8 +36,3 @@ v0.1.0
   - <canvas></canvas>
   - <caption></caption>
   - <cite></cite>
-
-Caveats:
-
-- Korona has no ability to construct inner tags. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the next release.
