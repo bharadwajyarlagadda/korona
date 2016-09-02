@@ -456,3 +456,25 @@ Korona supports ``open`` attribute for ``<details>`` tag. Korona can help you bu
     assert details_tag1 == '<details open >abcd</details>
     assert details_tag1 == details_tag2
 
+<dialog>
+--------
+
+Korona supports ``open`` attribute for ``<dialog>`` tag. Korona can help you build ``<dialog>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Dialog
+
+    attributes = {'open': True, 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    dialog1 = Dialog(**attributes)
+    # You can also pass in the attributes as args.
+    dialog2 = Dialog(open=True, text='abcd')
+
+    dialog_tag1 = dialog1.construct()
+    dialog_tag2 = dialog2.construct()
+
+    assert dialog_tag1 == '<dialog open >abcd</dialog>
+    assert dialog_tag1 == dialog_tag2
+
