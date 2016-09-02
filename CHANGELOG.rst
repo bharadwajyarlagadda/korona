@@ -13,6 +13,7 @@ v0.2.0-alpha
   - <dialog></dialog>
   - <div></div>
   - <dl></dl>
+  - <dt></dt>
 
 Caveats:
 
