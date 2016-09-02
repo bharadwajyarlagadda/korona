@@ -17,5 +17,6 @@ from .tags import (
     colgroup_tag,
     dd_tag,
     del_tag,
-    details_tag
+    details_tag,
+    dialog_tag
 )

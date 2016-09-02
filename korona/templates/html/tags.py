@@ -118,3 +118,8 @@ details_tag = env.from_string("""\
 <details {% if open -%} open {% endif -%}>
          {%- if text -%} {{ text}} {%- endif -%}</details>
 """)
+
+dialog_tag = env.from_string("""\
+<dialog {% if open -%} open {% endif -%}>
+        {%- if text -%} {{ text }} {%- endif -%}</dialog>
+""")
