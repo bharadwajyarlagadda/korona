@@ -522,3 +522,25 @@ Korona can build <dl> tag.
     assert dl_tag1 == '<dl>abc</dl>'
     assert dl_tag1 == dl_tag2
 
+<dt>
+----
+
+Korona can build <dt> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import DT
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    dt1 = DT(**attributes)
+    # You can also pass in the attributes as args.
+    dt2 = DT(text='abc')
+
+    dt_tag1 = dt1.construct()
+    dt_tag2 = dt2.construct()
+
+    assert dt_tag1 == '<dt>abc</dt>'
+    assert dt_tag1 == dt_tag2
+
