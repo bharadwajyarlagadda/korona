@@ -105,7 +105,7 @@ colgroup_tag = env.from_string("""\
 """)
 
 dd_tag = env.from_string("""\
-<dd>{% if text -%} {{ text }} {% endif -%}</dd>
+<dd>{%- if text -%} {{ text }} {%- endif -%}</dd>
 """)
 
 del_tag = env.from_string("""\
@@ -127,4 +127,8 @@ dialog_tag = env.from_string("""\
 div_tag = env.from_string("""\
 <div {% if align -%} align="{{ align }}" {% endif -%}>
      {%- if text -%} {{ text }} {%- endif -%}</div>
+""")
+
+dl_tag = env.from_string("""\
+<dl>{%- if text -%} {{ text }} {%- endif -%}</dl>
 """)
