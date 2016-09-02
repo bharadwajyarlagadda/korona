@@ -23,7 +23,8 @@ from korona.html.construct import (
     Dialog,
     Div,
     DL,
-    DT
+    DT,
+    Embed
 )
 from korona.templates.html import (
     anchor_tag,
@@ -46,7 +47,8 @@ from korona.templates.html import (
     dialog_tag,
     div_tag,
     dl_tag,
-    dt_tag
+    dt_tag,
+    embed_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -618,3 +620,19 @@ def test_construct_dt_tag(attributes):
     """
     dt = DT(**attributes)
     assert dt.construct() == dt_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'height': '200'}),
+    ({'height': '200', 'width': '100'}),
+    ({'src': 'helloworld.swf', 'height': '200', 'width': '100'}),
+    ({'src': 'helloworld.swf',
+      'height': '200',
+      'width': '100',
+      'type': 'application'})
+])
+def test_construct_embed_tag(attributes):
+    """Test for validating whether the embed tag is constructed correctly or not.
+    """
+    embed = Embed(**attributes)
+    assert embed.construct() == embed_tag.render(attributes)

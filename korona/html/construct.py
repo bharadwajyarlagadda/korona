@@ -31,7 +31,8 @@ from ..templates.html import (
     dialog_tag,
     div_tag,
     dl_tag,
-    dt_tag
+    dt_tag,
+    embed_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -920,3 +921,26 @@ class DT(object):
     def construct(self):
         """Returns the constructed dt tag <dt>."""
         return dt_tag.render(self.values)
+
+
+class Embed(object):
+    """Class for constructing embed tag.
+
+    Args:
+        height (str): Specifies the height of the embedded content (in pixels).
+        width (str): Specifies the width of the embedded content (in pixels).
+        src (str): Specifies the address of the external file to embed.
+        type (str): Specifies the media type of the embedded content
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, height=None, width=None, src=None, type=None):
+        self.tag = 'embed'
+        self.values = {'height': height,
+                       'width': width,
+                       'src': src,
+                       'type': type}
+
+    def construct(self):
+        """Returns the constructed embed tag <embed>."""
+        return embed_tag.render(self.values)
