@@ -28,7 +28,8 @@ from ..templates.html import (
     dd_tag,
     del_tag,
     details_tag,
-    dialog_tag
+    dialog_tag,
+    div_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -816,9 +817,7 @@ class Del(object):
     def __init__(self, cite=None, datetime=None, text=None):
         self.tag = 'del'
         # TODO: If possible, add validation for attribute cite
-        self.values = {'cite': cite,
-                       'datetime': datetime,
-                       'text': text}
+        self.values = {'cite': cite, 'datetime': datetime, 'text': text}
 
     def construct(self):
         """Returns the constructed del tag <del>."""
@@ -838,8 +837,7 @@ class Details(object):
     """
     def __init__(self, open=False, text=None):
         self.tag = 'details'
-        self.values = {'open': open,
-                       'text': text}
+        self.values = {'open': open, 'text': text}
 
     def construct(self):
         """Returns the constructed details tag <details>."""
@@ -852,16 +850,37 @@ class Dialog(object):
     Args:
         open (bool): Specifies that the dialog element is active and that the
             user can interact with it.
-        text (str): Specifies the details text. (As in
+        text (str): Specifies the dialog text. (As in
             <dialog>{text}</dialog>)
 
     .. versionadded:: 0.2.0-alpha
     """
     def __init__(self, open=False, text=None):
         self.tag = 'dialog'
-        self.values = {'open': open,
-                       'text': text}
+        self.values = {'open': open, 'text': text}
 
     def construct(self):
         """Returns the constructed dialog tag <dialog>."""
         return dialog_tag.render(self.values)
+
+
+class Div(object):
+    """Class for constructing div tag.
+
+    Args:
+        align (str): Specifies the alignment of the content inside a <div>
+            element.
+        text (str): Specifies the div text. (As in <div>{text}</div>)
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, align=None, text=None):
+        self.tag = 'div'
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='align',
+                                  value=align)
+        self.values = {'align': align, 'text': text}
+
+    def construct(self):
+        """Returns the constructed div tag <div>."""
+        return div_tag.render(self.values)
