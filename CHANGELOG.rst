@@ -14,6 +14,7 @@ v0.2.0-alpha
   - <div></div>
   - <dl></dl>
   - <dt></dt>
+  - <embed>
 
 Caveats:
 
