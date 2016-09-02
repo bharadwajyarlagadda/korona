@@ -500,7 +500,7 @@ Korona supports ``align`` attribute for ``<div>`` tag. Korona can help you build
     assert div_tag1 == '<div align="left" >abcd</div>
     assert div_tag1 == dialog_tag2
 
-<dd>
+<dl>
 ----
 
 Korona can build <dl> tag.
