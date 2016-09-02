@@ -544,3 +544,32 @@ Korona can build <dt> tag.
     assert dt_tag1 == '<dt>abc</dt>'
     assert dt_tag1 == dt_tag2
 
+<embed>
+-------
+
+Korona supports some of the embed tag attributes like:
+
+- ``height``
+- ``src``
+- ``type``
+- ``width``
+
+Korona can build <embed> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Embed
+
+    attributes = {'src': 'helloworld.swf', 'height': '200', 'width': '100'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    embed1 = Embed(**attributes)
+    # You can also pass in the attributes as args.
+    embed2 = Embed(src='helloworld.swf', height='200', width='100')
+
+    embed_tag1 = embed1.construct()
+    embed_tag2 = embed2.construct()
+
+    assert embed_tag1 == '<embed src="helloworld.swf" width="100" height="200" >'
+    assert embed_tag1 == embed_tag2
+
