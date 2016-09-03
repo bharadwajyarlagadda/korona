@@ -984,12 +984,16 @@ class FieldSet(object):
 class Figure(object):
     """Class for constructing figure tag.
 
+    Args:
+        text (str): Specifies the dt text. (As in <figure>{text}</figure>)
+
     .. versionadded:: 0.2.0-alpha
     """
-    def __init__(self):
+    def __init__(self, text=None):
         # TODO: Add support for inner tags.
         self.tag = 'figure'
+        self.values = {'text': text}
 
     def construct(self):
         """Returns the constructed fieldset tag <figure></figure>."""
-        return figure_tag.render()
+        return figure_tag.render(self.values)

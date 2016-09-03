@@ -657,9 +657,12 @@ def test_construct_fieldset_tag(attributes):
     assert fieldset.construct() == fieldset_tag.render(attributes)
 
 
-def test_construct_figure_tag():
+@parametrize('attributes', [
+    ({'text': 'abcd'})
+])
+def test_construct_figure_tag(attributes):
     """Test for validating whether the figure tag is constructed correctly or
     not.
     """
-    figure = Figure()
-    assert figure.construct() == figure_tag.render()
+    figure = Figure(**attributes)
+    assert figure.construct() == figure_tag.render(attributes)

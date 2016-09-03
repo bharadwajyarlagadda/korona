@@ -604,5 +604,22 @@ Korona can build <fieldset> tag.
 <figure>
 --------
 
-Korona for now does not support any inner tags.
+Korona for now does not support any inner tags in <figure> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Figure
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    figure1 = Figure(**attributes)
+    # You can also pass in the attributes as args.
+    figure2 = Figure(text='abc')
+
+    figure_tag1 = figure1.construct()
+    figure_tag2 = figure2.construct()
+
+    assert figure_tag1 == '<figure>abc</figure>'
+    assert figure_tag1 == figure_tag2
 
