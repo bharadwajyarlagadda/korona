@@ -8,5 +8,4 @@ API Reference
 
 .. autoclass:: korona.html.construct.Abbr
     :members:
-    :inherited-members:
 

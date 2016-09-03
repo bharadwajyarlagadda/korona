@@ -61,8 +61,9 @@ class A(object):
         text (str): Anchor tag text. (Ex. <a>text</a>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self,
                  charset=None,
@@ -191,8 +192,9 @@ class Abbr(object):
         text (str): Abbr tag text. (Ex. <abbr>text</abbr>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
         self.tag = 'abbr'
@@ -210,8 +212,9 @@ class Acronym(object):
         text (str): Acronym tag text. (Ex. <acronym>text</acronym>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
         self.tag = 'acronym'
@@ -229,8 +232,9 @@ class Address(object):
         text (str): Address tag text. (Ex. <address>text</address>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
         self.tag = 'address'
@@ -262,8 +266,9 @@ class Area(object):
         type (str): Specifies the media type of the target URL.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self,
                  alt=None,
@@ -401,8 +406,9 @@ class Article(object):
         text (str): Article tag text. (Ex. <article>text</article>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
         self.tag = 'article'
@@ -420,8 +426,9 @@ class B(object):
         text (str): Bold tag text. (Ex. <b>text</b>)
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
         self.tag = 'b'
@@ -441,8 +448,9 @@ class Base(object):
             forms in the page.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, href=None, target=None):
         # TODO: Add in the main api method where it can check that there
@@ -497,8 +505,9 @@ class Button(object):
         value (str): Specifies an initial value for the button.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self,
                  autofocus=False,
@@ -596,8 +605,9 @@ class Canvas(object):
         width (str): Specifies the width of the canvas.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, height=None, width=None):
         # TODO: Possible add the canvas text attribute.
@@ -619,8 +629,9 @@ class Caption(object):
         text (str): Specifies the caption text.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, align=None, text=None):
         self.tag = 'caption'
@@ -641,8 +652,9 @@ class Cite(object):
         text (str): Specifies the citation text.
 
     .. versionadded:: 0.1.0
-    .. versionchanged:: 0.2.0-alpha: Renamed the method construct_tag to
-        construct.
+
+    .. versionchanged:: 0.2.0-alpha
+        Renamed the method construct_tag to construct.
     """
     def __init__(self, text):
         self.tag = 'cite'
