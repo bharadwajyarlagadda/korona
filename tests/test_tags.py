@@ -24,7 +24,8 @@ from korona.html.construct import (
     Div,
     DL,
     DT,
-    Embed
+    Embed,
+    FieldSet
 )
 from korona.templates.html import (
     anchor_tag,
@@ -48,7 +49,8 @@ from korona.templates.html import (
     div_tag,
     dl_tag,
     dt_tag,
-    embed_tag
+    embed_tag,
+    fieldset_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -632,7 +634,22 @@ def test_construct_dt_tag(attributes):
       'type': 'application'})
 ])
 def test_construct_embed_tag(attributes):
-    """Test for validating whether the embed tag is constructed correctly or not.
+    """Test for validating whether the embed tag is constructed correctly or
+    not.
     """
     embed = Embed(**attributes)
     assert embed.construct() == embed_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'disabled': True}),
+    ({'form': 'form1'}),
+    ({'name': 'name1'}),
+    ({'disabled': True, 'form': 'form1', 'name': 'name1'})
+])
+def test_construct_fieldset_tag(attributes):
+    """Test for validating whether the fieldset tag is constructed correctly
+    or not.
+    """
+    fieldset = FieldSet(**attributes)
+    assert fieldset.construct() == fieldset_tag.render(attributes)
