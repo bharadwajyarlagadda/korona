@@ -573,3 +573,31 @@ Korona can build <embed> tag.
     assert embed_tag1 == '<embed src="helloworld.swf" width="100" height="200" >'
     assert embed_tag1 == embed_tag2
 
+<fieldset>
+----------
+
+Korona supports some of the fieldset tag attributes like:
+
+- ``disabled``
+- ``form``
+- ``name``
+
+Korona can build <fieldset> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import FieldSet
+
+    attributes = {'disabled': True, 'form': 'form1', 'name': 'name1'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    fieldset1 = FieldSet(**attributes)
+    # You can also pass in the attributes as args.
+    fieldset2 = FieldSet(disabled=True, form='form1', name='name1')
+
+    fieldset_tag1 = fieldset1.construct()
+    fieldset_tag2 = fieldset2.construct()
+
+    assert fieldset_tag1 == '<fieldset form="form1" name="name1" disabled ></fieldset>'
+    assert fieldset_tag1 == fieldset_tag2
+
