@@ -10,6 +10,7 @@ Guide
 
     installation
     guide
+    api
 
 Project Info
 ============
