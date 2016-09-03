@@ -100,4 +100,9 @@ API Reference
 
 .. autoclass:: korona.html.construct.Footer
     :members:
+
+
+.. autoclass:: korona.html.construct.Form
+    :members:
+
     

@@ -18,6 +18,7 @@ v0.2.0-alpha
   - <fieldset></fieldset>
   - <figure></figure>
   - <footer></footer>
+  - <form></form>
 
 Caveats:
 

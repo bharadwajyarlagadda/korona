@@ -648,3 +648,26 @@ Korona can build <footer> tag.
     assert footer_tag1 == footer_tag2
 
 .. note:: Korona for now does not support any inner tags in <footer> tag.
+
+<form>
+------
+
+Korona can build <form> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Form
+
+    attributes = {'action': 'demo.asp', 'method': 'get', 'name': 'name1', 'target': '_top'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    form1 = Form(**attributes)
+    # You can also pass in the attributes as args.
+    form2 = Form(action='demo.asp', method='get', name='name1', target='_top')
+
+    form_tag1 = form1.construct()
+    form_tag2 = form2.construct()
+
+    assert form_tag1 == '<form action="demo.asp" method="get" name="name1" target="_top" ></form>'
+    assert form_tag1 == form_tag2
+
