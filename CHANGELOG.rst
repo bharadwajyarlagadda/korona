@@ -15,11 +15,12 @@ v0.2.0-alpha
   - <dl></dl>
   - <dt></dt>
   - <embed>
+  - <fieldset></fieldset>
 
 Caveats:
 
 - Korona has no ability to construct inner tags. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the next release.
+- Korona will be added with constructing the inner tags in the future releases.
 
 v0.1.0
 ------
