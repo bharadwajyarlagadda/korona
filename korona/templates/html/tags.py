@@ -150,3 +150,7 @@ fieldset_tag = env.from_string("""\
           {% if name -%} name="{{ name }}" {% endif -%}
           {% if disabled -%} disabled {% endif -%}></fieldset>
 """)
+
+figure_tag = env.from_string("""\
+<figure></figure>
+""")

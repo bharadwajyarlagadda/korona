@@ -23,5 +23,6 @@ from .tags import (
     dl_tag,
     dt_tag,
     embed_tag,
-    fieldset_tag
+    fieldset_tag,
+    figure_tag
 )
