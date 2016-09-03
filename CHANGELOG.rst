@@ -16,6 +16,7 @@ v0.2.0-alpha
   - <dt></dt>
   - <embed>
   - <fieldset></fieldset>
+  - <figure></figure>
 
 Caveats:
 

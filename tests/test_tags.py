@@ -25,7 +25,8 @@ from korona.html.construct import (
     DL,
     DT,
     Embed,
-    FieldSet
+    FieldSet,
+    Figure
 )
 from korona.templates.html import (
     anchor_tag,
@@ -50,7 +51,8 @@ from korona.templates.html import (
     dl_tag,
     dt_tag,
     embed_tag,
-    fieldset_tag
+    fieldset_tag,
+    figure_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -653,3 +655,11 @@ def test_construct_fieldset_tag(attributes):
     """
     fieldset = FieldSet(**attributes)
     assert fieldset.construct() == fieldset_tag.render(attributes)
+
+
+def test_construct_figure_tag():
+    """Test for validating whether the figure tag is constructed correctly or
+    not.
+    """
+    figure = Figure()
+    assert figure.construct() == figure_tag.render()

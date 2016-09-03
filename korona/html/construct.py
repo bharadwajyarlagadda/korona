@@ -33,7 +33,8 @@ from ..templates.html import (
     dl_tag,
     dt_tag,
     embed_tag,
-    fieldset_tag
+    fieldset_tag,
+    figure_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -978,3 +979,17 @@ class FieldSet(object):
     def construct(self):
         """Returns the constructed fieldset tag <fieldset></fieldset>."""
         return fieldset_tag.render(self.values)
+
+
+class Figure(object):
+    """Class for constructing figure tag.
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self):
+        # TODO: Add support for inner tags.
+        self.tag = 'figure'
+
+    def construct(self):
+        """Returns the constructed fieldset tag <figure></figure>."""
+        return figure_tag.render()
