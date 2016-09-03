@@ -806,7 +806,7 @@ class DD(object):
     """Class for constructing dd tag.
 
     Args:
-        text (str): Specifies the dd text.
+        text (str): Specifies the dd text. (As in <dd>{text}</dd>)
 
     .. versionadded:: 0.2.0-alpha
     """
@@ -815,7 +815,7 @@ class DD(object):
         self.values = {'text': text}
 
     def construct(self):
-        """Returns the constructed dd tag <dd>."""
+        """Returns the constructed dd tag <dd></dd>."""
         return dd_tag.render(self.values)
 
 
@@ -856,7 +856,7 @@ class Details(object):
         self.values = {'open': open, 'text': text}
 
     def construct(self):
-        """Returns the constructed details tag <details>."""
+        """Returns the constructed details tag <details></details>."""
         return details_tag.render(self.values)
 
 
@@ -876,7 +876,7 @@ class Dialog(object):
         self.values = {'open': open, 'text': text}
 
     def construct(self):
-        """Returns the constructed dialog tag <dialog>."""
+        """Returns the constructed dialog tag <dialog></dialog>."""
         return dialog_tag.render(self.values)
 
 
@@ -898,7 +898,7 @@ class Div(object):
         self.values = {'align': align, 'text': text}
 
     def construct(self):
-        """Returns the constructed div tag <div>."""
+        """Returns the constructed div tag <div></div>."""
         return div_tag.render(self.values)
 
 
@@ -915,7 +915,7 @@ class DL(object):
         self.values = {'text': text}
 
     def construct(self):
-        """Returns the constructed dl tag <dl>."""
+        """Returns the constructed dl tag <dl></dl>."""
         return dl_tag.render(self.values)
 
 
@@ -932,7 +932,7 @@ class DT(object):
         self.values = {'text': text}
 
     def construct(self):
-        """Returns the constructed dt tag <dt>."""
+        """Returns the constructed dt tag <dt></dt>."""
         return dt_tag.render(self.values)
 
 
@@ -976,5 +976,5 @@ class FieldSet(object):
         self.values = {'disabled': disabled, 'form': form, 'name': name}
 
     def construct(self):
-        """Returns the constructed fieldset tag <fieldset>."""
+        """Returns the constructed fieldset tag <fieldset></fieldset>."""
         return fieldset_tag.render(self.values)
