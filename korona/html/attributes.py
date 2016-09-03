@@ -358,5 +358,26 @@ TAG_ATTRIBUTES = {
                                'a <div> element',
                 'values': ['left', 'right', 'center', 'justify']
             }
+        },
+    'form':
+        {
+            'autocomplete': {
+                'description': 'Specifies whether a form should have '
+                               'autocomplete on or off',
+                'values': ['on', 'off']
+            },
+            'enctype': {
+                'description': 'Specifies how the form-data should be encoded '
+                               'when submitting it to the server (only for '
+                               'method="post")',
+                'values': ['application/x-www-form-urlencoded',
+                           'multipart/form-data',
+                           'text/plain']
+            },
+            'method': {
+                'description': 'Specifies the HTTP method to use when sending '
+                               'form-data',
+                'values': ['get', 'post']
+            }
         }
 }
