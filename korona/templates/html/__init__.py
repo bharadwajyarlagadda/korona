@@ -22,5 +22,6 @@ from .tags import (
     div_tag,
     dl_tag,
     dt_tag,
-    embed_tag
+    embed_tag,
+    fieldset_tag
 )

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Templates for all the html tags."""
 
 from .environment import env
 
@@ -142,4 +143,10 @@ embed_tag = env.from_string("""\
        {% if type -%} type="{{ type }}" {% endif -%}
        {% if width -%} width="{{ width }}" {% endif -%}
        {% if height -%} height="{{ height }}" {% endif -%}>
+""")
+
+fieldset_tag = env.from_string("""\
+<fieldset {% if form -%} form="{{ form }}" {% endif -%}
+          {% if name -%} name="{{ name }}" {% endif -%}
+          {% if disabled -%} disabled {% endif -%}></fieldset>
 """)
