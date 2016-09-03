@@ -25,5 +25,6 @@ from .tags import (
     embed_tag,
     fieldset_tag,
     figure_tag,
-    footer_tag
+    footer_tag,
+    form_tag
 )
