@@ -92,3 +92,8 @@ API Reference
 
 .. autoclass:: korona.html.construct.FieldSet
     :members:
+
+
+.. autoclass:: korona.html.construct.Figure
+    :members:
+    

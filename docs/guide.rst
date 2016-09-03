@@ -601,3 +601,8 @@ Korona can build <fieldset> tag.
     assert fieldset_tag1 == '<fieldset form="form1" name="name1" disabled ></fieldset>'
     assert fieldset_tag1 == fieldset_tag2
 
+<figure>
+--------
+
+Korona for now does not support any inner tags.
+
