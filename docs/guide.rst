@@ -604,7 +604,7 @@ Korona can build <fieldset> tag.
 <figure>
 --------
 
-Korona for now does not support any inner tags in <figure> tag.
+Korona can build <figure> tag.
 
 .. code-block:: python
 
@@ -623,3 +623,28 @@ Korona for now does not support any inner tags in <figure> tag.
     assert figure_tag1 == '<figure>abc</figure>'
     assert figure_tag1 == figure_tag2
 
+.. note:: Korona for now does not support any inner tags in <figure> tag.
+
+<footer>
+--------
+
+Korona can build <footer> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Footer
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    footer1 = Footer(**attributes)
+    # You can also pass in the attributes as args.
+    footer2 = Footer(text='abc')
+
+    footer_tag1 = figure1.construct()
+    footer_tag2 = figure2.construct()
+
+    assert footer_tag1 == '<footer>abc</footer>'
+    assert footer_tag1 == footer_tag2
+
+.. note:: Korona for now does not support any inner tags in <footer> tag.

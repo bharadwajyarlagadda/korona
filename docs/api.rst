@@ -96,4 +96,8 @@ API Reference
 
 .. autoclass:: korona.html.construct.Figure
     :members:
+
+
+.. autoclass:: korona.html.construct.Footer
+    :members:
     

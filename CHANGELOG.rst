@@ -17,6 +17,7 @@ v0.2.0-alpha
   - <embed>
   - <fieldset></fieldset>
   - <figure></figure>
+  - <footer></footer>
 
 Caveats:
 
