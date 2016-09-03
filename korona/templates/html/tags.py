@@ -154,3 +154,7 @@ fieldset_tag = env.from_string("""\
 figure_tag = env.from_string("""\
 <figure>{%- if text -%} {{ text }} {%- endif -%}</figure>
 """)
+
+footer_tag = env.from_string("""\
+<footer>{%- if text -%} {{ text }} {%- endif -%}</footer>
+""")

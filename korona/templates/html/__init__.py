@@ -24,5 +24,6 @@ from .tags import (
     dt_tag,
     embed_tag,
     fieldset_tag,
-    figure_tag
+    figure_tag,
+    footer_tag
 )
