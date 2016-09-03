@@ -34,7 +34,8 @@ from ..templates.html import (
     dt_tag,
     embed_tag,
     fieldset_tag,
-    figure_tag
+    figure_tag,
+    footer_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -985,7 +986,7 @@ class Figure(object):
     """Class for constructing figure tag.
 
     Args:
-        text (str): Specifies the dt text. (As in <figure>{text}</figure>)
+        text (str): Specifies the figure text. (As in <figure>{text}</figure>)
 
     .. versionadded:: 0.2.0-alpha
     """
@@ -995,5 +996,23 @@ class Figure(object):
         self.values = {'text': text}
 
     def construct(self):
-        """Returns the constructed fieldset tag <figure></figure>."""
+        """Returns the constructed figure tag <figure></figure>."""
         return figure_tag.render(self.values)
+
+
+class Footer(object):
+    """Class for constructing the footer tag.
+
+    Args:
+        text (str): Specifies the footer text. (As in <footer>{text}</footer>)
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self, text=None):
+        # TODO: Add support for inner tags.
+        self.tag = 'footer'
+        self.values = {'text': text}
+
+    def construct(self):
+        """Returns the constructed footer tag <footer></footer>."""
+        return footer_tag.render(self.values)

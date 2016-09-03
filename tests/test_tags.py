@@ -26,7 +26,8 @@ from korona.html.construct import (
     DT,
     Embed,
     FieldSet,
-    Figure
+    Figure,
+    Footer
 )
 from korona.templates.html import (
     anchor_tag,
@@ -52,7 +53,8 @@ from korona.templates.html import (
     dt_tag,
     embed_tag,
     fieldset_tag,
-    figure_tag
+    figure_tag,
+    footer_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -666,3 +668,14 @@ def test_construct_figure_tag(attributes):
     """
     figure = Figure(**attributes)
     assert figure.construct() == figure_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'text': 'abcd'})
+])
+def test_construct_footer_tag(attributes):
+    """Test for validating whether the footer tag is constructed correctly or
+    not.
+    """
+    footer = Footer(**attributes)
+    assert footer.construct() == footer_tag.render(attributes)
