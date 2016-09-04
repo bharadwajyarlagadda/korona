@@ -420,5 +420,47 @@ TAG_ATTRIBUTES = {
                                ' frame',
                 'values': None
             }
-        }
+        },
+    'h1':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
+    'h2':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
+    'h3':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
+    'h4':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
+    'h5':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
+    'h6':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a heading',
+                'values': ['left', 'center', 'right', 'justify']
+            }
+        },
 }
