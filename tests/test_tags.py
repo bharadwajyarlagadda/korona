@@ -28,7 +28,8 @@ from korona.html.construct import (
     FieldSet,
     Figure,
     Footer,
-    Form
+    Form,
+    Frame
 )
 from korona.templates.html import (
     anchor_tag,
@@ -56,7 +57,8 @@ from korona.templates.html import (
     fieldset_tag,
     figure_tag,
     footer_tag,
-    form_tag
+    form_tag,
+    frame_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -718,5 +720,43 @@ def test_construct_form_tag_error(attributes, exception, error_msg):
     """Test for validating form tag's attributes."""
     with pytest.raises(exception) as exc:
         Form(**attributes)
+
+    assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'noresize': 'noresize'}),
+    ({'src': 'frame_a.htm', 'scrolling': 'yes'}),
+    ({'frameborder': '0'}),
+    ({'src': 'frame_a.htm',
+      'scrolling': 'auto',
+      'marginheight': '250',
+      'marginwidth': '100',
+      'name': 'name1',
+      'longdesc': 'a.txt'})
+])
+def test_construct_frame_tag(attributes):
+    """Test for validating whether the frame tag is constructed correctly or
+    not.
+    """
+    frame = Frame(**attributes)
+    assert frame.construct() == frame_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'scrolling': 'abc'},
+     AttributeError,
+     'attribute values should be one of these'),
+    ({'noresize': 'abc'},
+     AttributeError,
+     'attribute values should be one of these'),
+    ({'frameborder': '2'},
+     AttributeError,
+     'attribute values should be one of these')
+])
+def test_construct_frame_tag_error(attributes, exception, error_msg):
+    """Test for validating frame tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Frame(**attributes)
 
     assert error_msg in str(exc)

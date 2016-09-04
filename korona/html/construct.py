@@ -36,7 +36,8 @@ from ..templates.html import (
     fieldset_tag,
     figure_tag,
     footer_tag,
-    form_tag
+    form_tag,
+    frame_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -946,7 +947,7 @@ class Embed(object):
         height (str): Specifies the height of the embedded content (in pixels).
         width (str): Specifies the width of the embedded content (in pixels).
         src (str): Specifies the address of the external file to embed.
-        type (str): Specifies the media type of the embedded content
+        type (str): Specifies the media type of the embedded content.
 
     .. versionadded:: 0.2.0-alpha
     """
@@ -1024,19 +1025,19 @@ class Form(object):
 
     Args:
         accept (str): Specifies a comma-separated list of file types that the
-            server accepts (that can be submitted through the file upload)
+            server accepts (that can be submitted through the file upload).
         action (str): Specifies where to send the form-data when a form is
-            submitted
+            submitted.
         autocomplete (str): Specifies whether a form should have autocomplete
-            on or off
+            on or off.
         enctype (str): Specifies how the form-data should be encoded when
-            submitting it to the server (only for method="post")
-        method (str): Specifies the HTTP method to use when sending form-data
-        name (str): Specifies the name of a form
+            submitting it to the server (only for method="post").
+        method (str): Specifies the HTTP method to use when sending form-data.
+        name (str): Specifies the name of a form.
         novalidate (bool): Specifies that the form should not be validated
-            when submitted
+            when submitted.
         target (str): Specifies where to display the response that is received
-            after submitting the form
+            after submitting the form.
         text (str): Specifies the form text. (As in <form>{text}</form>)
 
     .. versionadded:: 0.2.0-alpha
@@ -1086,3 +1087,54 @@ class Form(object):
         if enctype and method != 'post':
             raise AttributeError('<form>: The enctype attribute can be '
                                  'used/set only if method="post".')
+
+
+class Frame(object):
+    """Class for constructing <frame> tag.
+
+    Args:
+        frameborder (str): Specifies whether or not to display a border around
+            a frame.
+        longdesc (str): Specifies a page that contains a long description of
+            the content of a frame.
+        marginheight (str): Specifies the top and bottom margins of a frame.
+        marginwidth (str): Specifies the left and right margins of a frame.
+        name (str): Specifies the name of a frame.
+        noresize (str): Specifies that a frame is not resizable.
+        scrolling (str): Specifies whether or not to display scrollbars in a
+            frame.
+        src (str): Specifies the URL of the document to show in a frame.
+
+    .. versionadded:: 0.2.0-alpha
+    """
+    def __init__(self,
+                 frameborder=None,
+                 longdesc=None,
+                 marginheight=None,
+                 marginwidth=None,
+                 name=None,
+                 noresize=None,
+                 scrolling=None,
+                 src=None):
+        self.tag = 'frame'
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='frameborder',
+                                  value=frameborder)
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='noresize',
+                                  value=noresize)
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='scrolling',
+                                  value=scrolling)
+        self.values = {'frameborder': frameborder,
+                       'longdesc': longdesc,
+                       'marginheight': marginheight,
+                       'marginwidth': marginwidth,
+                       'name': name,
+                       'noresize': noresize,
+                       'scrolling': scrolling,
+                       'src': src}
+
+    def construct(self):
+        """Returns the constructed tag <frame>."""
+        return frame_tag.render(self.values)
