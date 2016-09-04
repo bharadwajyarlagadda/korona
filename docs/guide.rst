@@ -875,3 +875,27 @@ Korona supports ``align`` attribute for ``<h6>`` tag. Korona can help you build 
     assert h6_tag1 == '<h6 align="left" >abcd</h6>
     assert h6_tag1 == h6_tag2
 
+<head>
+------
+
+Korona can help you build ``<head>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Head
+
+    attributes = {'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    head1 = Head(**attributes)
+    # You can also pass in the attributes as args.
+    head2 = Head(text='abcd')
+
+    head_tag1 = head1.construct()
+    head_tag2 = head2.construct()
+
+    assert head_tag1 == '<head>abcd</head>'
+    assert head_tag1 == head_tag2
+
+.. note:: <head> tag for now only supports ``text``. It doesn't has the capability for creating inner tags such as ``<title>``, ``<style>``, etc.
+

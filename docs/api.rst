@@ -137,4 +137,8 @@ API Reference
 .. autoclass:: korona.html.construct.H6
     :members:
 
+
+.. autoclass:: korona.html.construct.Head
+    :members:
+
     
