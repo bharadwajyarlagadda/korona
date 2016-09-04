@@ -26,5 +26,6 @@ from .tags import (
     fieldset_tag,
     figure_tag,
     footer_tag,
-    form_tag
+    form_tag,
+    frame_tag
 )
