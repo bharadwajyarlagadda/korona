@@ -19,6 +19,7 @@ v0.2.0-alpha
   - <figure></figure>
   - <footer></footer>
   - <form></form>
+  - <frame>
 
 Caveats:
 

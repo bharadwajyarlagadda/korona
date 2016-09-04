@@ -652,6 +652,18 @@ Korona can build <footer> tag.
 <form>
 ------
 
+Korona supports some of the form tag attributes like:
+
+- ``accept``
+- ``action``
+- ``autocomplete``
+- ``enctype``
+- ``method``
+- ``name``
+- ``novalidate``
+- ``target``
+- ``text`` (text as in <form>{text}</form>)
+
 Korona can build <form> tag.
 
 .. code-block:: python
@@ -670,4 +682,37 @@ Korona can build <form> tag.
 
     assert form_tag1 == '<form action="demo.asp" method="get" name="name1" target="_top" ></form>'
     assert form_tag1 == form_tag2
+
+<frame>
+-------
+
+Korona supports some of the frame tag attributes like:
+
+- ``frameborder``
+- ``longdesc``
+- ``marginheight``
+- ``marginwidth``
+- ``name``
+- ``noresize``
+- ``scrolling``
+- ``src``
+
+Koron can build <frame> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Frame
+
+    attributes = {'src': 'frame_a.htm', 'scrolling': 'auto', 'marginheight': '250', 'marginwidth': '100', 'name': 'name1', 'longdesc': 'a.txt'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    frame1 = Frame(**attributes)
+    # You can also pass in the attributes as args.
+    frame2 = Frame(src='frame_a.htm', scrolling='auto', marginheight='250', marginwidth='100', name='name1', longdesc='a.txt')
+
+    frame_tag1 = frame1.construct()
+    frame_tag2 = frame2.construct()
+
+    assert frame_tag1 == '<frame src="frame_a.htm" longdesc="a.txt" marginheight="250" marginwidth="100" name="name1" scrolling="auto" >'
+    assert frame_tag1 == frame_tag2
 
