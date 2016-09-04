@@ -181,3 +181,8 @@ frame_tag = env.from_string("""\
        {% if noresize -%} noresize="{{ noresize }}" {% endif -%}
        {% if scrolling -%} scrolling="{{ scrolling }}" {% endif -%}>
 """)
+
+frameset_tag = env.from_string("""\
+<frameset {% if cols -%} cols="{{ cols }}" {% endif -%}
+          {% if rows -%} rows="{{ rows }}" {% endif -%}></frameset>
+""")
