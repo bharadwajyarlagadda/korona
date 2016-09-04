@@ -67,7 +67,7 @@ class A(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self,
@@ -198,7 +198,7 @@ class Abbr(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
@@ -218,7 +218,7 @@ class Acronym(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
@@ -238,7 +238,7 @@ class Address(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
@@ -272,7 +272,7 @@ class Area(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self,
@@ -412,7 +412,7 @@ class Article(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
@@ -432,7 +432,7 @@ class B(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text=None):
@@ -454,7 +454,7 @@ class Base(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, href=None, target=None):
@@ -511,7 +511,7 @@ class Button(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self,
@@ -611,7 +611,7 @@ class Canvas(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, height=None, width=None):
@@ -635,7 +635,7 @@ class Caption(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, align=None, text=None):
@@ -658,7 +658,7 @@ class Cite(object):
 
     .. versionadded:: 0.1.0
 
-    .. versionchanged:: 0.2.0-alpha
+    .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
     """
     def __init__(self, text):
@@ -686,7 +686,7 @@ class Col(object):
             to a <col> element.
         width (str): Specifies the width of a <col> element.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self,
                  align=None,
@@ -752,7 +752,7 @@ class ColGroup(object):
         valign (str): Vertical aligns the content in a column group.
         width (str): Specifies the width of a column group.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self,
                  align=None,
@@ -813,7 +813,7 @@ class DD(object):
     Args:
         text (str): Specifies the dd text. (As in <dd>{text}</dd>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, text=None):
         self.tag = 'dd'
@@ -833,7 +833,7 @@ class Del(object):
         datetime (datetime): Specifies the date and time of when the text was
             deleted.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, cite=None, datetime=None, text=None):
         self.tag = 'del'
@@ -854,7 +854,7 @@ class Details(object):
         text (str): Specifies the details text. (As in
             <details>{text}</details>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, open=False, text=None):
         self.tag = 'details'
@@ -874,7 +874,7 @@ class Dialog(object):
         text (str): Specifies the dialog text. (As in
             <dialog>{text}</dialog>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, open=False, text=None):
         self.tag = 'dialog'
@@ -893,7 +893,7 @@ class Div(object):
             element.
         text (str): Specifies the div text. (As in <div>{text}</div>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'div'
@@ -913,7 +913,7 @@ class DL(object):
     Args:
         text (str): Specifies the dl text. (As in <dl>{text}</dl>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, text=None):
         self.tag = 'dl'
@@ -930,7 +930,7 @@ class DT(object):
     Args:
         text (str): Specifies the dt text. (As in <dt>{text}</dt>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, text=None):
         self.tag = 'dt'
@@ -950,7 +950,7 @@ class Embed(object):
         src (str): Specifies the address of the external file to embed.
         type (str): Specifies the media type of the embedded content.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, height=None, width=None, src=None, type=None):
         self.tag = 'embed'
@@ -973,7 +973,7 @@ class FieldSet(object):
         form (str): Specifies one or more forms the fieldset belongs to.
         name (str): Specifies a name for the fieldset.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, disabled=False, form=None, name=None):
         # TODO: Add support for inner tags.
@@ -991,7 +991,7 @@ class Figure(object):
     Args:
         text (str): Specifies the figure text. (As in <figure>{text}</figure>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, text=None):
         # TODO: Add support for inner tags.
@@ -1009,7 +1009,7 @@ class Footer(object):
     Args:
         text (str): Specifies the footer text. (As in <footer>{text}</footer>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, text=None):
         # TODO: Add support for inner tags.
@@ -1041,7 +1041,7 @@ class Form(object):
             after submitting the form.
         text (str): Specifies the form text. (As in <form>{text}</form>)
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self,
                  accept=None,
@@ -1106,7 +1106,7 @@ class Frame(object):
             frame.
         src (str): Specifies the URL of the document to show in a frame.
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self,
                  frameborder=None,
@@ -1148,7 +1148,7 @@ class FrameSet(object):
         cols (str): Specifies the number and size of columns in a frameset
         rows (str): Specifies the number and size of rows in a frameset
 
-    .. versionadded:: 0.2.0-alpha
+    .. versionadded:: 0.2.0
     """
     def __init__(self, cols=None, rows=None):
         self.tag = 'frameset'
