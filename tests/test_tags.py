@@ -36,7 +36,8 @@ from korona.html.construct import (
     H3,
     H4,
     H5,
-    H6
+    H6,
+    Head
 )
 from korona.templates.html import (
     anchor_tag,
@@ -73,6 +74,7 @@ from korona.templates.html import (
     h4_tag,
     h5_tag,
     h6_tag,
+    head_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -924,3 +926,14 @@ def test_construct_h6_tag_error(attributes, exception, error_msg):
         H6(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abcd'})
+])
+def test_construct_head_tag(attributes):
+    """Test for validating whether the head tag is constructed correctly or
+    not.
+    """
+    head = Head(**attributes)
+    assert head.construct() == head_tag.render(attributes)

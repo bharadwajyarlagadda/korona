@@ -44,7 +44,8 @@ from ..templates.html import (
     h3_tag,
     h4_tag,
     h5_tag,
-    h6_tag
+    h6_tag,
+    head_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -1170,7 +1171,7 @@ class H1(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h1>{text}</h1>)
+        text (str): Specifies the <h1> text. (As in <h1>{text}</h1>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1191,7 +1192,7 @@ class H2(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h2>{text}</h2>)
+        text (str): Specifies the <h2> text. (As in <h2>{text}</h2>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1212,7 +1213,7 @@ class H3(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h3>{text}</h3>)
+        text (str): Specifies the <h3> text. (As in <h3>{text}</h3>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1233,7 +1234,7 @@ class H4(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h4>{text}</h4>)
+        text (str): Specifies the <h4> text. (As in <h4>{text}</h4>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1254,7 +1255,7 @@ class H5(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h5>{text}</h5>)
+        text (str): Specifies the <h5> text. (As in <h5>{text}</h5>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1275,7 +1276,7 @@ class H6(object):
 
     Args:
         align (str): Specifies the alignment of a heading.
-        text (str): Specifies the form text. (As in <h6>{text}</h6>)
+        text (str): Specifies the <h6> text. (As in <h6>{text}</h6>)
 
     .. versionadded:: 0.3.0-alpha
     """
@@ -1289,3 +1290,22 @@ class H6(object):
     def construct(self):
         """Returns the constructed tag <h6>."""
         return h6_tag.render(self.values)
+
+
+class Head(object):
+    """Class for constructing <head> tag.
+
+    Args:
+        text (str): Specifies the head text. (As in <head>{text}</head>)
+
+    .. versionadded:: 0.3.0-alpha
+    """
+    def __init__(self, text=None):
+        # TODO: Add the ability to validate which inner tags can go into the
+        # <head> tag.
+        self.tag = 'head'
+        self.values = {'text': text}
+
+    def construct(self):
+        """Returns the constructed tag <head>."""
+        return head_tag.render(self.values)
