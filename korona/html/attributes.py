@@ -379,5 +379,46 @@ TAG_ATTRIBUTES = {
                                'form-data',
                 'values': ['get', 'post']
             }
+        },
+    'frame':
+        {
+            'frameborder': {
+                'description': 'Specifies whether or not to display a border '
+                               'around a frame',
+                'values': ['0', '1']
+            },
+            'longdesc': {
+                'description': 'Specifies a page that contains a long '
+                               'description of the content of a frame',
+                'values': None
+            },
+            'marginheight': {
+                'description': 'Specifies the top and bottom margins of a '
+                               'frame',
+                'values': None
+            },
+            'marginwidth': {
+                'description': 'Specifies the left and right margins of a '
+                               'frame',
+                'values': None
+            },
+            'name': {
+                'description': 'Specifies the name of a frame',
+                'values': None
+            },
+            'noresize': {
+                'description': 'Specifies that a frame is not resizable',
+                'values': ['noresize']
+            },
+            'scrolling': {
+                'description': 'Specifies whether or not to display scrollbars'
+                               ' in a frame',
+                'values': ['yes', 'no', 'auto']
+            },
+            'src': {
+                'description': 'Specifies the URL of the document to show in a'
+                               ' frame',
+                'values': None
+            }
         }
 }
