@@ -113,4 +113,28 @@ API Reference
 .. autoclass:: korona.html.construct.FrameSet
     :members:
 
+
+.. autoclass:: korona.html.construct.H1
+    :members:
+
+
+.. autoclass:: korona.html.construct.H2
+    :members:
+
+
+.. autoclass:: korona.html.construct.H3
+    :members:
+
+
+.. autoclass:: korona.html.construct.H4
+    :members:
+
+
+.. autoclass:: korona.html.construct.H5
+    :members:
+
+
+.. autoclass:: korona.html.construct.H6
+    :members:
+
     

@@ -1,6 +1,23 @@
 Changelog
 =========
 
+v0.3.0-alpha
+------------
+
+- Added classes for building some of the tags:
+
+  - <h1></h1>
+  - <h2></h2>
+  - <h3></h3>
+  - <h4></h4>
+  - <h5></h5>
+  - <h6></h6>
+
+Caveats:
+
+- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
+- Korona will be added with constructing the inner tags in the future releases.
+
 v0.2.0
 ------
 
@@ -24,7 +41,7 @@ v0.2.0
 
 Caveats:
 
-- Korona has no ability to construct inner tags. (For ex. <address><p>Hi There</p></address>)
+- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
 - Korona will be added with constructing the inner tags in the future releases.
 
 v0.1.0
@@ -45,3 +62,8 @@ v0.1.0
   - <canvas></canvas>
   - <caption></caption>
   - <cite></cite>
+
+Caveats:
+
+- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
+- Korona will be added with constructing the inner tags in the future releases.

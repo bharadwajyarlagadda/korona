@@ -743,3 +743,135 @@ Korona can build <frameset> tag.
     assert frameset_tag1 == '<frameset cols="25%" ></frameset>'
     assert frameset_tag1 == frameset2_tag
 
+<h1>
+----
+
+Korona supports ``align`` attribute for ``<h1>`` tag. Korona can help you build ``<h1>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H1
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h1_one = H1(**attributes)
+    # You can also pass in the attributes as args.
+    h1_two = H1(align='left', text='abcd')
+
+    h1_tag1 = h1_one.construct()
+    h1_tag2 = h1_two.construct()
+
+    assert h1_tag1 == '<h1 align="left" >abcd</h1>
+    assert h1_tag1 == h1_tag2
+
+<h2>
+----
+
+Korona supports ``align`` attribute for ``<h2>`` tag. Korona can help you build ``<h2>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H2
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h2_one = H2(**attributes)
+    # You can also pass in the attributes as args.
+    h2_two = H2(align='left', text='abcd')
+
+    h2_tag1 = h2_one.construct()
+    h2_tag2 = h2_two.construct()
+
+    assert h2_tag1 == '<h2 align="left" >abcd</h2>
+    assert h2_tag1 == h2_tag2
+
+<h3>
+----
+
+Korona supports ``align`` attribute for ``<h3>`` tag. Korona can help you build ``<h3>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H3
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h3_one = H3(**attributes)
+    # You can also pass in the attributes as args.
+    h3_two = H3(align='left', text='abcd')
+
+    h3_tag1 = h3_one.construct()
+    h3_tag2 = h3_two.construct()
+
+    assert h3_tag1 == '<h3 align="left" >abcd</h3>
+    assert h3_tag1 == h3_tag2
+
+<h4>
+----
+
+Korona supports ``align`` attribute for ``<h4>`` tag. Korona can help you build ``<h4>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H4
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h4_one = H4(**attributes)
+    # You can also pass in the attributes as args.
+    h4_two = H4(align='left', text='abcd')
+
+    h4_tag1 = h4_one.construct()
+    h4_tag2 = h4_two.construct()
+
+    assert h4_tag1 == '<h4 align="left" >abcd</h4>
+    assert h4_tag1 == h4_tag2
+
+<h5>
+----
+
+Korona supports ``align`` attribute for ``<h5>`` tag. Korona can help you build ``<h5>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H5
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h5_one = H5(**attributes)
+    # You can also pass in the attributes as args.
+    h5_two = H5(align='left', text='abcd')
+
+    h5_tag1 = h5_one.construct()
+    h5_tag2 = h5_two.construct()
+
+    assert h5_tag1 == '<h5 align="left" >abcd</h5>
+    assert h5_tag1 == h5_tag2
+
+<h6>
+----
+
+Korona supports ``align`` attribute for ``<h6>`` tag. Korona can help you build ``<h6>`` tag.
+
+.. code-block:: python
+
+    from korona.html.construct import H6
+
+    attributes = {'align': 'left', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    h6_one = H6(**attributes)
+    # You can also pass in the attributes as args.
+    h6_two = H6(align='left', text='abcd')
+
+    h6_tag1 = h6_one.construct()
+    h6_tag2 = h6_two.construct()
+
+    assert h6_tag1 == '<h6 align="left" >abcd</h6>
+    assert h6_tag1 == h6_tag2
+
