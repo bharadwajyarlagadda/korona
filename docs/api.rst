@@ -109,4 +109,8 @@ API Reference
 .. autoclass:: korona.html.construct.Frame
     :members:
 
+
+.. autoclass:: korona.html.construct.FrameSet
+    :members:
+
     

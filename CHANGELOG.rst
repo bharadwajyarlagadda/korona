@@ -20,6 +20,7 @@ v0.2.0-alpha
   - <footer></footer>
   - <form></form>
   - <frame>
+  - <frameset></frameset>
 
 Caveats:
 

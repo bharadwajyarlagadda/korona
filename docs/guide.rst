@@ -716,3 +716,30 @@ Koron can build <frame> tag.
     assert frame_tag1 == '<frame src="frame_a.htm" longdesc="a.txt" marginheight="250" marginwidth="100" name="name1" scrolling="auto" >'
     assert frame_tag1 == frame_tag2
 
+<frameset>
+----------
+
+Korona supports some of the frameset tag attributes like:
+
+- ``cols``
+- ``rows``
+
+Korona can build <frameset> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import FrameSet
+
+    attributes = {'cols': '25%'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    frameset1 = FrameSet(**attributes)
+    # You can also pass in the attributes as args.
+    frameset2 = FrameSet(cols='25%')
+
+    frameset_tag1 = frameset1.construct()
+    frameset_tag2 = frameset2.construct()
+
+    assert frameset_tag1 == '<frameset cols="25%" ></frameset>'
+    assert frameset_tag1 == frameset2_tag
+
