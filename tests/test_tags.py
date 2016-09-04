@@ -29,7 +29,8 @@ from korona.html.construct import (
     Figure,
     Footer,
     Form,
-    Frame
+    Frame,
+    FrameSet
 )
 from korona.templates.html import (
     anchor_tag,
@@ -58,7 +59,8 @@ from korona.templates.html import (
     figure_tag,
     footer_tag,
     form_tag,
-    frame_tag
+    frame_tag,
+    frameset_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -760,3 +762,15 @@ def test_construct_frame_tag_error(attributes, exception, error_msg):
         Frame(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'cols': '25%'}),
+    ({'rows': '50%'})
+])
+def test_construct_frameset_tag(attributes):
+    """Test for validating whether the frameset tag is constructed correctly or
+    not.
+    """
+    frameset = FrameSet(**attributes)
+    assert frameset.construct() == frameset_tag.render(attributes)
