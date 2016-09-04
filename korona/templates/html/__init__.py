@@ -28,5 +28,11 @@ from .tags import (
     footer_tag,
     form_tag,
     frame_tag,
-    frameset_tag
+    frameset_tag,
+    h1_tag,
+    h2_tag,
+    h3_tag,
+    h4_tag,
+    h5_tag,
+    h6_tag,
 )

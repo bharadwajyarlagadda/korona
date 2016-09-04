@@ -186,3 +186,33 @@ frameset_tag = env.from_string("""\
 <frameset {% if cols -%} cols="{{ cols }}" {% endif -%}
           {% if rows -%} rows="{{ rows }}" {% endif -%}></frameset>
 """)
+
+h1_tag = env.from_string("""\
+<h1 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h1>
+""")
+
+h2_tag = env.from_string("""\
+<h2 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h2>
+""")
+
+h3_tag = env.from_string("""\
+<h3 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h3>
+""")
+
+h4_tag = env.from_string("""\
+<h4 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h4>
+""")
+
+h5_tag = env.from_string("""\
+<h5 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h5>
+""")
+
+h6_tag = env.from_string("""\
+<h6 {% if align -%} align="{{ align }}" {% endif -%}>
+    {%- if text -%} {{ text }} {%- endif -%}</h6>
+""")
