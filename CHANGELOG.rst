@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.3.1
+------
+
+- Added validation for URL strings in constructing the tags.
+
 v0.3.0
 ------
 
