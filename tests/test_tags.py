@@ -38,7 +38,8 @@ from korona.html.construct import (
     H5,
     H6,
     Head,
-    Header
+    Header,
+    HR
 )
 from korona.templates.html import (
     anchor_tag,
@@ -76,7 +77,8 @@ from korona.templates.html import (
     h5_tag,
     h6_tag,
     head_tag,
-    header_tag
+    header_tag,
+    hr_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -950,3 +952,28 @@ def test_construct_header_tag(attributes):
     """
     header = Header(**attributes)
     assert header.construct() == header_tag.render(attributes)
+
+
+@parametrize('attributes', [
+    ({'align': 'left', 'width': '50%'}),
+    ({'align': 'center', 'size': '100'}),
+    ({'noshade': True})
+])
+def test_construct_hr_tag(attributes):
+    """Test for validating whether the hr tag is constructed correctly or not.
+    """
+    hr = HR(**attributes)
+    assert hr.construct() == hr_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'align': 'top-right'},
+     AttributeError,
+     'attribute values should be one of these')
+])
+def test_construct_hr_tag_error(attributes, exception, error_msg):
+    """Test for validating hr tag's attributes."""
+    with pytest.raises(exception) as exc:
+        HR(**attributes)
+
+    assert error_msg in str(exc)
