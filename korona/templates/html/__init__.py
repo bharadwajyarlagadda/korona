@@ -35,5 +35,6 @@ from .tags import (
     h4_tag,
     h5_tag,
     h6_tag,
-    head_tag
+    head_tag,
+    header_tag
 )

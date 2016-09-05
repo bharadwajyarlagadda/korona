@@ -220,3 +220,7 @@ h6_tag = env.from_string("""\
 head_tag = env.from_string("""\
 <head>{%- if text -%} {{ text }} {%- endif -%}</head>
 """)
+
+header_tag = env.from_string("""\
+<header>{%- if text -%} {{ text }} {%- endif -%}</header>
+""")
