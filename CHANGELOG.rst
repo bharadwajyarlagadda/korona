@@ -1,8 +1,8 @@
 Changelog
 =========
 
-v0.3.0-alpha
-------------
+v0.3.0
+------
 
 - Added classes for building some of the tags:
 

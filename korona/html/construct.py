@@ -1175,7 +1175,7 @@ class H1(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h1> text. (As in <h1>{text}</h1>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h1'
@@ -1196,7 +1196,7 @@ class H2(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h2> text. (As in <h2>{text}</h2>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h2'
@@ -1217,7 +1217,7 @@ class H3(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h3> text. (As in <h3>{text}</h3>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h3'
@@ -1238,7 +1238,7 @@ class H4(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h4> text. (As in <h4>{text}</h4>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h4'
@@ -1259,7 +1259,7 @@ class H5(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h5> text. (As in <h5>{text}</h5>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h5'
@@ -1280,7 +1280,7 @@ class H6(object):
         align (str): Specifies the alignment of a heading.
         text (str): Specifies the <h6> text. (As in <h6>{text}</h6>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h6'
@@ -1300,7 +1300,7 @@ class Head(object):
     Args:
         text (str): Specifies the head text. (As in <head>{text}</head>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, text=None):
         # TODO: Add the ability to validate which inner tags can go into the
@@ -1319,7 +1319,7 @@ class Header(object):
     Args:
         text (str): Specifies the header text. (As in <header>{text}</header>)
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, text=None):
         # TODO: Add support for inner tags.
@@ -1341,7 +1341,7 @@ class HR(object):
         size (str): Specifies the height of a <hr> element.
         width (str): Specifies the width of a <hr> element
 
-    .. versionadded:: 0.3.0-alpha
+    .. versionadded:: 0.3.0
     """
     def __init__(self, align=None, noshade=False, size=None, width=None):
         self.tag = 'hr'
