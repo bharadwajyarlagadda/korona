@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from urllib.parse import urlparse
 
 from ..html.attributes import TAG_ATTRIBUTES
 from ..html.tags import TAGS
@@ -45,3 +46,18 @@ def validate_attribute_values(tag, attribute_name, value):
                              .format(tag=tag,
                                      attribute_name=attribute_name,
                                      values=','.join(attribute_values)))
+
+
+def validate_url(attribute_name, url):
+    """Validates whether the given string is a URL or not."""
+    if not url:
+        return
+
+    try:
+        result = urlparse(url=url)
+        if [result.scheme, result.netloc, result.path]:
+            return True
+    except:
+        raise ValueError('{attribute_name}: The given string {url} is not a '
+                         'valid url.'
+                         .format(attribute_name=attribute_name, url=url))
