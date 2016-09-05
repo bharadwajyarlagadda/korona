@@ -899,3 +899,26 @@ Korona can help you build ``<head>`` tag.
 
 .. note:: <head> tag for now only supports ``text``. It doesn't has the capability for creating inner tags such as ``<title>``, ``<style>``, etc.
 
+<header>
+--------
+
+Korona can build <header> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Header
+
+    attributes = {'text': 'abc'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    header1 = Header(**attributes)
+    # You can also pass in the attributes as args.
+    header2 = Header(text='abc')
+
+    header_tag1 = header1.construct()
+    header_tag2 = header2.construct()
+
+    assert header_tag1 == '<header>abc</header>'
+    assert header_tag1 == header_tag2
+
+.. note:: Korona for now does not support any inner tags in <header> tag.

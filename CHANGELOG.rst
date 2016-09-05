@@ -13,6 +13,7 @@ v0.3.0-alpha
   - <h5></h5>
   - <h6></h6>
   - <head></head>
+  - <header></header>
 
 Caveats:
 
