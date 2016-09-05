@@ -176,6 +176,9 @@ def test_construct_anchor_tag_coords(attributes):
     ({'shape': 'abc'},
      AttributeError,
      'attribute values should be one of these'),
+    ({'href': 532},
+     ValueError,
+     'is not a valid url')
 ])
 def test_construct_anchor_tag_error(attributes, exception, error_msg):
     """Test for validating anchor tag's attributes."""
@@ -305,6 +308,9 @@ def test_construct_area_tag_coords(attributes):
     ({'href': 'abc'},
      AttributeError,
      'attribute is required if the href attribute is present'),
+    ({'href': 532, 'alt': 'abc'},
+     ValueError,
+     'not a valid url')
 ])
 def test_construct_area_tag_error(attributes, exception, error_msg):
     """Test for validating area tag's attributes."""
@@ -353,7 +359,7 @@ def test_construct_base_tag(attributes):
 
 
 @parametrize('attributes,exception,error_msg', [
-    ({'href': 123}, ValueError, 'value should be string'),
+    ({'href': 123}, ValueError, 'is not a valid url'),
     ({'target': 123}, ValueError, 'value should be string'),
     ({'href': None, 'target': None},
      AttributeError,
@@ -772,7 +778,10 @@ def test_construct_frame_tag(attributes):
      'attribute values should be one of these'),
     ({'frameborder': '2'},
      AttributeError,
-     'attribute values should be one of these')
+     'attribute values should be one of these'),
+    ({'src': 123},
+     ValueError,
+     'is not a valid url')
 ])
 def test_construct_frame_tag_error(attributes, exception, error_msg):
     """Test for validating frame tag's attributes."""

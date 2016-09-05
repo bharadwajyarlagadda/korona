@@ -7,7 +7,8 @@ from __future__ import absolute_import
 
 from ..lib.utils import (
     validate_tag_attribute_value,
-    validate_attribute_values
+    validate_attribute_values,
+    validate_url
 )
 from .attributes import TAG_ATTRIBUTES
 from ..templates.html import (
@@ -78,6 +79,9 @@ class A(object):
 
     .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
+
+    .. versionchanged:: 0.3.1
+        Added URL validation for href attribute.
     """
     def __init__(self,
                  charset=None,
@@ -99,7 +103,7 @@ class A(object):
         validate_tag_attribute_value(tag=self.tag, value=charset)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        # TODO: Validate href link
+        validate_url(attribute_name='href', url=href)
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.validate_values(href=href, attribute_name='rel', value=rel)
         self.validate_values(href=href, attribute_name='rev', value=rev)
@@ -283,6 +287,9 @@ class Area(object):
 
     .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
+
+    .. versionchanged:: 0.3.1
+        Added URL validation for href attribute.
     """
     def __init__(self,
                  alt=None,
@@ -300,7 +307,7 @@ class Area(object):
         self.validate_alt(href=href, attribute_name='alt', value=alt)
         coordinates = self.get_coords(shape=shape, coords=coords)
         self.pre_validate(href=href, attribute_name='download', value=download)
-        # TODO: Add validation for href link
+        validate_url(attribute_name='href', url=href)
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.pre_validate(href=href, attribute_name='media', value=media)
         self.validate_values(href=href, attribute_name='rel', value=rel)
@@ -465,12 +472,15 @@ class Base(object):
 
     .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
+
+    .. versionchanged:: 0.3.1
+        Added URL validation for href attribute.
     """
     def __init__(self, href=None, target=None):
         # TODO: Add in the main api method where it can check that there
         # should be only one base tag in the whole html document.
         self.tag = 'base'
-        # TODO: Add validation for href link.
+        validate_url(attribute_name='href', url=href)
         self.validate_values(href=href, target=target)
         self.values = {'href': href, 'target': target}
 
@@ -487,9 +497,6 @@ class Base(object):
         if not href and not target:
             raise AttributeError('<base>: base tag must have either a href '
                                  'attribute or a target attribute, or both.')
-
-        if href and not isinstance(href, str):
-            raise ValueError('<base>: href attribute value should be string')
 
         if target and not isinstance(target, str):
             raise ValueError('<base>: target attribute value should be '
@@ -1116,6 +1123,9 @@ class Frame(object):
         src (str): Specifies the URL of the document to show in a frame.
 
     .. versionadded:: 0.2.0
+
+    .. versionchanged:: 0.3.1
+        Added URL validation for src attribute.
     """
     def __init__(self,
                  frameborder=None,
@@ -1136,6 +1146,7 @@ class Frame(object):
         validate_attribute_values(tag=self.tag,
                                   attribute_name='scrolling',
                                   value=scrolling)
+        validate_url(attribute_name='src', url=src)
         self.values = {'frameborder': frameborder,
                        'longdesc': longdesc,
                        'marginheight': marginheight,
