@@ -224,3 +224,10 @@ head_tag = env.from_string("""\
 header_tag = env.from_string("""\
 <header>{%- if text -%} {{ text }} {%- endif -%}</header>
 """)
+
+hr_tag = env.from_string("""\
+<hr {% if align -%} align="{{ align }}" {% endif -%}
+    {% if noshade -%} noshade {% endif -%}
+    {% if width -%} width="{{ width }}" {% endif -%}
+    {% if size -%} size="{{ size }}" {% endif -%}>
+""")
