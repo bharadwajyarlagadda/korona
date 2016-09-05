@@ -902,7 +902,7 @@ Korona can help you build ``<head>`` tag.
 <header>
 --------
 
-Korona can build <header> tag.
+Korona can help you build <header> tag.
 
 .. code-block:: python
 
@@ -922,3 +922,26 @@ Korona can build <header> tag.
     assert header_tag1 == header_tag2
 
 .. note:: Korona for now does not support any inner tags in <header> tag.
+
+<hr>
+----
+
+Korona can help you build <hr> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import HR
+
+    attributes = {'align': 'center', 'size': '100'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    hr1 = HR(**attributes)
+    # You can also pass in the attributes as args.
+    hr2 = HR(align='center', size='100')
+
+    hr_tag1 = hr1.construct()
+    hr_tag2 = hr2.construct()
+
+    assert hr_tag1 == '<hr align="center" size="100" >'
+    assert hr_tag1 == hr_tag2
+

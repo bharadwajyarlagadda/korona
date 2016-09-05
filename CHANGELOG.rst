@@ -14,6 +14,7 @@ v0.3.0-alpha
   - <h6></h6>
   - <head></head>
   - <header></header>
+  - <hr>
 
 Caveats:
 
