@@ -463,4 +463,25 @@ TAG_ATTRIBUTES = {
                 'values': ['left', 'center', 'right', 'justify']
             }
         },
+    'hr':
+        {
+            'align': {
+                'description': 'Specifies the alignment of a <hr> element',
+                'values': ['left', 'center', 'right']
+            },
+            'noshade': {
+                'description': 'Specifies that a <hr> element should render in'
+                               ' one solid color (noshaded), instead of a '
+                               'shaded color',
+                'values': None
+            },
+            'size': {
+                'description': 'Specifies the height of a <hr> element',
+                'values': None
+            },
+            'width': {
+                'description': 'Specifies the width of a <hr> element',
+                'values': None
+            }
+        }
 }
