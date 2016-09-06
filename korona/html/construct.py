@@ -491,7 +491,7 @@ class Base(object):
         """Validates the following:
             - Either of href or target attribute value is given.
             - Check whether both href and target attribute values are strings
-                or not.
+            or not.
         """
         if not href and not target:
             raise AttributeError('<base>: base tag must have either a href '
