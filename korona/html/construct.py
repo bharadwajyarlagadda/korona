@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Html Tags construct module.
-"""
+"""Module for constructing Html Tags."""
 
 
 from __future__ import absolute_import
