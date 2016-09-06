@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
 from urllib.parse import urlparse
 
 from ..html.attributes import TAG_ATTRIBUTES
