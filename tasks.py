@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from invoke import task
+from invoke import run, task
 
 
 REQUIREMENTS = 'requirements-dev.txt'
@@ -21,74 +21,74 @@ COV_TARGET = PACKAGE_NAME
 
 
 @task
-def clean(ctx):
+def clean(ctx=None):
     """Remove temporary files related to development."""
-    ctx.run('find . -name \*.py[cod] -type f -delete')
-    ctx.run('find . -depth -name __pycache__ -type d -exec rm -rf {} \;')
-    ctx.run('rm -rf .tox .coverage .cache .egg* *.egg* dist build')
+    run('find . -name \*.py[cod] -type f -delete')
+    run('find . -depth -name __pycache__ -type d -exec rm -rf {} \;')
+    run('rm -rf .tox .coverage .cache .egg* *.egg* dist build')
 
 
 @task
-def install(ctx):
+def install(ctx=None):
     """Install package development dependencies."""
-    ctx.run('pip install -r {0}'.format(REQUIREMENTS))
+    run('pip install -r {0}'.format(REQUIREMENTS))
 
 
 @task
-def flake8(ctx):
+def flake8(ctx=None):
     """Run flake8 checker."""
-    ctx.run('flake8 --ignore={0} {1}'.format(FLAKE8_IGNORE, TEST_TARGETS))
+    run('flake8 --ignore={0} {1}'.format(FLAKE8_IGNORE, TEST_TARGETS))
 
 
 @task
-def pylint(ctx):
+def pylint(ctx=None):
     """Run pylint checker."""
-    ctx.run('pylint -E -d {0} {1}'.format(PYLINT_IGNORE, TEST_TARGETS))
+    run('pylint -E -d {0} {1}'.format(PYLINT_IGNORE, TEST_TARGETS))
 
 
 @task(pre=[flake8, pylint])
-def lint(ctx):
+def lint(ctx=None):
     """Run static linter."""
     pass
 
 
 @task
-def unit(ctx):
+def unit(ctx=None):
     """Run unit tests."""
-    ctx.run('py.test --cov {0} {1}'.format(COV_TARGET, TEST_TARGETS))
+    run('py.test --cov {0} {1}'.format(COV_TARGET, TEST_TARGETS))
 
 
 @task(pre=[lint, unit])
-def test(ctx):
+def test(ctx=None):
     """Run all tests."""
     pass
 
 
 @task(post=[clean])
-def tox(ctx):
+def tox(ctx=None):
     """Run tox testing."""
-    ctx.run('tox -c tox.ini')
+    run('tox -c tox.ini')
 
 
 @task
-def docs(ctx, serve=False, port=8000):
+def docs(ctx=None, serve=False, port=8000):
     """Build documentation."""
-    ctx.run('rm -rf {0}'.format('docs/_build'))
-    ctx.run('cd docs && make doctest && make html')
+    run('rm -rf {0}'.format('docs/_build'))
+    run('cd docs && make doctest && make html')
 
     if serve:
         print('Serving docs on port {0} ...'.format(port))
-        ctx.run('cd {0} && python -m http.server {1}'
-                .format('docs/_build/html', port))
+        run('cd {0} && python -m http.server {1}'
+            .format('docs/_build/html', port))
 
 
 @task
-def build(ctx):
+def build(ctx=None):
     """Build package distribution."""
-    ctx.run('python setup.py sdist bdist_wheel')
+    run('python setup.py sdist bdist_wheel')
 
 
 @task(pre=[build], post=[clean])
-def release(ctx):
+def release(ctx=None):
     """Upload package distribution to PyPI."""
-    ctx.run('twine upload dist/*')
+    run('twine upload dist/*')
