@@ -21,7 +21,7 @@ COV_TARGET = PACKAGE_NAME
 
 
 @task
-def clean(ctx=None):
+def clean(ctx):
     """Remove temporary files related to development."""
     run('find . -name \*.py[cod] -type f -delete')
     run('find . -depth -name __pycache__ -type d -exec rm -rf {} \;')
@@ -29,49 +29,49 @@ def clean(ctx=None):
 
 
 @task
-def install(ctx=None):
+def install(ctx):
     """Install package development dependencies."""
     run('pip install -r {0}'.format(REQUIREMENTS))
 
 
 @task
-def flake8(ctx=None):
+def flake8(ctx):
     """Run flake8 checker."""
     run('flake8 --ignore={0} {1}'.format(FLAKE8_IGNORE, TEST_TARGETS))
 
 
 @task
-def pylint(ctx=None):
+def pylint(ctx):
     """Run pylint checker."""
     run('pylint -E -d {0} {1}'.format(PYLINT_IGNORE, TEST_TARGETS))
 
 
 @task(pre=[flake8, pylint])
-def lint(ctx=None):
+def lint(ctx):
     """Run static linter."""
     pass
 
 
 @task
-def unit(ctx=None):
+def unit(ctx):
     """Run unit tests."""
     run('py.test --cov {0} {1}'.format(COV_TARGET, TEST_TARGETS))
 
 
 @task(pre=[lint, unit])
-def test(ctx=None):
+def test(ctx):
     """Run all tests."""
     pass
 
 
 @task(post=[clean])
-def tox(ctx=None):
+def tox(ctx):
     """Run tox testing."""
     run('tox -c tox.ini')
 
 
 @task
-def docs(ctx=None, serve=False, port=8000):
+def docs(ctx, serve=False, port=8000):
     """Build documentation."""
     run('rm -rf {0}'.format('docs/_build'))
     run('cd docs && make doctest && make html')
@@ -83,12 +83,12 @@ def docs(ctx=None, serve=False, port=8000):
 
 
 @task
-def build(ctx=None):
+def build(ctx):
     """Build package distribution."""
     run('python setup.py sdist bdist_wheel')
 
 
 @task(pre=[build], post=[clean])
-def release(ctx=None):
+def release(ctx):
     """Upload package distribution to PyPI."""
     run('twine upload dist/*')
