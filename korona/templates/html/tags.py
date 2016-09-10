@@ -237,3 +237,7 @@ html_tag = env.from_string("""\
       {% if xmlns -%} xmlns="{{ xmlns }}" {% endif -%}>
       {%- if text -%} {{ text }} {%- endif -%}</html>
 """)
+
+italics_tag = env.from_string("""\
+<i>{%- if text -%} {{ text }} {%- endif -%}</i>
+""")
