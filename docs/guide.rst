@@ -945,3 +945,25 @@ Korona can help you build <hr> tag.
     assert hr_tag1 == '<hr align="center" size="100" >'
     assert hr_tag1 == hr_tag2
 
+<html>
+------
+
+Korona can help you build <html> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Html
+
+    attributes = {'manifest': 'demo.appcache', 'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    html1 = Html(**attributes)
+    # You can also pass in the attributes as args.
+    html2 = Html(manifest='demo.appcache', text='abcd')
+
+    html_tag1 = html1.construct()
+    html_tag2 = html2.construct()
+
+    assert html_tag1 == '<html manifest="demo.appcache" >abcd</html>'
+    assert html_tag1 == html_tag2
+

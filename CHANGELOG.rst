@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.4.0-dev
+----------
+
+- Added classes for building some of the tags:
+
+  - <html></html>
+
 v0.3.1
 ------
 
