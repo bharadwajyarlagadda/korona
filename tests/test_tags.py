@@ -39,7 +39,8 @@ from korona.html.construct import (
     H6,
     Head,
     Header,
-    HR
+    HR,
+    Html
 )
 from korona.templates.html import (
     anchor_tag,
@@ -78,7 +79,8 @@ from korona.templates.html import (
     h6_tag,
     head_tag,
     header_tag,
-    hr_tag
+    hr_tag,
+    html_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -984,5 +986,31 @@ def test_construct_hr_tag_error(attributes, exception, error_msg):
     """Test for validating hr tag's attributes."""
     with pytest.raises(exception) as exc:
         HR(**attributes)
+
+    assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abc'}),
+    ({'xmlns': 'www.w3.org', 'text': 'abcd'}),
+    ({'manifest': 'demo.appcache', 'text': 'abcd'})
+])
+def test_construct_html_tag(attributes):
+    """Test for validating whether the html tag is constructed correctly or
+    not.
+    """
+    html = Html(**attributes)
+    assert html.construct() == html_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'manifest': 12},
+     ValueError,
+     'is not a valid url.')
+])
+def test_construct_html_tag_error(attributes, exception, error_msg):
+    """Test for validating html tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Html(**attributes)
 
     assert error_msg in str(exc)
