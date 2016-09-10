@@ -153,3 +153,7 @@ API Reference
 .. autoclass:: korona.html.construct.Html
     :members:
 
+
+.. autoclass:: korona.html.construct.I
+    :members:
+

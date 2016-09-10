@@ -948,6 +948,11 @@ Korona can help you build <hr> tag.
 <html>
 ------
 
+Korona supports some of the html tag attributes like:
+
+- ``manifest``
+- ``xmlns``
+
 Korona can help you build <html> tag.
 
 .. code-block:: python
@@ -966,4 +971,26 @@ Korona can help you build <html> tag.
 
     assert html_tag1 == '<html manifest="demo.appcache" >abcd</html>'
     assert html_tag1 == html_tag2
+
+<i>
+---
+
+Korona can help you build <i> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import I
+
+    attributes = {'text': 'abcd'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    italics1 = I(**attributes)
+    # You can also pass in the attributes as args.
+    italics2 = I(text='abcd')
+
+    italics_tag1 = italics1.construct()
+    italics_tag2 = italics2.construct()
+
+    assert italics_tag1 == '<i>abcd</i>
+    assert italics_tag1 == italics_tag2
 

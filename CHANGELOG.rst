@@ -7,11 +7,21 @@ v0.4.0-dev
 - Added classes for building some of the tags:
 
   - <html></html>
+  - <i></i>
+
+Caveats:
+
+- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
+- Korona will be added with constructing the inner tags in the future releases.
 
 v0.3.1
 ------
 
 - Added validation for URL strings in constructing the tags.
+
+Caveats:
+
+- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
 
 v0.3.0
 ------
@@ -31,7 +41,6 @@ v0.3.0
 Caveats:
 
 - Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the future releases.
 
 v0.2.0
 ------
@@ -57,7 +66,6 @@ v0.2.0
 Caveats:
 
 - Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the future releases.
 
 v0.1.0
 ------
@@ -81,4 +89,3 @@ v0.1.0
 Caveats:
 
 - Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the future releases.
