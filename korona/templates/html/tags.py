@@ -231,3 +231,7 @@ hr_tag = env.from_string("""\
     {% if width -%} width="{{ width }}" {% endif -%}
     {% if size -%} size="{{ size }}" {% endif -%}>
 """)
+
+html_tag = env.from_string("""\
+<html>{%- if text -%} {{ text }} {%- endif -%}</html>
+""")
