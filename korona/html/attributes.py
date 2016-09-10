@@ -483,5 +483,71 @@ TAG_ATTRIBUTES = {
                 'description': 'Specifies the width of a <hr> element',
                 'values': None
             }
+        },
+    'iframe':
+        {
+            'align': {
+                'description': 'Specifies the alignment of an <iframe> '
+                               'according to surrounding elements',
+                'values': ['left', 'right', 'middle', 'top', 'bottom']
+            },
+            'frameborder': {
+                'description': 'Specifies whether or not to display a border '
+                               'around an <iframe>',
+                'values': [1, 0]
+            },
+            'height': {
+                'description': 'Specifies the height of an <iframe>',
+                'values': None
+            },
+            'longdesc': {
+                'description': 'Specifies a page that contains a long '
+                               'description of the content of an <iframe>',
+                'values': None
+            },
+            'marginheight': {
+                'description': 'Specifies the top and bottom margins of the '
+                               'content of an <iframe>',
+                'values': None
+            },
+            'marginwidth': {
+                'description': 'Specifies the left and right margins of the '
+                               'content of an <iframe>',
+                'values': None
+            },
+            'name': {
+                'description': 'Specifies the name of an <iframe>',
+                'values': None
+            },
+            'sandbox': {
+                'description': 'Enables an extra set of restrictions for the '
+                               'content in an <iframe>',
+                'values': ['',
+                           'allow-forms',
+                           'allow-pointer-lock',
+                           'allow-popups',
+                           'allow-same-origin',
+                           'allow-scripts',
+                           'allow-top-navigation']
+            },
+            'scrolling': {
+                'description': 'Specifies whether or not to display scrollbars'
+                               ' in an <iframe>',
+                'values': ['yes', 'no', 'auto']
+            },
+            'src': {
+                'description': 'Specifies the address of the document to embed'
+                               ' in the <iframe>',
+                'src': None
+            },
+            'srcdoc': {
+                'description': 'Specifies the HTML content of the page to show'
+                               ' in the <iframe>',
+                'values': None
+            },
+            'width': {
+                'description': 'Specifies the width of an <iframe>',
+                'values': None
+            }
         }
 }
