@@ -48,7 +48,8 @@ from ..templates.html import (
     head_tag,
     header_tag,
     hr_tag,
-    html_tag
+    html_tag,
+    italics_tag
 )
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -1392,3 +1393,20 @@ class Html(object):
     def construct(self):
         """Returns the constructed html tag <html>."""
         return html_tag.render(self.values)
+
+
+class I(object):
+    """Class for constructing <i> tag.
+
+    Args:
+        text (str): Specifies the italics text. (As in <i>{text}</i>)
+
+    .. versionadded:: 0.4.0-dev
+    """
+    def __init__(self, text=None):
+        self.tag = 'i'
+        self.values = {'text': text}
+
+    def construct(self):
+        """Returns the constructed italics tag <i>."""
+        return italics_tag.render(self.values)

@@ -40,7 +40,8 @@ from korona.html.construct import (
     Head,
     Header,
     HR,
-    Html
+    Html,
+    I
 )
 from korona.templates.html import (
     anchor_tag,
@@ -80,7 +81,8 @@ from korona.templates.html import (
     head_tag,
     header_tag,
     hr_tag,
-    html_tag
+    html_tag,
+    italics_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -1014,3 +1016,14 @@ def test_construct_html_tag_error(attributes, exception, error_msg):
         Html(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'text': 'abcd'})
+])
+def test_construct_italics_tag(attributes):
+    """Test for validating whether the italics tag is constructed correctly or
+    not.
+    """
+    italics = I(**attributes)
+    assert italics.construct() == italics_tag.render(attributes)
