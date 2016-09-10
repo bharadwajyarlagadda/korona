@@ -233,5 +233,7 @@ hr_tag = env.from_string("""\
 """)
 
 html_tag = env.from_string("""\
-<html>{%- if text -%} {{ text }} {%- endif -%}</html>
+<html {% if manifest -%} manifest="{{ manifest }}" {% endif -%}
+      {% if xmlns -%} xmlns="{{ xmlns }}" {% endif -%}>
+      {%- if text -%} {{ text }} {%- endif -%}</html>
 """)
