@@ -39,5 +39,6 @@ from .tags import (
     header_tag,
     hr_tag,
     html_tag,
-    italics_tag
+    italics_tag,
+    iframe_tag
 )
