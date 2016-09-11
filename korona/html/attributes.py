@@ -494,7 +494,7 @@ TAG_ATTRIBUTES = {
             'frameborder': {
                 'description': 'Specifies whether or not to display a border '
                                'around an <iframe>',
-                'values': [1, 0]
+                'values': ['1', '0']
             },
             'height': {
                 'description': 'Specifies the height of an <iframe>',
