@@ -994,3 +994,40 @@ Korona can help you build <i> tag.
     assert italics_tag1 == '<i>abcd</i>
     assert italics_tag1 == italics_tag2
 
+<iframe>
+--------
+
+Korona supports iframe tag attributes like:
+
+- ``align``
+- ``frameborder``
+- ``height``
+- ``longdesc``
+- ``marginheight``
+- ``marginwidth``
+- ``name``
+- ``sandbox``
+- ``scrolling``
+- ``src``
+- ``srcdoc``
+- ``width``
+
+Korona can help you build <iframe> tag.
+
+.. code-block:: python
+
+    from korona.html.construct import IFrame
+
+    attributes = {'src': '/demo.asp', 'height': '100', 'width': '200'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    iframe1 = IFrame(**attributes)
+    # You can also pass in the attributes as args.
+    iframe2 = IFrame(src='/demo.asp', height='100', width='200')
+
+    iframe_tag1 = iframe1.construct()
+    iframe_tag2 = iframe2.construct()
+
+    assert iframe_tag1 == '<iframe src="/demo.asp" width="200" height="100" ></iframe>'
+    assert iframe_tag1 == iframe_tag2
+

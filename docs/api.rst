@@ -157,3 +157,7 @@ API Reference
 .. autoclass:: korona.html.construct.I
     :members:
 
+
+.. autoclass:: korona.html.construct.IFrame
+    :members:
+
