@@ -40,5 +40,6 @@ from .tags import (
     hr_tag,
     html_tag,
     italics_tag,
-    iframe_tag
+    iframe_tag,
+    img_tag
 )
