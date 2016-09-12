@@ -42,7 +42,8 @@ from korona.html.construct import (
     HR,
     Html,
     I,
-    IFrame
+    IFrame,
+    Img
 )
 from korona.templates.html import (
     anchor_tag,
@@ -84,7 +85,8 @@ from korona.templates.html import (
     hr_tag,
     html_tag,
     italics_tag,
-    iframe_tag
+    iframe_tag,
+    img_tag
 )
 from korona.lib.utils import validate_tag
 
@@ -1073,5 +1075,34 @@ def test_construct_iframe_tag_error(attributes, exception, error_msg):
     """Test for validating iframe tag's attributes."""
     with pytest.raises(exception) as exc:
         IFrame(**attributes)
+
+    assert error_msg in str(exc)
+
+
+@parametrize('attributes', [
+    ({'align': 'left', 'alt': 'Smiley text', 'border': '4'}),
+    ({'crossorigin': 'anonymous'}),
+    ({'height': '30', 'width': '30', 'hspace': '20', 'vspace': '20'}),
+    ({'ismap': True}),
+    ({'longdesc': 'explained', 'src': '/demo.asp', 'usemap': 'planets'})
+])
+def test_construct_img_tag(attributes):
+    """Test for validating whether the img tag is constructed correctly or not.
+    """
+    img = Img(**attributes)
+    assert img.construct() == img_tag.render(attributes)
+
+
+@parametrize('attributes,exception,error_msg', [
+    ({'align': 'left-top'},
+     AttributeError,
+     'attribute values should be one of these'),
+    ({'longdesc': 123}, ValueError, 'is not a valid url'),
+    ({'src': 123}, ValueError, 'is not a valid url')
+])
+def test_construct_img_tag_error(attributes, exception, error_msg):
+    """Test for validating img tag's attributes."""
+    with pytest.raises(exception) as exc:
+        Img(**attributes)
 
     assert error_msg in str(exc)
