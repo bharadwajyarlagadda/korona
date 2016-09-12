@@ -549,5 +549,62 @@ TAG_ATTRIBUTES = {
                 'description': 'Specifies the width of an <iframe>',
                 'values': None
             }
+        },
+    'img':
+        {
+            'align': {
+                'description': 'Specifies the alignment of an image according '
+                               'to surrounding elements',
+                'values': ['left', 'right', 'middle', 'top', 'bottom']
+            },
+            'alt': {
+                'description': 'Specifies an alternate text for an image',
+                'values': None
+            },
+            'border': {
+                'description': 'Specifies the width of the border around an '
+                               'image',
+                'values': None
+            },
+            'crossorigin': {
+                'description': 'Allow images from third-party sites that allow'
+                               ' cross-origin access to be used with canvas',
+                'values': None
+            },
+            'height': {
+                'description': 'Specifies the height of an image',
+                'values': None
+            },
+            'hspace': {
+                'description': 'Specifies the whitespace on left and right '
+                               'side of an image',
+                'values': None
+            },
+            'ismap': {
+                'description': 'Specifies an image as a server-side image-map',
+                'values': None
+            },
+            'longdesc': {
+                'description': 'Specifies a URL to a detailed description of '
+                               'an image',
+                'values': None
+            },
+            'src': {
+                'description': 'Specifies the URL of an image',
+                'values': None
+            },
+            'usemap': {
+                'description': 'Specifies an image as a client-side image-map',
+                'values': None
+            },
+            'vspace': {
+                'description': 'Specifies the whitespace on top and bottom of '
+                               'an image',
+                'values': None
+            },
+            'width': {
+                'description': 'Specifies the width of an image',
+                'values': None
+            }
         }
 }
