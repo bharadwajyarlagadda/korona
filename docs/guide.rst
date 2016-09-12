@@ -1031,3 +1031,40 @@ Korona can help you build <iframe> tag.
     assert iframe_tag1 == '<iframe src="/demo.asp" width="200" height="100" ></iframe>'
     assert iframe_tag1 == iframe_tag2
 
+<img>
+-----
+
+Korona supports img tag attributes like:
+
+- ``align``
+- ``alt``
+- ``border``
+- ``crossorigin``
+- ``height``
+- ``hspace``
+- ``ismap``
+- ``longdesc``
+- ``src``
+- ``usemap``
+- ``vspace``
+- ``width``
+
+Korona can help you build <img tag.
+
+.. code-block:: python
+
+    from korona.html.construct import Img
+
+    attributes = {'height': '30', 'width': '30', 'hspace': '20', 'vspace': '20'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    img1 = Img(**attributes)
+    # You can also pass in the attributes as args.
+    img2 = Img(height='30', width='30', hspace='20', vspace='20')
+
+    img_tag1 = img1.construct()
+    img_tag2 = img2.construct()
+
+    assert img_tag1 == '<img height="30" hspace="20" vspace="20" width="30" >'
+    assert img_tag1 == img_tag2
+

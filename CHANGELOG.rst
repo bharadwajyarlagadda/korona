@@ -9,6 +9,7 @@ v0.4.0-dev
   - <html></html>
   - <i></i>
   - <iframe></iframe>
+  - <img>
 
 Caveats:
 
