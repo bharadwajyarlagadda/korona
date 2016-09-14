@@ -606,5 +606,189 @@ TAG_ATTRIBUTES = {
                 'description': 'Specifies the width of an image',
                 'values': None
             }
+        },
+    'input':
+        {
+            'accept': {
+                'description': 'Specifies the types of files that the server '
+                               'accepts (only for type="file")',
+                'values': None
+            },
+            'align': {
+                'description': 'Specifies the alignment of an image input '
+                               '(only for type="image")',
+                'values': ['left', 'right', 'top', 'middle', 'bottom']
+            },
+            'alt': {
+                'description': 'Specifies an alternate text for images (only '
+                               'for type="image")',
+                'values': None
+            },
+            'autocomplete': {
+                'description': 'Specifies whether an <input> element should '
+                               'have autocomplete enabled',
+                'values': ['on', 'off']
+            },
+            'autofocus': {
+                'description': 'Specifies that an <input> element should '
+                               'automatically get focus when the page loads',
+                'values': None
+            },
+            'checked': {
+                'description': 'Specifies that an <input> element should be '
+                               'pre-selected when the page loads (for '
+                               'type="checkbox" or type="radio")',
+                'values': None
+            },
+            'dirname': {
+                'description': 'Specifies that the text direction will be '
+                               'submitted',
+                'values': None
+            },
+            'disabled': {
+                'description': 'Specifies that an <input> element should be '
+                               'disabled',
+                'values': None
+            },
+            'form': {
+                'description': 'Specifies one or more forms the <input> '
+                               'element belongs to',
+                'values': None
+            },
+            'formaction': {
+                'description': 'Specifies the URL of the file that will '
+                               'process the input control when the form is '
+                               'submitted (for type="submit" and '
+                               'type="image")',
+                'values': None
+            },
+            'formenctype': {
+                'description': 'Specifies how the form-data should be encoded '
+                               'when submitting it to the server (for type='
+                               '"submit" and type="image")',
+                'values': ['application/x-www-form-urlencoded',
+                           'multipart/form-data',
+                           'text/plain']
+            },
+            'formmethod': {
+                'description': 'Defines the HTTP method for sending data to '
+                               'the action URL (for type="submit" and type='
+                               '"image")',
+                'values': ['get', 'post']
+            },
+            'formnovalidate': {
+                'description': 'Defines that form elements should not be '
+                               'validated when submitted',
+                'values': None
+            },
+            'formtarget': {
+                'description': 'Specifies where to display the response that '
+                               'is received after submitting the form (for '
+                               'type="submit" and type="image")',
+                'values': None
+            },
+            'height': {
+                'description': 'Specifies the height of an <input> element '
+                               '(only for type="image")',
+                'values': None
+            },
+            'list': {
+                'description': 'Refers to a <datalist> element that contains '
+                               'pre-defined options for an <input> element',
+                'values': None
+            },
+            'max': {
+                'description': 'Specifies the maximum value for an <input> '
+                               'element',
+                'values': None
+            },
+            'maxlength': {
+                'description': 'Specifies the maximum number of characters '
+                               'allowed in an <input> element',
+                'values': None
+            },
+            'min': {
+                'description': 'Specifies a minimum value for an <input> '
+                               'element',
+                'values': None
+            },
+            'multiple': {
+                'description': 'Specifies that a user can enter more than one '
+                               'value in an <input> element',
+                'values': None
+            },
+            'name': {
+                'description': 'Specifies the name of an <input> element',
+                'values': None
+            },
+            'pattern': {
+                'description': "Specifies a regular expression that an <input>"
+                               " element's value is checked against",
+                'values': None
+            },
+            'placeholder': {
+                'description': 'Specifies a short hint that describes the '
+                               'expected value of an <input> element',
+                'values': None
+            },
+            'readonly': {
+                'description': 'Specifies that an input field is read-only',
+                'values': None
+            },
+            'required': {
+                'description': 'Specifies that an input field must be filled '
+                               'out before submitting the form',
+                'values': None
+            },
+            'size': {
+                'description': 'Specifies the width, in characters, of an '
+                               '<input> element',
+                'values': None
+            },
+            'src': {
+                'description': 'Specifies the URL of the image to use as a '
+                               'submit button (only for type="image")',
+                'values': None
+            },
+            'step': {
+                'description': 'Specifies the legal number intervals for an '
+                               'input field',
+                'values': None
+            },
+            'type': {
+                'description': 'Specifies the type <input> element to display',
+                'values': ['button',
+                           'checkbox',
+                           'color',
+                           'date',
+                           'datetime',
+                           'datetime-local',
+                           'email',
+                           'file',
+                           'hidden',
+                           'image',
+                           'month',
+                           'number',
+                           'password',
+                           'radio',
+                           'range',
+                           'reset',
+                           'search',
+                           'submit',
+                           'tel',
+                           'text',
+                           'time',
+                           'url',
+                           'week']
+            },
+            'value': {
+                'description': 'Specifies the value of an <input> element',
+                'values': None
+            },
+            'width': {
+                'description': 'Specifies the width of an <input> element '
+                               '(only for type="image")',
+                'values': None
+            }
         }
 }
