@@ -750,7 +750,7 @@ Korona supports ``align`` attribute for ``<h1>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H1
+    from korona.html.tags import H1
 
     attributes = {'align': 'left', 'text': 'abcd'}
 
@@ -772,7 +772,7 @@ Korona supports ``align`` attribute for ``<h2>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H2
+    from korona.html.tags import H2
 
     attributes = {'align': 'left', 'text': 'abcd'}
 
@@ -794,7 +794,7 @@ Korona supports ``align`` attribute for ``<h3>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H3
+    from korona.html.tags import H3
 
     attributes = {'align': 'left', 'text': 'abcd'}
 
@@ -816,7 +816,7 @@ Korona supports ``align`` attribute for ``<h4>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H4
+    from korona.html.tags import H4
 
     attributes = {'align': 'left', 'text': 'abcd'}
 
@@ -838,7 +838,7 @@ Korona supports ``align`` attribute for ``<h5>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H5
+    from korona.html.tags import H5
 
     attributes = {'align': 'left', 'text': 'abcd'}
 
@@ -860,7 +860,7 @@ Korona supports ``align`` attribute for ``<h6>`` tag. Korona can help you build 
 
 .. code-block:: python
 
-    from korona.html.construct import H6
+    from korona.html.tags import H6
 
     attributes = {'align': 'left', 'text': 'abcd'}
 

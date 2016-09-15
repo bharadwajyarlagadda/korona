@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <caption> tag."""
 
+from __future__ import absolute_import
+
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import caption_tag
 

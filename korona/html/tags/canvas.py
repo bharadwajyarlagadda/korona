@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <canvas> tag."""
 
+from __future__ import absolute_import
+
 from ...lib.utils import validate_tag_attribute_value
 from ...templates.html.tags import canvas_tag
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <button> tag."""
 
+from __future__ import absolute_import
+
 from ..root.attributes import TAG_ATTRIBUTES
 from ...templates.html.tags import button_tag
 

@@ -114,27 +114,27 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.H1
+.. autoclass:: korona.html.tags.H1
     :members:
 
 
-.. autoclass:: korona.html.construct.H2
+.. autoclass:: korona.html.tags.H2
     :members:
 
 
-.. autoclass:: korona.html.construct.H3
+.. autoclass:: korona.html.tags.H3
     :members:
 
 
-.. autoclass:: korona.html.construct.H4
+.. autoclass:: korona.html.tags.H4
     :members:
 
 
-.. autoclass:: korona.html.construct.H5
+.. autoclass:: korona.html.tags.H5
     :members:
 
 
-.. autoclass:: korona.html.construct.H6
+.. autoclass:: korona.html.tags.H6
     :members:
 
 
