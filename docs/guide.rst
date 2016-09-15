@@ -236,7 +236,7 @@ Korona can build <button> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Button
+    from korona.html.tags import Button
 
     attributes = {'name': 'HTML1',
                   'type': 'submit',
@@ -262,7 +262,7 @@ Korona can build <canvas> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Canvas
+    from korona.html.tags import Canvas
 
     attributes = {'height': '100', 'width': '200'}
 
@@ -286,7 +286,7 @@ Korona can build <caption> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Caption
+    from korona.html.tags import Caption
 
     attributes = {'align': 'top', 'text': 'abcd'}
 
@@ -308,7 +308,7 @@ Korona can build <cite> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Cite
+    from korona.html.tags import Cite
 
     attributes = {'text': 'abcd'}
 

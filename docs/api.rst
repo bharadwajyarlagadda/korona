@@ -34,19 +34,19 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Button
+.. autoclass:: korona.html.tags.Button
     :members:
 
 
-.. autoclass:: korona.html.construct.Canvas
+.. autoclass:: korona.html.tags.Canvas
     :members:
 
 
-.. autoclass:: korona.html.construct.Caption
+.. autoclass:: korona.html.tags.Caption
     :members:
 
 
-.. autoclass:: korona.html.construct.Cite
+.. autoclass:: korona.html.tags.Cite
     :members:
 
 

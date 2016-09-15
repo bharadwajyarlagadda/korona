@@ -3,10 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Button,
-    Canvas,
-    Caption,
-    Cite,
     Col,
     ColGroup,
     DD,
@@ -38,10 +34,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    button_tag,
-    canvas_tag,
-    caption_tag,
-    cite_tag,
     col_tag,
     colgroup_tag,
     dd_tag,
@@ -87,130 +79,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
         validate_tag(tag)
 
     assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'type': 'submit', 'autofocus': True}),
-    ({'type': 'submit', 'disabled': True}),
-    ({'type': 'submit', 'formnovalidate': True}),
-    ({'type': 'submit', 'text': 'HTML'}),
-    ({'type': 'submit', 'name': 'HTML', 'value': 'HTML', 'text': 'HTML'}),
-    ({'type': 'submit',
-      'text': 'HTML',
-      'form': 'form1',
-      'formaction': 'demo.asp',
-      'formmethod': 'post',
-      'formtarget': '_blank',
-      'formenctype': 'multipart/form-data'})
-])
-def test_construct_button_tag(attributes):
-    """Test for validating whether the button tag is constructed correctly or
-    not.
-    """
-    button = Button(**attributes)
-    assert button.construct() == button_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({}, AttributeError, 'Button type should be specified'),
-    ({'type': 'reset', 'formaction': 'demo.asp'},
-     AttributeError,
-     'attribute is only used for buttons with type "submit"'),
-    ({'type': 'reset', 'formmethod': 'post'},
-     AttributeError,
-     'attribute is only used for buttons with type "submit"'),
-    ({'type': 'reset', 'formtarget': '_blank'},
-     AttributeError,
-     'attribute is only used for buttons with type "submit"'),
-    ({'type': 'reset', 'formenctype': 'multipart/form-data'},
-     AttributeError,
-     'attribute is only used for buttons with type "submit"'),
-    ({'type': 'reset', 'formnovalidate': True},
-     AttributeError,
-     'attribute is only used for buttons with type "submit"'),
-    ({'type': 'abc'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'type': 'submit', 'formenctype': 'abc'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'type': 'submit', 'formmethod': 'abc'},
-     AttributeError,
-     'attribute values should be one of these'),
-
-])
-def test_construct_button_tag_error(attributes, exception, error_msg):
-    """Test for validating button tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Button(**attributes)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'height': '100'}),
-    ({'width': '200'}),
-    ({'height': '100', 'width': '200'})
-])
-def test_construct_canvas_tag(attributes):
-    """Test for validating whether the canvas tag is constructed correctly or
-    not.
-    """
-    canvas = Canvas(**attributes)
-    assert canvas.construct() == canvas_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'height': 123}, ValueError, 'should be a string'),
-    ({'width': 123}, ValueError, 'should be a string'),
-    ({'height': None, 'width': 123},
-     ValueError,
-     'should be a string')
-])
-def test_construct_canvas_tag_error(attributes, exception, error_msg):
-    """Test for validating canvas tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Canvas(**attributes)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'align': 'top'}),
-    ({'text': 'abcd'}),
-    ({'align': 'bottom', 'text': 'abcd'})
-])
-def test_construct_caption_tag(attributes):
-    """Test for validating whether the caption tag is constructed correctly or
-    not.
-    """
-    caption = Caption(**attributes)
-    assert caption.construct() == caption_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'align': 123}, ValueError, 'should be a string'),
-    ({'align': 'abcd', 'text': 'abcd'},
-     AttributeError,
-     'attribute values should be one of these')
-])
-def test_construct_caption_tag_error(attributes, exception, error_msg):
-    """Test for validating caption tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Caption(**attributes)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'}),
-])
-def test_construct_cite_tag(attributes):
-    """Test for validating whether the citation tag is constructed correctly or
-    not.
-    """
-    cite = Cite(**attributes)
-    assert cite.construct() == cite_tag.render(attributes)
 
 
 @parametrize('attributes', [
