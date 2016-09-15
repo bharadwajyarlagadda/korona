@@ -27,7 +27,7 @@ Korona can build an anchor tag.
 
 .. code-block:: python
 
-    from korona.html.construct import A
+    from korona.html.tags import A
 
     attributes = {'charset': 'UTF-8', 'href': 'www.google.com', 'hreflang': 'en', 'text': 'google'}
 
@@ -49,7 +49,7 @@ Korona can build an <abbr> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Abbr
+    from korona.html.tags import Abbr
 
     attributes = {'text': 'WHO'}
 

@@ -2,11 +2,11 @@
 API Reference
 =============
 
-.. autoclass:: korona.html.construct.A
+.. autoclass:: korona.html.tags.A
     :members:
 
 
-.. autoclass:: korona.html.construct.Abbr
+.. autoclass:: korona.html.tags.Abbr
     :members:
 
 
