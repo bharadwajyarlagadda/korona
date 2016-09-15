@@ -10,15 +10,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Acronym
+.. autoclass:: korona.html.tags.Acronym
     :members:
 
 
-.. autoclass:: korona.html.construct.Address
+.. autoclass:: korona.html.tags.Address
     :members:
 
 
-.. autoclass:: korona.html.construct.Area
+.. autoclass:: korona.html.tags.Area
     :members:
 
 

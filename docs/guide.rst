@@ -73,7 +73,7 @@ Korona can build an <acronym> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Acronym
+    from korona.html.tags import Acronym
 
     attributes = {'text': 'ASAP'}
 
@@ -97,7 +97,7 @@ Korona can build an <address> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Address
+    from korona.html.tags import Address
 
     attributes = {'text': 'abcd@yahoo.com'}
 
@@ -132,7 +132,7 @@ Korona can build an <area> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Area
+    from korona.html.tags import Area
 
     attributes = {'href': 'www.example.com', 'hreflang': 'en', 'alt': 'example'}
 
