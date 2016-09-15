@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import Address
 from korona.templates.html import address_tag

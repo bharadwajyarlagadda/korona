@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import Acronym
 from korona.templates.html import acronym_tag

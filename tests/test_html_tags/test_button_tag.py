@@ -2,7 +2,7 @@
 
 import pytest
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import Button
 from korona.templates.html.tags import button_tag

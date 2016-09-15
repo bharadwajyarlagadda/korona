@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import B
 from korona.templates.html.tags import bold_tag

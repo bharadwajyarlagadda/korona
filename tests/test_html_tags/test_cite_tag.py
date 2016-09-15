@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import Cite
 from korona.templates.html.tags import cite_tag

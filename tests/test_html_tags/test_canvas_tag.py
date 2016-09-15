@@ -2,7 +2,7 @@
 
 import pytest
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import Canvas
 from korona.templates.html.tags import canvas_tag

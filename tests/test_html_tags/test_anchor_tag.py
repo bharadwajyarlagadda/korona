@@ -2,7 +2,7 @@
 
 import pytest
 
-from .fixtures import parametrize
+from ..fixtures import parametrize
 
 from korona.html.tags import A
 from korona.templates.html import anchor_tag
