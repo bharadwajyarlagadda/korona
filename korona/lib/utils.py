@@ -2,8 +2,8 @@
 
 from future.moves.urllib.parse import urlparse
 
-from ..html.attributes import TAG_ATTRIBUTES
-from ..html.tags import TAGS
+from ..html.root.attributes import TAG_ATTRIBUTES
+from ..html.root.tags import TAGS
 
 
 def validate_tag(tag=None):
