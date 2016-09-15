@@ -14,5 +14,7 @@ from .button import Button
 from .canvas import Canvas
 from .caption import Caption
 from .cite import Cite
+from .col import Col
+from .colgroup import ColGroup
 
 from .heading import H1, H2, H3, H4, H5, H6

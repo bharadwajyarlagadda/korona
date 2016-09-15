@@ -339,7 +339,7 @@ Korona can build <col> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Col
+    from korona.html.tags import Col
 
     attributes = {'align': 'char', 'char': '.', 'charoff': '2'}
 
@@ -370,7 +370,7 @@ Korona can build <colgroup> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import ColGroup
+    from korona.html.tags import ColGroup
 
     attributes = {'align': 'char', 'char': '.', 'charoff': '2'}
 

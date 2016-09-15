@@ -50,11 +50,11 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Col
+.. autoclass:: korona.html.tags.Col
     :members:
 
 
-.. autoclass:: korona.html.construct.ColGroup
+.. autoclass:: korona.html.tags.ColGroup
     :members:
 
 

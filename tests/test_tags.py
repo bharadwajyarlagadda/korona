@@ -3,8 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Col,
-    ColGroup,
     DD,
     Del,
     Details,
@@ -28,8 +26,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    col_tag,
-    colgroup_tag,
     dd_tag,
     del_tag,
     details_tag,
@@ -65,74 +61,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
     """Test for validating the error for given invalid tags."""
     with pytest.raises(error) as exc:
         validate_tag(tag)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'align': 'char'}),
-    ({'align': 'char', 'char': '.'}),
-    ({'align': 'char', 'char': '.', 'charoff': '2'}),
-    ({'align': 'left', 'span': '2'}),
-    ({'align': 'right', 'valign': 'top'}),
-    ({'width': '130'})
-])
-def test_construct_col_tag(attributes):
-    """Test for validating whether the col tag is constructed correctly or
-    not.
-    """
-    col = Col(**attributes)
-    assert col.construct() == col_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'char': '.'}, AttributeError, 'The char attribute can only be used'),
-    ({'charoff': '2'}, AttributeError, 'The charoff attribute can only be'),
-    ({'char': '.', 'charoff': '2'},
-     AttributeError,
-     'The char attribute can only be used'),
-    ({'align': 'left', 'charoff': '2'},
-     AttributeError,
-     'The charoff attribute can only be')
-])
-def test_construct_col_tag_error(attributes, exception, error_msg):
-    """Test for validating col tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Col(**attributes)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'align': 'char'}),
-    ({'align': 'char', 'char': '.'}),
-    ({'align': 'char', 'char': '.', 'charoff': '2'}),
-    ({'align': 'left', 'span': '2'}),
-    ({'align': 'right', 'valign': 'top'}),
-    ({'width': '130'})
-])
-def test_construct_colgroup_tag(attributes):
-    """Test for validating whether the colgroup tag is constructed correctly or
-    not.
-    """
-    colgroup = ColGroup(**attributes)
-    assert colgroup.construct() == colgroup_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'char': '.'}, AttributeError, 'The char attribute can only be used'),
-    ({'charoff': '2'}, AttributeError, 'The charoff attribute can only be'),
-    ({'char': '.', 'charoff': '2'},
-     AttributeError,
-     'The char attribute can only be used'),
-    ({'align': 'left', 'charoff': '2'},
-     AttributeError,
-     'The charoff attribute can only be')
-])
-def test_construct_colgroup_tag_error(attributes, exception, error_msg):
-    """Test for validating colgroup tag's attributes."""
-    with pytest.raises(exception) as exc:
-        ColGroup(**attributes)
 
     assert error_msg in str(exc)
 
