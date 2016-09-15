@@ -154,7 +154,7 @@ Korona can build an <article> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Article
+    from korona.html.tags import Article
 
     attributes = {'text': '<p>Hi there</p>'}
 
@@ -176,7 +176,7 @@ Korona can build <b> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import B
+    from korona.html.tags import B
 
     attributes = {'text': 'example'}
 
@@ -199,7 +199,7 @@ Korona can build <base> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Base
+    from korona.html.tags import Base
 
     attributes = {'href': 'www.google.com', 'target': 'example'}
 

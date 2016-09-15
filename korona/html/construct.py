@@ -11,9 +11,6 @@ from ..lib.utils import (
 )
 from .root.attributes import TAG_ATTRIBUTES
 from ..templates.html import (
-    article_tag,
-    bold_tag,
-    base_tag,
     button_tag,
     canvas_tag,
     caption_tag,
@@ -51,89 +48,6 @@ from ..templates.html import (
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
-
-
-class Article(object):
-    """Class for constructing article tag.
-
-    Args:
-        text (str): Article tag text. (Ex. <article>text</article>)
-
-    .. versionadded:: 0.1.0
-
-    .. versionchanged:: 0.2.0
-        Renamed the method construct_tag to construct.
-    """
-    def __init__(self, text=None):
-        self.tag = 'article'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed article tag <article></article>."""
-        return article_tag.render(self.values)
-
-
-class B(object):
-    """Class for constructing bold tag.
-
-    Args:
-        text (str): Bold tag text. (Ex. <b>text</b>)
-
-    .. versionadded:: 0.1.0
-
-    .. versionchanged:: 0.2.0
-        Renamed the method construct_tag to construct.
-    """
-    def __init__(self, text=None):
-        self.tag = 'b'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed bold tag <b></b>."""
-        return bold_tag.render(self.values)
-
-
-class Base(object):
-    """Class for constructing base tag.
-
-    Args:
-        href (str): Specifies the base URL for all relative URLs in the page.
-        target (str): Specifies the default target for all hyperlinks and
-            forms in the page.
-
-    .. versionadded:: 0.1.0
-
-    .. versionchanged:: 0.2.0
-        Renamed the method construct_tag to construct.
-
-    .. versionchanged:: 0.3.1
-        Added URL validation for href attribute.
-    """
-    def __init__(self, href=None, target=None):
-        # TODO: Add in the main api method where it can check that there
-        # should be only one base tag in the whole html document.
-        self.tag = 'base'
-        validate_url(attribute_name='href', url=href)
-        self.validate_values(href=href, target=target)
-        self.values = {'href': href, 'target': target}
-
-    def construct(self):
-        """Returns the constructed base tag <base>."""
-        return base_tag.render(self.values)
-
-    def validate_values(self, href, target):
-        """Validates the following:
-            - Either of href or target attribute value is given.
-            - Check whether both href and target attribute values are strings
-            or not.
-        """
-        if not href and not target:
-            raise AttributeError('<base>: base tag must have either a href '
-                                 'attribute or a target attribute, or both.')
-
-        if target and not isinstance(target, str):
-            raise ValueError('<base>: target attribute value should be '
-                             'string')
 
 
 class Button(object):

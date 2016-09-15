@@ -3,9 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Article,
-    B,
-    Base,
     Button,
     Canvas,
     Caption,
@@ -41,9 +38,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    article_tag,
-    bold_tag,
-    base_tag,
     button_tag,
     canvas_tag,
     caption_tag,
@@ -91,59 +85,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
     """Test for validating the error for given invalid tags."""
     with pytest.raises(error) as exc:
         validate_tag(tag)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'text': 'abc'}),
-    ({'text': None}),
-    ({'text': '<p>Hi there</p>'})
-])
-def test_construct_article_tag(attributes):
-    """Test for validating whether the article tag is constructed correctly or
-    not.
-    """
-    article = Article(**attributes)
-    assert article.construct() == article_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abc'}),
-    ({'text': None})
-])
-def test_construct_bold_tag(attributes):
-    """Test for validating whether the bold tag is constructed correctly or
-    not.
-    """
-    bold = B(**attributes)
-    assert bold.construct() == bold_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'href': 'www.google.com'}),
-    ({'target': 'abc'}),
-    ({'href': 'www.google.com', 'target': 'abc'})
-])
-def test_construct_base_tag(attributes):
-    """Test for validating whether the base tag is constructed correctly or
-    not.
-    """
-    base = Base(**attributes)
-    assert base.construct() == base_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'href': 123}, ValueError, 'is not a valid url'),
-    ({'target': 123}, ValueError, 'value should be string'),
-    ({'href': None, 'target': None},
-     AttributeError,
-     'either a href attribute or a target attribute, or both')
-])
-def test_construct_base_tag_error(attributes, exception, error_msg):
-    """Test for validating base tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Base(**attributes)
 
     assert error_msg in str(exc)
 

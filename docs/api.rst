@@ -22,15 +22,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Article
+.. autoclass:: korona.html.tags.Article
     :members:
 
 
-.. autoclass:: korona.html.construct.B
+.. autoclass:: korona.html.tags.B
     :members:
 
 
-.. autoclass:: korona.html.construct.Base
+.. autoclass:: korona.html.tags.Base
     :members:
 
 

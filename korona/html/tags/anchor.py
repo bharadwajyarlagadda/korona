@@ -4,12 +4,7 @@
 from __future__ import absolute_import
 
 from ..root.attributes import TAG_ATTRIBUTES
-
-from ...lib.utils import (
-    validate_tag_attribute_value,
-    validate_url
-)
-
+from ...lib.utils import validate_tag_attribute_value, validate_url
 from ...templates.html import anchor_tag
 
 RECTANGLE_SHAPE_COORDINATES = 4

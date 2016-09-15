@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <area> tag."""
 
+from __future__ import absolute_import
+
 from ..root.attributes import TAG_ATTRIBUTES
-
 from ...lib.utils import validate_url
-
 from ...templates.html.tags import area_tag
 
 RECTANGLE_SHAPE_COORDINATES = 4
