@@ -58,11 +58,11 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.DD
+.. autoclass:: korona.html.tags.DD
     :members:
 
 
-.. autoclass:: korona.html.construct.Del
+.. autoclass:: korona.html.tags.Del
     :members:
 
 
@@ -78,11 +78,11 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.DL
+.. autoclass:: korona.html.tags.DL
     :members:
 
 
-.. autoclass:: korona.html.construct.DT
+.. autoclass:: korona.html.tags.DT
     :members:
 
 

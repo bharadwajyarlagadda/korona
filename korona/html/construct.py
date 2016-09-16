@@ -10,13 +10,9 @@ from ..lib.utils import (
 )
 
 from ..templates.html import (
-    dd_tag,
-    del_tag,
     details_tag,
     dialog_tag,
     div_tag,
-    dl_tag,
-    dt_tag,
     embed_tag,
     fieldset_tag,
     figure_tag,
@@ -35,44 +31,6 @@ from ..templates.html import (
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
-
-
-class DD(object):
-    """Class for constructing dd tag.
-
-    Args:
-        text (str): Specifies the dd text. (As in <dd>{text}</dd>)
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, text=None):
-        self.tag = 'dd'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed dd tag <dd></dd>."""
-        return dd_tag.render(self.values)
-
-
-class Del(object):
-    """Class for constructing del tag.
-
-    Args:
-        cite (str): Specifies a URL to a document that explains the reason
-            why the text was deleted.
-        datetime (datetime): Specifies the date and time of when the text was
-            deleted.
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, cite=None, datetime=None, text=None):
-        self.tag = 'del'
-        # TODO: If possible, add validation for attribute cite
-        self.values = {'cite': cite, 'datetime': datetime, 'text': text}
-
-    def construct(self):
-        """Returns the constructed del tag <del>."""
-        return del_tag.render(self.values)
 
 
 class Details(object):
@@ -135,40 +93,6 @@ class Div(object):
     def construct(self):
         """Returns the constructed div tag <div></div>."""
         return div_tag.render(self.values)
-
-
-class DL(object):
-    """Class for constructing dl tag.
-
-    Args:
-        text (str): Specifies the dl text. (As in <dl>{text}</dl>)
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, text=None):
-        self.tag = 'dl'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed dl tag <dl></dl>."""
-        return dl_tag.render(self.values)
-
-
-class DT(object):
-    """Class for constructing dt tag.
-
-    Args:
-        text (str): Specifies the dt text. (As in <dt>{text}</dt>)
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, text=None):
-        self.tag = 'dt'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed dt tag <dt></dt>."""
-        return dt_tag.render(self.values)
 
 
 class Embed(object):

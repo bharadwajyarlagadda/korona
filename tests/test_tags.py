@@ -3,13 +3,9 @@
 import pytest
 
 from korona.html.construct import (
-    DD,
-    Del,
     Details,
     Dialog,
     Div,
-    DL,
-    DT,
     Embed,
     FieldSet,
     Figure,
@@ -26,13 +22,9 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    dd_tag,
-    del_tag,
     details_tag,
     dialog_tag,
     div_tag,
-    dl_tag,
-    dt_tag,
     embed_tag,
     fieldset_tag,
     figure_tag,
@@ -63,28 +55,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
         validate_tag(tag)
 
     assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'text': 'abc'})
-])
-def test_construct_dd_tag(attributes):
-    """Test for validating whether the dd tag is constructed correctly or not.
-    """
-    dd = DD(**attributes)
-    assert dd.construct() == dd_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'cite': 'www.abcd.com'}),
-    ({'datetime': '2014-11-15T22:55:03Z'}),
-    ({'datetime': '2015-11-15T22:55:03Z', 'text': 'abcd'})
-])
-def test_construct_del_tag(attributes):
-    """Test for validating whether the del tag is constructed correctly or not.
-    """
-    del_ = Del(**attributes)
-    assert del_.construct() == del_tag.render(attributes)
 
 
 @parametrize('attributes', [
@@ -136,26 +106,6 @@ def test_construct_div_tag_error(attributes, exception, error_msg):
         Div(**attributes)
 
     assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'text': 'abc'})
-])
-def test_construct_dl_tag(attributes):
-    """Test for validating whether the dl tag is constructed correctly or not.
-    """
-    dl = DL(**attributes)
-    assert dl.construct() == dl_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abc'})
-])
-def test_construct_dt_tag(attributes):
-    """Test for validating whether the dt tag is constructed correctly or not.
-    """
-    dt = DT(**attributes)
-    assert dt.construct() == dt_tag.render(attributes)
 
 
 @parametrize('attributes', [

@@ -392,7 +392,7 @@ Korona can build <dd> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import DD
+    from korona.html.tags import DD
 
     attributes = {'text': 'abc'}
 
@@ -419,7 +419,7 @@ Korona can build <del> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Del
+    from korona.html.tags import Del
 
     attributes = {'cite': 'www.abcd.com', 'text': 'abcd'}
 
@@ -507,7 +507,7 @@ Korona can build <dl> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import DL
+    from korona.html.tags import DL
 
     attributes = {'text': 'abc'}
 
@@ -529,7 +529,7 @@ Korona can build <dt> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import DT
+    from korona.html.tags import DT
 
     attributes = {'text': 'abc'}
 
