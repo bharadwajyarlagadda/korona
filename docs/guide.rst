@@ -441,7 +441,7 @@ Korona supports ``open`` attribute for ``<details>`` tag. Korona can help you bu
 
 .. code-block:: python
 
-    from korona.html.construct import Details
+    from korona.html.tags import Details
 
     attributes = {'open': True, 'text': 'abcd'}
 
@@ -463,7 +463,7 @@ Korona supports ``open`` attribute for ``<dialog>`` tag. Korona can help you bui
 
 .. code-block:: python
 
-    from korona.html.construct import Dialog
+    from korona.html.tags import Dialog
 
     attributes = {'open': True, 'text': 'abcd'}
 
@@ -485,7 +485,7 @@ Korona supports ``align`` attribute for ``<div>`` tag. Korona can help you build
 
 .. code-block:: python
 
-    from korona.html.construct import Div
+    from korona.html.tags import Div
 
     attributes = {'align': 'left', 'text': 'abcd'}
 

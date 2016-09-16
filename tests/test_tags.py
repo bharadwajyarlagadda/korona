@@ -3,9 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Details,
-    Dialog,
-    Div,
     Embed,
     FieldSet,
     Figure,
@@ -22,9 +19,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    details_tag,
-    dialog_tag,
-    div_tag,
     embed_tag,
     fieldset_tag,
     figure_tag,
@@ -53,57 +47,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
     """Test for validating the error for given invalid tags."""
     with pytest.raises(error) as exc:
         validate_tag(tag)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'open': True}),
-    ({'text': 'abcd'}),
-    ({'open': True, 'text': 'abcd'})
-])
-def test_construct_details_tag(attributes):
-    """Test for validating whether the details tag is constructed correctly or
-    not.
-    """
-    details = Details(**attributes)
-    assert details.construct() == details_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'open': True}),
-    ({'text': 'abcd'}),
-    ({'open': True, 'text': 'abcd'})
-])
-def test_construct_dialog_tag(attributes):
-    """Test for validating whether the dialog tag is constructed correctly or
-    not.
-    """
-    dialog = Dialog(**attributes)
-    assert dialog.construct() == dialog_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'align': 'left'}),
-    ({'text': 'abcd'}),
-    ({'align': 'right', 'text': 'abcd'})
-])
-def test_construct_div_tag(attributes):
-    """Test for validating whether the div tag is constructed correctly or not.
-    """
-    div = Div(**attributes)
-    assert div.construct() == div_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'align': 'abcd'},
-     AttributeError,
-     'attribute values should be one of these')
-])
-def test_construct_div_tag_error(attributes, exception, error_msg):
-    """Test for validating div tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Div(**attributes)
 
     assert error_msg in str(exc)
 

@@ -66,15 +66,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Details
+.. autoclass:: korona.html.tags.Details
     :members:
 
 
-.. autoclass:: korona.html.construct.Dialog
+.. autoclass:: korona.html.tags.Dialog
     :members:
 
 
-.. autoclass:: korona.html.construct.Div
+.. autoclass:: korona.html.tags.Div
     :members:
 
 
