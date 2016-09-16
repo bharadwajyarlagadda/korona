@@ -13,13 +13,13 @@ v0.4.0-dev
 
 - Moved all the classes for constructing tags to separate files for easy accessibility.
 
-v0.3.1
-------
+v0.3.1 (2016-09-05)
+-------------------
 
 - Added validation for URL strings in constructing the tags.
 
-v0.3.0
-------
+v0.3.0 (2016-09-04)
+-------------------
 
 - Added classes for building some of the tags:
 
@@ -33,8 +33,8 @@ v0.3.0
   - <header></header>
   - <hr>
 
-v0.2.0
-------
+v0.2.0 (2016-09-03)
+-------------------
 
 - Added classes for building some of the tags:
 
@@ -54,8 +54,8 @@ v0.2.0
   - <frame>
   - <frameset></frameset>
 
-v0.1.0
-------
+v0.1.0 (2016-08-28)
+-------------------
 
 - First release.
 - Added classes for building some of the tags:
