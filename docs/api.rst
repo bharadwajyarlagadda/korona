@@ -146,15 +146,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.HR
+.. autoclass:: korona.html.tags.HR
     :members:
 
 
-.. autoclass:: korona.html.construct.Html
+.. autoclass:: korona.html.tags.Html
     :members:
 
 
-.. autoclass:: korona.html.construct.I
+.. autoclass:: korona.html.tags.I
     :members:
 
 

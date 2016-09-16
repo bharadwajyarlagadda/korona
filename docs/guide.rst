@@ -930,7 +930,7 @@ Korona can help you build <hr> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import HR
+    from korona.html.tags import HR
 
     attributes = {'align': 'center', 'size': '100'}
 
@@ -957,7 +957,7 @@ Korona can help you build <html> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Html
+    from korona.html.tags import Html
 
     attributes = {'manifest': 'demo.appcache', 'text': 'abcd'}
 
@@ -979,7 +979,7 @@ Korona can help you build <i> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import I
+    from korona.html.tags import I
 
     attributes = {'text': 'abcd'}
 

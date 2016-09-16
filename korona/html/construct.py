@@ -10,84 +10,9 @@ from ..lib.utils import (
 )
 
 from ..templates.html import (
-    hr_tag,
-    html_tag,
-    italics_tag,
     iframe_tag,
     img_tag
 )
-
-RECTANGLE_SHAPE_COORDINATES = 4
-CIRCLE_SHAPE_COORDINATES = 3
-
-
-class HR(object):
-    """Class for constructing hr tag.
-
-    Args:
-        align (str): Specifies the alignment of a <hr> element.
-        noshade (bool): Specifies that a <hr> element should render in one
-            solid color (noshaded), instead of a shaded color.
-        size (str): Specifies the height of a <hr> element.
-        width (str): Specifies the width of a <hr> element
-
-    .. versionadded:: 0.3.0
-    """
-    def __init__(self, align=None, noshade=False, size=None, width=None):
-        self.tag = 'hr'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
-        self.values = {'align': align,
-                       'noshade': noshade,
-                       'size': size,
-                       'width': width}
-
-    def construct(self):
-        """Returns the constructed hr tag <hr>."""
-        return hr_tag.render(self.values)
-
-
-class Html(object):
-    """Class for constructing html tag.
-
-    Args:
-        manifest (str): Specifies the address of the document's cache manifest
-            (for offline browsing)
-        xmlns (str): Specifies the XML namespace attribute (If you need your
-            content to conform to XHTML)
-        text (str): Specifies the html text. (As in <html>{text}</html>)
-
-    .. versionadded:: 0.4.0-dev
-    """
-    def __init__(self, manifest=None, xmlns=None, text=None):
-        # TODO: Add support for inner tags.
-        self.tag = 'html'
-        validate_url(attribute_name='manifest', url=manifest)
-        self.values = {'manifest': manifest,
-                       'xmlns': xmlns,
-                       'text': text}
-
-    def construct(self):
-        """Returns the constructed html tag <html>."""
-        return html_tag.render(self.values)
-
-
-class I(object):
-    """Class for constructing <i> tag.
-
-    Args:
-        text (str): Specifies the italics text. (As in <i>{text}</i>)
-
-    .. versionadded:: 0.4.0-dev
-    """
-    def __init__(self, text=None):
-        self.tag = 'i'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed italics tag <i>."""
-        return italics_tag.render(self.values)
 
 
 class IFrame(object):

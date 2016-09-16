@@ -34,5 +34,9 @@ from .frameset import FrameSet
 
 from .head import Head
 from .header import Header
+from .horizontal_rule import HR
+from .html import Html
+
+from .italics import I
 
 from .heading import H1, H2, H3, H4, H5, H6
