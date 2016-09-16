@@ -12,7 +12,7 @@ class I(object):
     Args:
         text (str): Specifies the italics text. (As in <i>{text}</i>)
 
-    .. versionadded:: 0.4.0-dev
+    .. versionadded:: 0.4.0
     """
     def __init__(self, text=None):
         self.tag = 'i'

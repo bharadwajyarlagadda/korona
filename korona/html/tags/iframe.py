@@ -34,7 +34,7 @@ class IFrame(object):
             <iframe>.
         width (str): Specifies the width of an <iframe>.
 
-    .. versionadded:: 0.4.0-dev
+    .. versionadded:: 0.4.0
     """
     def __init__(self,
                  align=None,

@@ -1,8 +1,8 @@
 Changelog
 =========
 
-v0.4.0-dev
-----------
+v0.4.0 (2016-09-15)
+-------------------
 
 - Added classes for building some of the tags:
 

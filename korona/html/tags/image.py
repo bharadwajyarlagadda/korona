@@ -28,7 +28,7 @@ class Img(object):
         vspace (str): Specifies the whitespace on top and bottom of an image.
         width (str): Specifies the width of an image.
 
-    .. versionadded:: 0.4.0-dev
+    .. versionadded:: 0.4.0
     """
     def __init__(self,
                  align=None,

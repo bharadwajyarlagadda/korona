@@ -17,7 +17,7 @@ class Html(object):
             content to conform to XHTML)
         text (str): Specifies the html text. (As in <html>{text}</html>)
 
-    .. versionadded:: 0.4.0-dev
+    .. versionadded:: 0.4.0
     """
     def __init__(self, manifest=None, xmlns=None, text=None):
         # TODO: Add support for inner tags.
