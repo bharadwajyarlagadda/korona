@@ -10,9 +10,6 @@ from ..lib.utils import (
 )
 
 from ..templates.html import (
-    frameset_tag,
-    head_tag,
-    header_tag,
     hr_tag,
     html_tag,
     italics_tag,
@@ -22,61 +19,6 @@ from ..templates.html import (
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
-
-
-class FrameSet(object):
-    """Class for constructing <frameset> tag.
-
-    Args:
-        cols (str): Specifies the number and size of columns in a frameset.
-        rows (str): Specifies the number and size of rows in a frameset.
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, cols=None, rows=None):
-        self.tag = 'frameset'
-        self.values = {'cols': cols, 'rows': rows}
-
-    def construct(self):
-        """Returns the constructed tag <frameset>."""
-        return frameset_tag.render(self.values)
-
-
-class Head(object):
-    """Class for constructing <head> tag.
-
-    Args:
-        text (str): Specifies the head text. (As in <head>{text}</head>)
-
-    .. versionadded:: 0.3.0
-    """
-    def __init__(self, text=None):
-        # TODO: Add the ability to validate which inner tags can go into the
-        # <head> tag.
-        self.tag = 'head'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed tag <head>."""
-        return head_tag.render(self.values)
-
-
-class Header(object):
-    """Class for constructing the header tag.
-
-    Args:
-        text (str): Specifies the header text. (As in <header>{text}</header>)
-
-    .. versionadded:: 0.3.0
-    """
-    def __init__(self, text=None):
-        # TODO: Add support for inner tags.
-        self.tag = 'header'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed header tag <header></header>."""
-        return header_tag.render(self.values)
 
 
 class HR(object):

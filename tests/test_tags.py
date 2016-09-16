@@ -3,9 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    FrameSet,
-    Head,
-    Header,
     HR,
     Html,
     I,
@@ -13,9 +10,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    frameset_tag,
-    head_tag,
-    header_tag,
     hr_tag,
     html_tag,
     italics_tag,
@@ -37,40 +31,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
         validate_tag(tag)
 
     assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'cols': '25%'}),
-    ({'rows': '50%'})
-])
-def test_construct_frameset_tag(attributes):
-    """Test for validating whether the frameset tag is constructed correctly or
-    not.
-    """
-    frameset = FrameSet(**attributes)
-    assert frameset.construct() == frameset_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'})
-])
-def test_construct_head_tag(attributes):
-    """Test for validating whether the head tag is constructed correctly or
-    not.
-    """
-    head = Head(**attributes)
-    assert head.construct() == head_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'})
-])
-def test_construct_header_tag(attributes):
-    """Test for validating whether the header tag is constructed correctly or
-    not.
-    """
-    header = Header(**attributes)
-    assert header.construct() == header_tag.render(attributes)
 
 
 @parametrize('attributes', [

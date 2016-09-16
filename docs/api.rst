@@ -110,7 +110,7 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.FrameSet
+.. autoclass:: korona.html.tags.FrameSet
     :members:
 
 
@@ -138,11 +138,11 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Head
+.. autoclass:: korona.html.tags.Head
     :members:
 
 
-.. autoclass:: korona.html.construct.Header
+.. autoclass:: korona.html.tags.Header
     :members:
 
 

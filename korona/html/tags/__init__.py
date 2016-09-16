@@ -30,5 +30,9 @@ from .figure import Figure
 from .footer import Footer
 from .form import Form
 from .frame import Frame
+from .frameset import FrameSet
+
+from .head import Head
+from .header import Header
 
 from .heading import H1, H2, H3, H4, H5, H6

@@ -728,7 +728,7 @@ Korona can build <frameset> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import FrameSet
+    from korona.html.tags import FrameSet
 
     attributes = {'cols': '25%'}
 
@@ -882,7 +882,7 @@ Korona can help you build ``<head>`` tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Head
+    from korona.html.tags import Head
 
     attributes = {'text': 'abcd'}
 
@@ -906,7 +906,7 @@ Korona can help you build <header> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Header
+    from korona.html.tags import Header
 
     attributes = {'text': 'abc'}
 
