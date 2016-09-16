@@ -23,4 +23,9 @@ from .details import Details
 from .dialog import Dialog
 from .div import Div
 
+from .embed import Embed
+
+from .fieldset import FieldSet
+from .figure import Figure
+
 from .heading import H1, H2, H3, H4, H5, H6

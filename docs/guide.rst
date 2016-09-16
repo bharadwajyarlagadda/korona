@@ -558,7 +558,7 @@ Korona can build <embed> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Embed
+    from korona.html.tags import Embed
 
     attributes = {'src': 'helloworld.swf', 'height': '200', 'width': '100'}
 
@@ -586,7 +586,7 @@ Korona can build <fieldset> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import FieldSet
+    from korona.html.tags import FieldSet
 
     attributes = {'disabled': True, 'form': 'form1', 'name': 'name1'}
 
@@ -608,7 +608,7 @@ Korona can build <figure> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Figure
+    from korona.html.tags import Figure
 
     attributes = {'text': 'abc'}
 

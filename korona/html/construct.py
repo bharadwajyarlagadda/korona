@@ -10,12 +10,6 @@ from ..lib.utils import (
 )
 
 from ..templates.html import (
-    details_tag,
-    dialog_tag,
-    div_tag,
-    embed_tag,
-    fieldset_tag,
-    figure_tag,
     footer_tag,
     form_tag,
     frame_tag,
@@ -31,68 +25,6 @@ from ..templates.html import (
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
-
-
-class Embed(object):
-    """Class for constructing embed tag.
-
-    Args:
-        height (str): Specifies the height of the embedded content (in pixels).
-        width (str): Specifies the width of the embedded content (in pixels).
-        src (str): Specifies the address of the external file to embed.
-        type (str): Specifies the media type of the embedded content.
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, height=None, width=None, src=None, type=None):
-        self.tag = 'embed'
-        self.values = {'height': height,
-                       'width': width,
-                       'src': src,
-                       'type': type}
-
-    def construct(self):
-        """Returns the constructed embed tag <embed>."""
-        return embed_tag.render(self.values)
-
-
-class FieldSet(object):
-    """Class for constructing fieldset tag.
-
-    Args:
-        disabled (bool): Specifies that a group of related form elements
-            should be disabled.
-        form (str): Specifies one or more forms the fieldset belongs to.
-        name (str): Specifies a name for the fieldset.
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, disabled=False, form=None, name=None):
-        # TODO: Add support for inner tags.
-        self.tag = 'fieldset'
-        self.values = {'disabled': disabled, 'form': form, 'name': name}
-
-    def construct(self):
-        """Returns the constructed fieldset tag <fieldset></fieldset>."""
-        return fieldset_tag.render(self.values)
-
-
-class Figure(object):
-    """Class for constructing figure tag.
-
-    Args:
-        text (str): Specifies the figure text. (As in <figure>{text}</figure>)
-
-    .. versionadded:: 0.2.0
-    """
-    def __init__(self, text=None):
-        # TODO: Add support for inner tags.
-        self.tag = 'figure'
-        self.values = {'text': text}
-
-    def construct(self):
-        """Returns the constructed figure tag <figure></figure>."""
-        return figure_tag.render(self.values)
 
 
 class Footer(object):

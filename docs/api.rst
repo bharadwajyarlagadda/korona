@@ -86,15 +86,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Embed
+.. autoclass:: korona.html.tags.Embed
     :members:
 
 
-.. autoclass:: korona.html.construct.FieldSet
+.. autoclass:: korona.html.tags.FieldSet
     :members:
 
 
-.. autoclass:: korona.html.construct.Figure
+.. autoclass:: korona.html.tags.Figure
     :members:
 
 

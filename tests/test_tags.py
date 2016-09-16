@@ -3,9 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Embed,
-    FieldSet,
-    Figure,
     Footer,
     Form,
     Frame,
@@ -19,9 +16,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    embed_tag,
-    fieldset_tag,
-    figure_tag,
     footer_tag,
     form_tag,
     frame_tag,
@@ -49,48 +43,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
         validate_tag(tag)
 
     assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'height': '200'}),
-    ({'height': '200', 'width': '100'}),
-    ({'src': 'helloworld.swf', 'height': '200', 'width': '100'}),
-    ({'src': 'helloworld.swf',
-      'height': '200',
-      'width': '100',
-      'type': 'application'})
-])
-def test_construct_embed_tag(attributes):
-    """Test for validating whether the embed tag is constructed correctly or
-    not.
-    """
-    embed = Embed(**attributes)
-    assert embed.construct() == embed_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'disabled': True}),
-    ({'form': 'form1'}),
-    ({'name': 'name1'}),
-    ({'disabled': True, 'form': 'form1', 'name': 'name1'})
-])
-def test_construct_fieldset_tag(attributes):
-    """Test for validating whether the fieldset tag is constructed correctly
-    or not.
-    """
-    fieldset = FieldSet(**attributes)
-    assert fieldset.construct() == fieldset_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'})
-])
-def test_construct_figure_tag(attributes):
-    """Test for validating whether the figure tag is constructed correctly or
-    not.
-    """
-    figure = Figure(**attributes)
-    assert figure.construct() == figure_tag.render(attributes)
 
 
 @parametrize('attributes', [
