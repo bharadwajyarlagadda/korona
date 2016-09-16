@@ -3,9 +3,6 @@
 import pytest
 
 from korona.html.construct import (
-    Footer,
-    Form,
-    Frame,
     FrameSet,
     Head,
     Header,
@@ -16,9 +13,6 @@ from korona.html.construct import (
     Img
 )
 from korona.templates.html import (
-    footer_tag,
-    form_tag,
-    frame_tag,
     frameset_tag,
     head_tag,
     header_tag,
@@ -41,97 +35,6 @@ def test_validate_invalid_tags(tag, error, error_msg):
     """Test for validating the error for given invalid tags."""
     with pytest.raises(error) as exc:
         validate_tag(tag)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'})
-])
-def test_construct_footer_tag(attributes):
-    """Test for validating whether the footer tag is constructed correctly or
-    not.
-    """
-    footer = Footer(**attributes)
-    assert footer.construct() == footer_tag.render(attributes)
-
-
-@parametrize('attributes', [
-    ({'text': 'abcd'}),
-    ({'action': 'demo.asp',
-      'method': 'get',
-      'name': 'name1',
-      'target': '_top'}),
-    ({'novalidate': True}),
-    ({'method': 'post', 'enctype': 'text/plain'})
-])
-def test_construct_form_tag(attributes):
-    """Test for validating whether the form tag is constructed correctly or
-    not.
-    """
-    form = Form(**attributes)
-    assert form.construct() == form_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'enctype': 'text/plain', 'method': 'get'},
-     AttributeError,
-     'enctype attribute can be used/set only if method'),
-    ({'method': 'post', 'enctype': 'plain'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'autocomplete': 'false'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'method': 'PUT'},
-     AttributeError,
-     'attribute values should be one of these')
-])
-def test_construct_form_tag_error(attributes, exception, error_msg):
-    """Test for validating form tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Form(**attributes)
-
-    assert error_msg in str(exc)
-
-
-@parametrize('attributes', [
-    ({'noresize': 'noresize'}),
-    ({'src': 'frame_a.htm', 'scrolling': 'yes'}),
-    ({'frameborder': '0'}),
-    ({'src': 'frame_a.htm',
-      'scrolling': 'auto',
-      'marginheight': '250',
-      'marginwidth': '100',
-      'name': 'name1',
-      'longdesc': 'a.txt'})
-])
-def test_construct_frame_tag(attributes):
-    """Test for validating whether the frame tag is constructed correctly or
-    not.
-    """
-    frame = Frame(**attributes)
-    assert frame.construct() == frame_tag.render(attributes)
-
-
-@parametrize('attributes,exception,error_msg', [
-    ({'scrolling': 'abc'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'noresize': 'abc'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'frameborder': '2'},
-     AttributeError,
-     'attribute values should be one of these'),
-    ({'src': 123},
-     ValueError,
-     'is not a valid url')
-])
-def test_construct_frame_tag_error(attributes, exception, error_msg):
-    """Test for validating frame tag's attributes."""
-    with pytest.raises(exception) as exc:
-        Frame(**attributes)
 
     assert error_msg in str(exc)
 

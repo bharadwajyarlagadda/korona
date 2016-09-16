@@ -632,7 +632,7 @@ Korona can build <footer> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Footer
+    from korona.html.tags import Footer
 
     attributes = {'text': 'abc'}
 
@@ -668,7 +668,7 @@ Korona can build <form> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Form
+    from korona.html.tags import Form
 
     attributes = {'action': 'demo.asp', 'method': 'get', 'name': 'name1', 'target': '_top'}
 
@@ -701,7 +701,7 @@ Koron can build <frame> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Frame
+    from korona.html.tags import Frame
 
     attributes = {'src': 'frame_a.htm', 'scrolling': 'auto', 'marginheight': '250', 'marginwidth': '100', 'name': 'name1', 'longdesc': 'a.txt'}
 

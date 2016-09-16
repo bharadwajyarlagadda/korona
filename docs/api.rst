@@ -98,15 +98,15 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.Footer
+.. autoclass:: korona.html.tags.Footer
     :members:
 
 
-.. autoclass:: korona.html.construct.Form
+.. autoclass:: korona.html.tags.Form
     :members:
 
 
-.. autoclass:: korona.html.construct.Frame
+.. autoclass:: korona.html.tags.Frame
     :members:
 
 
