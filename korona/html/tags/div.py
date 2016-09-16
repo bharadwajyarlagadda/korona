@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <div> tag."""
 
+from __future__ import absolute_import
+
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import div_tag
 

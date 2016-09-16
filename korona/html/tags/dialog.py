@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <dialog> tag."""
 
+from __future__ import absolute_import
+
 from ...templates.html.tags import dialog_tag
 
 

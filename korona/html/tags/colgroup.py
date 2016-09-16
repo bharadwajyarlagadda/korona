@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Module for constructing <colgroup> tags."""
+"""Module for constructing <colgroup> tag."""
 
 from __future__ import absolute_import
 

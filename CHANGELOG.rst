@@ -11,19 +11,12 @@ v0.4.0-dev
   - <iframe></iframe>
   - <img>
 
-Caveats:
-
-- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
-- Korona will be added with constructing the inner tags in the future releases.
+- Moved all the classes for constructing tags to separate files for easy accessibility.
 
 v0.3.1
 ------
 
 - Added validation for URL strings in constructing the tags.
-
-Caveats:
-
-- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
 
 v0.3.0
 ------
@@ -39,10 +32,6 @@ v0.3.0
   - <head></head>
   - <header></header>
   - <hr>
-
-Caveats:
-
-- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
 
 v0.2.0
 ------
@@ -65,10 +54,6 @@ v0.2.0
   - <frame>
   - <frameset></frameset>
 
-Caveats:
-
-- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)
-
 v0.1.0
 ------
 
@@ -87,7 +72,3 @@ v0.1.0
   - <canvas></canvas>
   - <caption></caption>
   - <cite></cite>
-
-Caveats:
-
-- Korona has no ability to construct inner tags for now. (For ex. <address><p>Hi There</p></address>)

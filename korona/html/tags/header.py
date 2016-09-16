@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <header> tag."""
 
+from __future__ import absolute_import
+
 from ...templates.html.tags import header_tag
 
 

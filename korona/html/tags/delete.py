@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Module for constructing delete tags <del>."""
+"""Module for constructing delete tag <del>."""
+
+from __future__ import absolute_import
 
 from ...templates.html.tags import del_tag
 

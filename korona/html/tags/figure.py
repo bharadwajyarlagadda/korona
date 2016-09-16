@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <figure> tag."""
 
+from __future__ import absolute_import
+
 from ...templates.html.tags import figure_tag
 
 

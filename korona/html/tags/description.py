@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing description tags <dd>, <dl>, <dt>."""
 
+from __future__ import absolute_import
+
 from ...templates.html.tags import dd_tag, dl_tag, dt_tag
 
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module for constructing <frame> tag."""
 
+from __future__ import absolute_import
+
 from ...lib.utils import validate_attribute_values, validate_url
 from ...templates.html.tags import frame_tag
 
