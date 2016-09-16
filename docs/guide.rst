@@ -1016,7 +1016,7 @@ Korona can help you build <iframe> tag.
 
 .. code-block:: python
 
-    from korona.html.construct import IFrame
+    from korona.html.tags import IFrame
 
     attributes = {'src': '/demo.asp', 'height': '100', 'width': '200'}
 
@@ -1053,7 +1053,7 @@ Korona can help you build <img tag.
 
 .. code-block:: python
 
-    from korona.html.construct import Img
+    from korona.html.tags import Img
 
     attributes = {'height': '30', 'width': '30', 'hspace': '20', 'vspace': '20'}
 

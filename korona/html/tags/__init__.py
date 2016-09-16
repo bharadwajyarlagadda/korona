@@ -38,5 +38,7 @@ from .horizontal_rule import HR
 from .html import Html
 
 from .italics import I
+from .iframe import IFrame
+from .image import Img
 
 from .heading import H1, H2, H3, H4, H5, H6

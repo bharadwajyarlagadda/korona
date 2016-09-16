@@ -158,10 +158,10 @@ API Reference
     :members:
 
 
-.. autoclass:: korona.html.construct.IFrame
+.. autoclass:: korona.html.tags.IFrame
     :members:
 
 
-.. autoclass:: korona.html.construct.Img
+.. autoclass:: korona.html.tags.Img
     :members:
 
