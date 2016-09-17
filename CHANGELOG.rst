@@ -1,7 +1,7 @@
 Changelog
 =========
 
-- Moved all the templates for html tags from ``templates/tags.py`` to ``templates/tags/``
+- Moved all the templates for html tags from ``templates/html/tags.py`` to ``templates/html/tags/``
 
 
 v0.4.0 (2016-09-15)
