@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_url
-from ...templates.html.tags import html_tag
+from ...templates.html.tags import html
 
 
 class Html(object):
@@ -29,4 +29,4 @@ class Html(object):
 
     def construct(self):
         """Returns the constructed html tag <html>."""
-        return html_tag.render(self.values)
+        return html.render(self.values)

@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import head_tag
+from ...templates.html.tags import head
 
 
 class Head(object):
@@ -22,4 +22,4 @@ class Head(object):
 
     def construct(self):
         """Returns the constructed tag <head>."""
-        return head_tag.render(self.values)
+        return head.render(self.values)

@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Button
-from korona.templates.html.tags import button_tag
+from korona.templates.html.tags import button
 
 
 @parametrize('attributes', [
@@ -26,8 +26,8 @@ def test_construct_button_tag(attributes):
     """Test for validating whether the button tag is constructed correctly or
     not.
     """
-    button = Button(**attributes)
-    assert button.construct() == button_tag.render(attributes)
+    button_ = Button(**attributes)
+    assert button_.construct() == button.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

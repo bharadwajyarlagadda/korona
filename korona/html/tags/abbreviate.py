@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html import abbr_tag
+from ...templates.html.tags import abbr
 
 
 class Abbr(object):
@@ -23,4 +23,4 @@ class Abbr(object):
 
     def construct(self):
         """Returns the constructed abbr tag <abbr></abbr>."""
-        return abbr_tag.render(self.values)
+        return abbr.render(self.values)

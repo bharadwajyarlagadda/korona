@@ -5,7 +5,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values, validate_url
-from ...templates.html.tags import img_tag
+from ...templates.html.tags import img
 
 
 class Img(object):
@@ -66,4 +66,4 @@ class Img(object):
 
     def construct(self):
         """Returns the constructed image tag <img>."""
-        return img_tag.render(self.values)
+        return img.render(self.values)

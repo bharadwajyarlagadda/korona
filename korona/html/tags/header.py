@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import header_tag
+from ...templates.html.tags import header
 
 
 class Header(object):
@@ -21,4 +21,4 @@ class Header(object):
 
     def construct(self):
         """Returns the constructed header tag <header></header>."""
-        return header_tag.render(self.values)
+        return header.render(self.values)

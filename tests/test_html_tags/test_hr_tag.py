@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import HR
-from korona.templates.html.tags import hr_tag
+from korona.templates.html.tags import hr
 
 
 @parametrize('attributes', [
@@ -16,8 +16,8 @@ from korona.templates.html.tags import hr_tag
 def test_construct_hr_tag(attributes):
     """Test for validating whether the hr tag is constructed correctly or not.
     """
-    hr = HR(**attributes)
-    assert hr.construct() == hr_tag.render(attributes)
+    horizontal_rule = HR(**attributes)
+    assert horizontal_rule.construct() == hr.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

@@ -5,14 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import H1, H2, H3, H4, H5, H6
-from korona.templates.html.tags import (
-    h1_tag,
-    h2_tag,
-    h3_tag,
-    h4_tag,
-    h5_tag,
-    h6_tag
-)
+from korona.templates.html.tags import h1, h2, h3, h4, h5, h6
 
 
 @parametrize('attributes', [
@@ -21,8 +14,8 @@ from korona.templates.html.tags import (
 def test_construct_h1_tag(attributes):
     """Test for validating whether the h1 tag is constructed correctly or not.
     """
-    h1 = H1(**attributes)
-    assert h1.construct() == h1_tag.render(attributes)
+    h1_ = H1(**attributes)
+    assert h1_.construct() == h1.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -44,8 +37,8 @@ def test_construct_h1_tag_error(attributes, exception, error_msg):
 def test_construct_h2_tag(attributes):
     """Test for validating whether the h2 tag is constructed correctly or not.
     """
-    h2 = H2(**attributes)
-    assert h2.construct() == h2_tag.render(attributes)
+    h2_ = H2(**attributes)
+    assert h2_.construct() == h2.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -67,8 +60,8 @@ def test_construct_h2_tag_error(attributes, exception, error_msg):
 def test_construct_h3_tag(attributes):
     """Test for validating whether the h3 tag is constructed correctly or not.
     """
-    h3 = H3(**attributes)
-    assert h3.construct() == h3_tag.render(attributes)
+    h3_ = H3(**attributes)
+    assert h3_.construct() == h3.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -90,8 +83,8 @@ def test_construct_h3_tag_error(attributes, exception, error_msg):
 def test_construct_h4_tag(attributes):
     """Test for validating whether the h4 tag is constructed correctly or not.
     """
-    h4 = H4(**attributes)
-    assert h4.construct() == h4_tag.render(attributes)
+    h4_ = H4(**attributes)
+    assert h4_.construct() == h4.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -113,8 +106,8 @@ def test_construct_h4_tag_error(attributes, exception, error_msg):
 def test_construct_h5_tag(attributes):
     """Test for validating whether the h5 tag is constructed correctly or not.
     """
-    h5 = H5(**attributes)
-    assert h5.construct() == h5_tag.render(attributes)
+    h5_ = H5(**attributes)
+    assert h5_.construct() == h5.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [
@@ -136,8 +129,8 @@ def test_construct_h5_tag_error(attributes, exception, error_msg):
 def test_construct_h6_tag(attributes):
     """Test for validating whether the h6 tag is constructed correctly or not.
     """
-    h6 = H6(**attributes)
-    assert h6.construct() == h6_tag.render(attributes)
+    h6_ = H6(**attributes)
+    assert h6_.construct() == h6.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

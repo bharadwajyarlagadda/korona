@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import embed_tag
+from ...templates.html.tags import embed
 
 
 class Embed(object):
@@ -26,4 +26,4 @@ class Embed(object):
 
     def construct(self):
         """Returns the constructed embed tag <embed>."""
-        return embed_tag.render(self.values)
+        return embed.render(self.values)

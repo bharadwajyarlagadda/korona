@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import caption_tag
+from ...templates.html.tags import caption
 
 
 class Caption(object):
@@ -28,4 +28,4 @@ class Caption(object):
 
     def construct(self):
         """Returns the constructed caption tag <caption>."""
-        return caption_tag.render(self.values)
+        return caption.render(self.values)

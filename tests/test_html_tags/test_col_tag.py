@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Col
-from korona.templates.html.tags import col_tag
+from korona.templates.html.tags import col
 
 
 @parametrize('attributes', [
@@ -20,8 +20,8 @@ def test_construct_col_tag(attributes):
     """Test for validating whether the col tag is constructed correctly or
     not.
     """
-    col = Col(**attributes)
-    assert col.construct() == col_tag.render(attributes)
+    column = Col(**attributes)
+    assert column.construct() == col.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import hr_tag
+from ...templates.html.tags import hr
 
 
 class HR(object):
@@ -31,4 +31,4 @@ class HR(object):
 
     def construct(self):
         """Returns the constructed hr tag <hr>."""
-        return hr_tag.render(self.values)
+        return hr.render(self.values)

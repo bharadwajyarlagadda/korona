@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import colgroup_tag
+from ...templates.html.tags import colgroup
 
 
 class ColGroup(object):
@@ -46,7 +46,7 @@ class ColGroup(object):
 
     def construct(self):
         """Returns the constructed colgroup tag <colgroup>."""
-        return colgroup_tag.render(self.values)
+        return colgroup.render(self.values)
 
     def validate_char_attribute(self, align, value):
         """Validates char attribute. The char attribute can only be used if

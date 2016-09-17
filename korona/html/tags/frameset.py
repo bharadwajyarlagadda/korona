@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import frameset_tag
+from ...templates.html.tags import frameset
 
 
 class FrameSet(object):
@@ -21,4 +21,4 @@ class FrameSet(object):
 
     def construct(self):
         """Returns the constructed tag <frameset>."""
-        return frameset_tag.render(self.values)
+        return frameset.render(self.values)

@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values, validate_url
-from ...templates.html.tags import frame_tag
+from ...templates.html.tags import frame
 
 
 class Frame(object):
@@ -59,4 +59,4 @@ class Frame(object):
 
     def construct(self):
         """Returns the constructed tag <frame>."""
-        return frame_tag.render(self.values)
+        return frame.render(self.values)

@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import italics_tag
+from ...templates.html.tags import italics
 
 
 class I(object):
@@ -20,4 +20,4 @@ class I(object):
 
     def construct(self):
         """Returns the constructed italics tag <i>."""
-        return italics_tag.render(self.values)
+        return italics.render(self.values)

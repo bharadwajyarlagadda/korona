@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import acronym_tag
+from ...templates.html.tags import acronym
 
 
 class Acronym(object):
@@ -24,4 +24,4 @@ class Acronym(object):
 
     def construct(self):
         """Returns the constructed acronym tag <acronym></acronym>."""
-        return acronym_tag.render(self.values)
+        return acronym.render(self.values)

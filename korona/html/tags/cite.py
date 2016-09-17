@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import cite_tag
+from ...templates.html.tags import cite
 
 
 class Cite(object):
@@ -23,4 +23,4 @@ class Cite(object):
 
     def construct(self):
         """Returns the constructed cite tag <cite>."""
-        return cite_tag.render(self.values)
+        return cite.render(self.values)

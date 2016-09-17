@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import fieldset_tag
+from ...templates.html.tags import fieldset
 
 
 class FieldSet(object):
@@ -24,4 +24,4 @@ class FieldSet(object):
 
     def construct(self):
         """Returns the constructed fieldset tag <fieldset></fieldset>."""
-        return fieldset_tag.render(self.values)
+        return fieldset.render(self.values)

@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Img
-from korona.templates.html.tags import img_tag
+from korona.templates.html.tags import img
 
 
 @parametrize('attributes', [
@@ -18,8 +18,8 @@ from korona.templates.html.tags import img_tag
 def test_construct_img_tag(attributes):
     """Test for validating whether the img tag is constructed correctly or not.
     """
-    img = Img(**attributes)
-    assert img.construct() == img_tag.render(attributes)
+    image = Img(**attributes)
+    assert image.construct() == img.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

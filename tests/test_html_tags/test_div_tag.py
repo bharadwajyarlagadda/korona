@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Div
-from korona.templates.html.tags import div_tag
+from korona.templates.html.tags import div
 
 
 @parametrize('attributes', [
@@ -16,8 +16,8 @@ from korona.templates.html.tags import div_tag
 def test_construct_div_tag(attributes):
     """Test for validating whether the div tag is constructed correctly or not.
     """
-    div = Div(**attributes)
-    assert div.construct() == div_tag.render(attributes)
+    division = Div(**attributes)
+    assert division.construct() == div.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

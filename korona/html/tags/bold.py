@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import bold_tag
+from ...templates.html.tags import bold
 
 
 class B(object):
@@ -23,4 +23,4 @@ class B(object):
 
     def construct(self):
         """Returns the constructed bold tag <b></b>."""
-        return bold_tag.render(self.values)
+        return bold.render(self.values)

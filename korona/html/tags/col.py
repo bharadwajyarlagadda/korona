@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import col_tag
+from ...templates.html.tags import col
 
 
 class Col(object):
@@ -50,7 +50,7 @@ class Col(object):
 
     def construct(self):
         """Returns the constructed col tag <col>."""
-        return col_tag.render(self.values)
+        return col.render(self.values)
 
     def validate_char_attribute(self, align, value):
         """Validates char attribute. The char attribute can only be used if

@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import address_tag
+from ...templates.html.tags import address
 
 
 class Address(object):
@@ -24,4 +24,4 @@ class Address(object):
 
     def construct(self):
         """Returns the constructed address tag <address></address>."""
-        return address_tag.render(self.values)
+        return address.render(self.values)

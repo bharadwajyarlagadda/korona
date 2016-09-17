@@ -3,7 +3,7 @@
 from ..fixtures import parametrize
 
 from korona.html.tags import Details
-from korona.templates.html.tags import details_tag
+from korona.templates.html.tags import details
 
 
 @parametrize('attributes', [
@@ -15,5 +15,5 @@ def test_construct_details_tag(attributes):
     """Test for validating whether the details tag is constructed correctly or
     not.
     """
-    details = Details(**attributes)
-    assert details.construct() == details_tag.render(attributes)
+    details_ = Details(**attributes)
+    assert details_.construct() == details.render(attributes)

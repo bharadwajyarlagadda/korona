@@ -5,7 +5,7 @@ from __future__ import absolute_import
 
 from ..root.attributes import TAG_ATTRIBUTES
 from ...lib.utils import validate_url
-from ...templates.html.tags import area_tag
+from ...templates.html.tags import area
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
@@ -76,7 +76,7 @@ class Area(object):
 
     def construct(self):
         """Returns the constructed area tag <area></area>."""
-        return area_tag.render(self.values)
+        return area.render(self.values)
 
     def validate_alt(self, href, attribute_name, value):
         """Validates area's alt attribute."""

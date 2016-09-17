@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import IFrame
-from korona.templates.html.tags import iframe_tag
+from korona.templates.html.tags import iframe
 
 
 @parametrize('attributes', [
@@ -20,8 +20,8 @@ def test_construct_iframe_tag(attributes):
     """Test for validating whether the iframe tag is constructed correctly or
     not.
     """
-    iframe = IFrame(**attributes)
-    assert iframe.construct() == iframe_tag.render(attributes)
+    iframe_ = IFrame(**attributes)
+    assert iframe_.construct() == iframe.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

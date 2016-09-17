@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import ColGroup
-from korona.templates.html.tags import colgroup_tag
+from korona.templates.html.tags import colgroup
 
 
 @parametrize('attributes', [
@@ -20,8 +20,8 @@ def test_construct_colgroup_tag(attributes):
     """Test for validating whether the colgroup tag is constructed correctly or
     not.
     """
-    colgroup = ColGroup(**attributes)
-    assert colgroup.construct() == colgroup_tag.render(attributes)
+    column_group = ColGroup(**attributes)
+    assert column_group.construct() == colgroup.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

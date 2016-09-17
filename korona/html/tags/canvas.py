@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_tag_attribute_value
-from ...templates.html.tags import canvas_tag
+from ...templates.html.tags import canvas
 
 
 class Canvas(object):
@@ -28,4 +28,4 @@ class Canvas(object):
 
     def construct(self):
         """Returns the constructed canvas tag <canvas>."""
-        return canvas_tag.render(self.values)
+        return canvas.render(self.values)

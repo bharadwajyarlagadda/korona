@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import footer_tag
+from ...templates.html.tags import footer
 
 
 class Footer(object):
@@ -21,4 +21,4 @@ class Footer(object):
 
     def construct(self):
         """Returns the constructed footer tag <footer></footer>."""
-        return footer_tag.render(self.values)
+        return footer.render(self.values)

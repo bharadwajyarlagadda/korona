@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import article_tag
+from ...templates.html.tags import article
 
 
 class Article(object):
@@ -23,4 +23,4 @@ class Article(object):
 
     def construct(self):
         """Returns the constructed article tag <article></article>."""
-        return article_tag.render(self.values)
+        return article.render(self.values)

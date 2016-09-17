@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Base
-from korona.templates.html.tags import base_tag
+from korona.templates.html.tags import base
 
 
 @parametrize('attributes', [
@@ -17,8 +17,8 @@ def test_construct_base_tag(attributes):
     """Test for validating whether the base tag is constructed correctly or
     not.
     """
-    base = Base(**attributes)
-    assert base.construct() == base_tag.render(attributes)
+    base_ = Base(**attributes)
+    assert base_.construct() == base.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

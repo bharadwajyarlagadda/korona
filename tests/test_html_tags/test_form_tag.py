@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Form
-from korona.templates.html.tags import form_tag
+from korona.templates.html.tags import form
 
 
 @parametrize('attributes', [
@@ -21,8 +21,8 @@ def test_construct_form_tag(attributes):
     """Test for validating whether the form tag is constructed correctly or
     not.
     """
-    form = Form(**attributes)
-    assert form.construct() == form_tag.render(attributes)
+    form_ = Form(**attributes)
+    assert form_.construct() == form.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import dd_tag, dl_tag, dt_tag
+from ...templates.html.tags import dd, dl, dt
 
 
 class DD(object):
@@ -20,7 +20,7 @@ class DD(object):
 
     def construct(self):
         """Returns the constructed dd tag <dd></dd>."""
-        return dd_tag.render(self.values)
+        return dd.render(self.values)
 
 
 class DL(object):
@@ -37,7 +37,7 @@ class DL(object):
 
     def construct(self):
         """Returns the constructed dl tag <dl></dl>."""
-        return dl_tag.render(self.values)
+        return dl.render(self.values)
 
 
 class DT(object):
@@ -54,4 +54,4 @@ class DT(object):
 
     def construct(self):
         """Returns the constructed dt tag <dt></dt>."""
-        return dt_tag.render(self.values)
+        return dt.render(self.values)

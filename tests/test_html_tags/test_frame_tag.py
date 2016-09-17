@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Frame
-from korona.templates.html.tags import frame_tag
+from korona.templates.html.tags import frame
 
 
 @parametrize('attributes', [
@@ -23,8 +23,8 @@ def test_construct_frame_tag(attributes):
     """Test for validating whether the frame tag is constructed correctly or
     not.
     """
-    frame = Frame(**attributes)
-    assert frame.construct() == frame_tag.render(attributes)
+    frame_ = Frame(**attributes)
+    assert frame_.construct() == frame.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

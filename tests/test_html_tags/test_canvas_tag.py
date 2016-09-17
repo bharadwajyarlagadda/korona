@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Canvas
-from korona.templates.html.tags import canvas_tag
+from korona.templates.html.tags import canvas
 
 
 @parametrize('attributes', [
@@ -17,8 +17,8 @@ def test_construct_canvas_tag(attributes):
     """Test for validating whether the canvas tag is constructed correctly or
     not.
     """
-    canvas = Canvas(**attributes)
-    assert canvas.construct() == canvas_tag.render(attributes)
+    canvas_ = Canvas(**attributes)
+    assert canvas_.construct() == canvas.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_url
-from ...templates.html.tags import base_tag
+from ...templates.html.tags import base
 
 
 class Base(object):
@@ -33,7 +33,7 @@ class Base(object):
 
     def construct(self):
         """Returns the constructed base tag <base>."""
-        return base_tag.render(self.values)
+        return base.render(self.values)
 
     def validate_values(self, href, target):
         """Validates the following:

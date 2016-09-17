@@ -3,7 +3,7 @@
 from ..fixtures import parametrize
 
 from korona.html.tags import Embed
-from korona.templates.html.tags import embed_tag
+from korona.templates.html.tags import embed
 
 
 @parametrize('attributes', [
@@ -19,5 +19,5 @@ def test_construct_embed_tag(attributes):
     """Test for validating whether the embed tag is constructed correctly or
     not.
     """
-    embed = Embed(**attributes)
-    assert embed.construct() == embed_tag.render(attributes)
+    embed_ = Embed(**attributes)
+    assert embed_.construct() == embed.render(attributes)

@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ..root.attributes import TAG_ATTRIBUTES
-from ...templates.html.tags import button_tag
+from ...templates.html.tags import button
 
 
 class Button(object):
@@ -83,7 +83,7 @@ class Button(object):
 
     def construct(self):
         """Returns the constructed base tag <button>."""
-        return button_tag.render(self.values)
+        return button.render(self.values)
 
     def validate_type(self, value):
         """Validate the type attribute for a <button> element. Different

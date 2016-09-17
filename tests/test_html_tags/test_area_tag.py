@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Area
-from korona.templates.html import area_tag
+from korona.templates.html.tags import area
 
 
 @parametrize('attributes', [
@@ -24,8 +24,8 @@ def test_construct_area_tag(attributes):
     """Test for validating whether the area tag is constructed correctly or
     not.
     """
-    area = Area(**attributes)
-    assert area.construct() == area_tag.render(attributes)
+    area_ = Area(**attributes)
+    assert area_.construct() == area.render(attributes)
 
 
 @parametrize('attributes', [
@@ -41,13 +41,13 @@ def test_construct_area_tag(attributes):
 ])
 def test_construct_area_tag_coords(attributes):
     """Test for validating the shape and coordinate attributes given."""
-    area = Area(**attributes)
+    area_ = Area(**attributes)
 
     if not isinstance(attributes['coords'], str):
         attributes['coords'] = (','.join(str(coord)
                                          for coord in attributes['coords']))
 
-    assert area.construct() == area_tag.render(attributes)
+    assert area_.construct() == area.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

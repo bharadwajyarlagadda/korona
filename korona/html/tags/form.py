@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import form_tag
+from ...templates.html.tags import form
 
 
 class Form(object):
@@ -62,7 +62,7 @@ class Form(object):
 
     def construct(self):
         """Returns the constructed form tag <form></form>."""
-        return form_tag.render(self.values)
+        return form.render(self.values)
 
     def validate_enctype_attribute(self, method, enctype):
         """Validates enctype attribute. The enctype attribute can be used only

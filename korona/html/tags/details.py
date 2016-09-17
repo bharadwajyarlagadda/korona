@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import details_tag
+from ...templates.html.tags import details
 
 
 class Details(object):
@@ -23,4 +23,4 @@ class Details(object):
 
     def construct(self):
         """Returns the constructed details tag <details></details>."""
-        return details_tag.render(self.values)
+        return details.render(self.values)

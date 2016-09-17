@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import div_tag
+from ...templates.html.tags import div
 
 
 class Div(object):
@@ -26,4 +26,4 @@ class Div(object):
 
     def construct(self):
         """Returns the constructed div tag <div></div>."""
-        return div_tag.render(self.values)
+        return div.render(self.values)

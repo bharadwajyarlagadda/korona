@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import A
-from korona.templates.html import anchor_tag
+from korona.templates.html.tags import anchor
 
 
 @parametrize('attributes', [
@@ -26,8 +26,8 @@ def test_construct_anchor_tag(attributes):
     """Test for validating whether the anchor tag is constructed correctly or
     not.
     """
-    anchor = A(**attributes)
-    assert anchor.construct() == anchor_tag.render(attributes)
+    anchor_ = A(**attributes)
+    assert anchor_.construct() == anchor.render(attributes)
 
 
 @parametrize('attributes', [
@@ -43,13 +43,13 @@ def test_construct_anchor_tag(attributes):
 ])
 def test_construct_anchor_tag_coords(attributes):
     """Test for validating the shape and coordinate attributes given."""
-    anchor = A(**attributes)
+    anchor_ = A(**attributes)
 
     if not isinstance(attributes['coords'], str):
         attributes['coords'] = (','.join(str(coord)
                                          for coord in attributes['coords']))
 
-    assert anchor.construct() == anchor_tag.render(attributes)
+    assert anchor_.construct() == anchor.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

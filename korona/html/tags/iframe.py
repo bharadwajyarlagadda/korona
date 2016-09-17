@@ -5,7 +5,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values, validate_url
-from ...templates.html.tags import iframe_tag
+from ...templates.html.tags import iframe
 
 
 class IFrame(object):
@@ -77,7 +77,7 @@ class IFrame(object):
 
     def construct(self):
         """Returns the constructed iframe tag <iframe>."""
-        return iframe_tag.render(self.values)
+        return iframe.render(self.values)
 
     def validate_sandbox(self, sandbox):
         """Validates sandbox attribute. The value of the sandbox attribute

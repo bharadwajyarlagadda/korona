@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import dialog_tag
+from ...templates.html.tags import dialog
 
 
 class Dialog(object):
@@ -23,4 +23,4 @@ class Dialog(object):
 
     def construct(self):
         """Returns the constructed dialog tag <dialog></dialog>."""
-        return dialog_tag.render(self.values)
+        return dialog.render(self.values)

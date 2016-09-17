@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Html
-from korona.templates.html.tags import html_tag
+from korona.templates.html.tags import html
 
 
 @parametrize('attributes', [
@@ -17,8 +17,8 @@ def test_construct_html_tag(attributes):
     """Test for validating whether the html tag is constructed correctly or
     not.
     """
-    html = Html(**attributes)
-    assert html.construct() == html_tag.render(attributes)
+    html_ = Html(**attributes)
+    assert html_.construct() == html.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

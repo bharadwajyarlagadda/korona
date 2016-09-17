@@ -5,7 +5,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Caption
-from korona.templates.html.tags import caption_tag
+from korona.templates.html.tags import caption
 
 
 @parametrize('attributes', [
@@ -17,8 +17,8 @@ def test_construct_caption_tag(attributes):
     """Test for validating whether the caption tag is constructed correctly or
     not.
     """
-    caption = Caption(**attributes)
-    assert caption.construct() == caption_tag.render(attributes)
+    caption_ = Caption(**attributes)
+    assert caption_.construct() == caption.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

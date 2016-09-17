@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import figure_tag
+from ...templates.html.tags import figure
 
 
 class Figure(object):
@@ -21,4 +21,4 @@ class Figure(object):
 
     def construct(self):
         """Returns the constructed figure tag <figure></figure>."""
-        return figure_tag.render(self.values)
+        return figure.render(self.values)

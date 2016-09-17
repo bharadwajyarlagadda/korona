@@ -4,14 +4,7 @@
 from __future__ import absolute_import
 
 from ...lib.utils import validate_attribute_values
-from ...templates.html.tags import (
-    h1_tag,
-    h2_tag,
-    h3_tag,
-    h4_tag,
-    h5_tag,
-    h6_tag
-)
+from ...templates.html.tags import h1, h2, h3, h4, h5, h6
 
 
 class H1(object):
@@ -32,7 +25,7 @@ class H1(object):
 
     def construct(self):
         """Returns the constructed tag <h1>."""
-        return h1_tag.render(self.values)
+        return h1.render(self.values)
 
 
 class H2(object):
@@ -53,7 +46,7 @@ class H2(object):
 
     def construct(self):
         """Returns the constructed tag <h2>."""
-        return h2_tag.render(self.values)
+        return h2.render(self.values)
 
 
 class H3(object):
@@ -74,7 +67,7 @@ class H3(object):
 
     def construct(self):
         """Returns the constructed tag <h3>."""
-        return h3_tag.render(self.values)
+        return h3.render(self.values)
 
 
 class H4(object):
@@ -95,7 +88,7 @@ class H4(object):
 
     def construct(self):
         """Returns the constructed tag <h4>."""
-        return h4_tag.render(self.values)
+        return h4.render(self.values)
 
 
 class H5(object):
@@ -116,7 +109,7 @@ class H5(object):
 
     def construct(self):
         """Returns the constructed tag <h5>."""
-        return h5_tag.render(self.values)
+        return h5.render(self.values)
 
 
 class H6(object):
@@ -137,4 +130,4 @@ class H6(object):
 
     def construct(self):
         """Returns the constructed tag <h6>."""
-        return h6_tag.render(self.values)
+        return h6.render(self.values)

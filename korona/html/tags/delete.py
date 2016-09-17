@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...templates.html.tags import del_tag
+from ...templates.html.tags import delete
 
 
 class Del(object):
@@ -24,4 +24,4 @@ class Del(object):
 
     def construct(self):
         """Returns the constructed del tag <del>."""
-        return del_tag.render(self.values)
+        return delete.render(self.values)

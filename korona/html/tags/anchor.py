@@ -5,7 +5,7 @@ from __future__ import absolute_import
 
 from ..root.attributes import TAG_ATTRIBUTES
 from ...lib.utils import validate_tag_attribute_value, validate_url
-from ...templates.html import anchor_tag
+from ...templates.html.tags import anchor
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
@@ -82,7 +82,7 @@ class A(object):
 
     def construct(self):
         """Returns the constructed anchor tag <a></a>."""
-        return anchor_tag.render(self.values)
+        return anchor.render(self.values)
 
     def get_coords(self, shape, coords):
         """Returns coordinates after a series of validations.
