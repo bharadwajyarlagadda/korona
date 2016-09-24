@@ -7,7 +7,7 @@ import pytest
 from ..fixtures import parametrize
 
 from korona.html.tags import Input
-from korona.templates.html.tags import input
+from korona.templates.html.tags import input as tag
 
 
 @parametrize('attributes', [
@@ -136,7 +136,7 @@ def test_construct_input_tag(attributes):
     not.
     """
     input = Input(**attributes)
-    print(input.construct())
+    assert input.construct() == tag.render(attributes)
 
 
 @parametrize('attributes,exception,error_msg', [

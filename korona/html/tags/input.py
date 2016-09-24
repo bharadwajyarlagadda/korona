@@ -465,10 +465,9 @@ class Input(object):
         """Validates input tag attribute. Some of the input attributes depend
         on the input type given by the consumer.
 
-        For example,
-            max and min attributes works with the following input types:
-            number, range, date, datetime, datetime-local, month, time and
-            week.
+        For example, max and min attributes works with the following input
+        types: number, range, date, datetime, datetime-local, month, time and
+        week.
         """
         if not attribute_value:
             return

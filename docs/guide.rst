@@ -23,7 +23,7 @@ Korona supports some of the anchor tag attributes like:
 - ``type``
 - ``text`` (text as in <a>{text}</a>)
 
-Korona can build an anchor tag.
+Korona can build an ``<anchor>`` tag.
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ Korona can build an anchor tag.
 <abbr>
 ------
 
-Korona can build an <abbr> tag.
+Korona can build an ``<abbr>`` tag.
 
 .. code-block:: python
 
@@ -69,7 +69,7 @@ Korona can build an <abbr> tag.
 <acronym>
 ---------
 
-Korona can build an <acronym> tag.
+Korona can build an ``<acronym>`` tag.
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Korona can build an <acronym> tag.
 <address>
 ---------
 
-Korona can build an <address> tag.
+Korona can build an ``<address>`` tag.
 
 .. code-block:: python
 
@@ -128,7 +128,7 @@ Korona supports some of the area tag attributes like:
 - ``target``
 - ``type``
 
-Korona can build an <area> tag.
+Korona can build an ``<area>`` tag.
 
 .. code-block:: python
 
@@ -150,7 +150,7 @@ Korona can build an <area> tag.
 <article>
 ---------
 
-Korona can build an <article> tag.
+Korona can build an ``<article>`` tag.
 
 .. code-block:: python
 
@@ -172,7 +172,7 @@ Korona can build an <article> tag.
 <b>
 ---
 
-Korona can build <b> tag.
+Korona can build ``<b>`` tag.
 
 .. code-block:: python
 
@@ -195,7 +195,7 @@ Korona can build <b> tag.
 <base>
 ------
 
-Korona can build <base> tag.
+Korona can build ``<base>`` tag.
 
 .. code-block:: python
 
@@ -232,7 +232,7 @@ Korona supports some of the button tag attributes like:
 - ``value``
 - ``text`` (text as in <button>{text}</button>)
 
-Korona can build <button> tag.
+Korona can build ``<button>`` tag.
 
 .. code-block:: python
 
@@ -258,7 +258,7 @@ Korona can build <button> tag.
 <canvas>
 --------
 
-Korona can build <canvas> tag.
+Korona can build ``<canvas>`` tag.
 
 .. code-block:: python
 
@@ -282,7 +282,7 @@ Korona can build <canvas> tag.
 <caption>
 ---------
 
-Korona can build <caption> tag.
+Korona can build ``<caption>`` tag.
 
 .. code-block:: python
 
@@ -304,7 +304,7 @@ Korona can build <caption> tag.
 <cite>
 ------
 
-Korona can build <cite> tag.
+Korona can build ``<cite>`` tag.
 
 .. code-block:: python
 
@@ -335,7 +335,7 @@ Korona supports some of the col tag attributes like:
 - ``valign``
 - ``width``
 
-Korona can build <col> tag.
+Korona can build ``<col>`` tag.
 
 .. code-block:: python
 
@@ -366,7 +366,7 @@ Korona supports some of the colgroup tag attributes like:
 - ``valign``
 - ``width``
 
-Korona can build <colgroup> tag.
+Korona can build ``<colgroup>`` tag.
 
 .. code-block:: python
 
@@ -388,7 +388,7 @@ Korona can build <colgroup> tag.
 <dd>
 ----
 
-Korona can build <dd> tag.
+Korona can build ``<dd>`` tag.
 
 .. code-block:: python
 
@@ -415,7 +415,7 @@ Korona supports some of the del tag attributes like:
 - ``cite``
 - ``datetime``
 
-Korona can build <del> tag.
+Korona can build ``<del>`` tag.
 
 .. code-block:: python
 
@@ -503,7 +503,7 @@ Korona supports ``align`` attribute for ``<div>`` tag. Korona can help you build
 <dl>
 ----
 
-Korona can build <dl> tag.
+Korona can build ``<dl>`` tag.
 
 .. code-block:: python
 
@@ -525,7 +525,7 @@ Korona can build <dl> tag.
 <dt>
 ----
 
-Korona can build <dt> tag.
+Korona can build ``<dt>`` tag.
 
 .. code-block:: python
 
@@ -554,7 +554,7 @@ Korona supports some of the embed tag attributes like:
 - ``type``
 - ``width``
 
-Korona can build <embed> tag.
+Korona can build ``<embed>`` tag.
 
 .. code-block:: python
 
@@ -582,7 +582,7 @@ Korona supports some of the fieldset tag attributes like:
 - ``form``
 - ``name``
 
-Korona can build <fieldset> tag.
+Korona can build ``<fieldset>`` tag.
 
 .. code-block:: python
 
@@ -604,7 +604,7 @@ Korona can build <fieldset> tag.
 <figure>
 --------
 
-Korona can build <figure> tag.
+Korona can build ``<figure>`` tag.
 
 .. code-block:: python
 
@@ -628,7 +628,7 @@ Korona can build <figure> tag.
 <footer>
 --------
 
-Korona can build <footer> tag.
+Korona can build ``<footer>`` tag.
 
 .. code-block:: python
 
@@ -664,7 +664,7 @@ Korona supports some of the form tag attributes like:
 - ``target``
 - ``text`` (text as in <form>{text}</form>)
 
-Korona can build <form> tag.
+Korona can build ``<form>`` tag.
 
 .. code-block:: python
 
@@ -697,7 +697,7 @@ Korona supports some of the frame tag attributes like:
 - ``scrolling``
 - ``src``
 
-Koron can build <frame> tag.
+Koron can build ``<frame>`` tag.
 
 .. code-block:: python
 
@@ -724,7 +724,7 @@ Korona supports some of the frameset tag attributes like:
 - ``cols``
 - ``rows``
 
-Korona can build <frameset> tag.
+Korona can build ``<frameset>`` tag.
 
 .. code-block:: python
 
@@ -902,7 +902,7 @@ Korona can help you build ``<head>`` tag.
 <header>
 --------
 
-Korona can help you build <header> tag.
+Korona can help you build ``<header>`` tag.
 
 .. code-block:: python
 
@@ -926,7 +926,7 @@ Korona can help you build <header> tag.
 <hr>
 ----
 
-Korona can help you build <hr> tag.
+Korona can help you build ``<hr>`` tag.
 
 .. code-block:: python
 
@@ -953,7 +953,7 @@ Korona supports some of the html tag attributes like:
 - ``manifest``
 - ``xmlns``
 
-Korona can help you build <html> tag.
+Korona can help you build ``<html>`` tag.
 
 .. code-block:: python
 
@@ -975,7 +975,7 @@ Korona can help you build <html> tag.
 <i>
 ---
 
-Korona can help you build <i> tag.
+Korona can help you build ``<i>`` tag.
 
 .. code-block:: python
 
@@ -997,7 +997,7 @@ Korona can help you build <i> tag.
 <iframe>
 --------
 
-Korona supports iframe tag attributes like:
+Korona supports ``iframe`` tag attributes like:
 
 - ``align``
 - ``frameborder``
@@ -1012,7 +1012,7 @@ Korona supports iframe tag attributes like:
 - ``srcdoc``
 - ``width``
 
-Korona can help you build <iframe> tag.
+Korona can help you build ``<iframe>`` tag.
 
 .. code-block:: python
 
@@ -1034,7 +1034,7 @@ Korona can help you build <iframe> tag.
 <img>
 -----
 
-Korona supports img tag attributes like:
+Korona supports ``img`` tag attributes like:
 
 - ``align``
 - ``alt``
@@ -1049,7 +1049,7 @@ Korona supports img tag attributes like:
 - ``vspace``
 - ``width``
 
-Korona can help you build <img tag.
+Korona can help you build ``<img>`` tag.
 
 .. code-block:: python
 
@@ -1067,4 +1067,104 @@ Korona can help you build <img tag.
 
     assert img_tag1 == '<img height="30" hspace="20" vspace="20" width="30" >'
     assert img_tag1 == img_tag2
+
+<input>
+-------
+
+Korona supports input tag attributes like:
+
+- accept(str): Specifies the types of files that the server accepts. The
+    accept attribute can only be used with <input type="file">.
+- align (str): Specifies the alignment of an image input. The align attribute
+    is only used with <input type="image">.
+- alt (str): Specifies an alternate text for images. The alt attribute can only
+    be used with <input type="image">.
+- autocomplete (str): Specifies whether an <input> element should have
+    autocomplete enabled. The autocomplete attribute works with the following
+    <input> types: text, search, url, tel, email, password, datepickers, range,
+    and color.
+- autofocus (bool): Specifies that an <input> element should automatically get
+    focus when the page loads.
+- checked (bool): Specifies that an <input> element should be pre-selected
+    when the page loads. The checked attribute can be used with <input
+    type="checkbox"> and <input type="radio">.
+- dirname (str): Specifies that the text direction will be submitted. The
+    dirname attribute's value is always the name of the input field, followed
+    by ".dir".
+- disabled (bool): Specifies that an <input> element should be disabled.
+- form (str): Specifies one or more forms the <input> element belongs to.
+- formaction (str): Specifies the URL of the file that will process the input
+    control when the form is submitted. The formaction attribute is used with
+    type="submit" and type="image".
+- formenctype (str): Specifies how the form-data should be encoded when
+    submitting it to the server. The formenctype attribute is used with
+    type="submit" and type="image".
+- formmethod (str): Defines the HTTP method for sending data to the action URL.
+    The formmethod attribute can be used
+    with type="submit" and type="image".
+- formnovalidate (bool): Defines that form elements should not be validated
+    when submitted. The formnovalidate attribute can be used with type="submit".
+- formtarget (str): Specifies where to display the response that is received
+    after submitting the form. The formtarget attribute can be used with
+    type="submit" and type="image".
+- height (int/float): Specifies the height of an <input> element. The height
+    attribute is used only with <input type="image">.
+- list (str): Refers to a <datalist> element that contains pre-defined options
+    for an <input> element.
+- max (int/date/time): Specifies the maximum value for an <input> element. The
+    max attribute works with the following input types: number, range, date,
+    datetime, datetime-local, month, time and week.
+- maxlength (int): Specifies the maximum number of characters allowed in an
+    <input> element.
+- min (int/date/time): Specifies a minimum value for an <input> element. The
+    min attribute works with the following input types: number, range, date,
+    datetime, datetime-local, month, time and week.
+- multiple (bool): Specifies that a user can enter more than one value in an
+    <input> element. The multiple attribute works with the following input
+    types: email, and file.
+- name (str): Specifies the name of an <input> element.
+- pattern (str): Specifies a regular expression that an <input> element's
+    value is checked against. The pattern attribute works with the following
+    input types: text, date, search, url, tel, email, and password.
+- placeholder (str): Specifies a short hint that describes the expected value
+    of an <input> element. The placeholder attribute works with the following
+    input types: text, search, url, tel, email, and password.
+- readonly (bool): Specifies that an input field is read-only.
+- required (bool): Specifies that an input field must be filled out before
+    submitting the form. The required attribute works with the following input
+    types: text, search, url, tel, email, password, date pickers, number,
+    checkbox, radio, and file.
+- size (int): Specifies the width, in characters, of an <input> element. The
+    size attribute works with the following input types: text, search, tel,
+    url, email, and password.
+- src (str): Specifies the URL of the image to use as a submit button. The
+    src attribute is required for <input type="image">, and can only be used
+    with <input type="image">.
+- step (int): Specifies the legal number intervals for an input field. The
+    step attribute works with the following input types: number, range, date,
+    datetime, datetime-local, month, time and week.
+- type (str): Specifies the type <input> element to display.
+- value (str): Specifies the value of an <input> element. The value attribute
+    cannot be used with <input type="file">.
+- width (int/float): Specifies the width of an <input> element. The width
+    attribute is used only with <input type="image">.
+
+Korona can help you build ``<input>`` tag.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    attributes = {'height': '30', 'width': '30', 'type': 'image', 'src': 'img_submit.jpeg'}
+
+    # You can pass in the attributes in the form of a dictionary.
+    input1 = Input(**attributes)
+    # You can also pass in the attributes as args.
+    input2 = Input(height='30', width='30', type='image', src='img_submit.jpeg')
+
+    input_tag1 = input1.construct()
+    input_tag2 = input2.construct()
+
+    assert input_tag1 == '<input type="image" src="img_submit.jpeg" width="30" height="30" >'
+    assert input_tag1 == input_tag2
 
