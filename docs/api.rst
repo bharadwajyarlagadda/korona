@@ -165,3 +165,7 @@ API Reference
 .. autoclass:: korona.html.tags.Img
     :members:
 
+
+.. autoclass:: korona.html.tags.Input
+    :members:
+
