@@ -1076,125 +1076,353 @@ Korona supports input tag attributes like:
 - accept(str): Specifies the types of files that the server accepts. The
   accept attribute can only be used with <input type="file">.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'accept': 'audio/*', 'type': 'file'})
+    input1.construct()
+    # <input type="file" accept="audio/*" >
+
 - align (str): Specifies the alignment of an image input. The align attribute
   is only used with <input type="image">.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'align': 'left', 'type': 'image'})
+    input1.construct()
+    # <input type="image" align="left" >
+
 - alt (str): Specifies an alternate text for images. The alt attribute can only
   be used with <input type="image">.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'alt': 'temp', 'type': 'image'})
+    input1.construct()
+    # <input type="image" alt="temp" >
 
 - autocomplete (str): Specifies whether an <input> element should have
   autocomplete enabled. The autocomplete attribute works with the following
   <input> types: text, search, url, tel, email, password, datepickers, range,
   and color.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'autocomplete': 'on', 'type': 'email'})
+    input1.construct()
+    # <input type="email" autocomplete="on" >
+
 - autofocus (bool): Specifies that an <input> element should automatically get
   focus when the page loads.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'autofocus': True})
+    input1.construct()
+    # <input autofocus >
 
 - checked (bool): Specifies that an <input> element should be pre-selected
   when the page loads. The checked attribute can be used with <input
   type="checkbox"> and <input type="radio">.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'checked': True, 'type': 'radio'})
+    input1.construct()
+    # <input type="radio" checked >
+
 - dirname (str): Specifies that the text direction will be submitted. The
   dirname attribute's value is always the name of the input field, followed by
   ".dir".
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'name': 'fname', 'dirname': 'fname.dir'})
+    input1.construct()
+    # <input name="fname" dirname="fname.dir" >
+
 - disabled (bool): Specifies that an <input> element should be disabled.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'disabled': True})
+    input1.construct()
+    # <input disabled >
+
 - form (str): Specifies one or more forms the <input> element belongs to.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'form': 'form1'})
+    input1.construct()
+    # <input form="form1" >
 
 - formaction (str): Specifies the URL of the file that will process the input
   control when the form is submitted. The formaction attribute is used with
   type="submit" and type="image".
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'formaction': 'demo.asp', 'type': 'submit'})
+    input1.construct()
+    # <input type="submit" formaction="demo.asp" >
+
 - formenctype (str): Specifies how the form-data should be encoded when
   submitting it to the server. The formenctype attribute is used with
   type="submit" and type="image".
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'formenctype': 'application/x-www-form-urlencoded', 'type': 'submit'})
+    input1.construct()
+    # <input type="submit" formenctype="application/x-www-form-urlencoded" >
+
 - formmethod (str): Defines the HTTP method for sending data to the action URL.
   The formmethod attribute can be used with type="submit" and type="image".
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'formmethod': 'get', 'type': 'submit'})
+    input1.construct()
+    # <input type="submit" formmethod="get" >
+
 - formnovalidate (bool): Defines that form elements should not be validated
   when submitted. The formnovalidate attribute can be used with type="submit".
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'formnovalidate': True, 'type': 'submit'})
+    input1.construct()
+    # <input type="submit" formnovalidate >
 
 - formtarget (str): Specifies where to display the response that is received
   after submitting the form. The formtarget attribute can be used with
   type="submit" and type="image".
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'formtarget': '_parent', 'type': 'submit'})
+    input1.construct()
+    # <input type="submit" formtarget="_parent" >
+
 - height (int/float): Specifies the height of an <input> element. The height
   attribute is used only with <input type="image">.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'height': '200', 'type': 'image'})
+    input1.construct()
+    # <input type="image" height="200" >
+
 - list (str): Refers to a <datalist> element that contains pre-defined options
   for an <input> element.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'list': 'list1'})
+    input1.construct()
+    # <input list="list1" >
 
 - max (int/date/time): Specifies the maximum value for an <input> element. The
   max attribute works with the following input types: number, range, date,
   datetime, datetime-local, month, time and week.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'max': date.today(), 'type': 'date'})
+    input1.construct()
+    # <input type="date" max="2016-09-24" >
+
 - maxlength (int): Specifies the maximum number of characters allowed in an
   <input> element.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'maxlength': '5'})
+    input1.construct()
+    # <input maxlength="5" >
 
 - min (int/date/time): Specifies a minimum value for an <input> element. The
   min attribute works with the following input types: number, range, date,
   datetime, datetime-local, month, time and week.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'min': date.today(), 'type': 'date'})
+    input1.construct()
+    # <input type="date" min="2016-09-24" >
+
 - multiple (bool): Specifies that a user can enter more than one value in an
   <input> element. The multiple attribute works with the following input types:
   email, and file.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'multiple': True, 'type': 'file'})
+    input1.construct()
+    # <input type="file" multiple >
+
 - name (str): Specifies the name of an <input> element.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'name': 'name1'})
+    input1.construct()
+    # <input name="name1" >
 
 - pattern (str): Specifies a regular expression that an <input> element's
   value is checked against. The pattern attribute works with the following input
   types: text, date, search, url, tel, email, and password.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'pattern': '[A-Za-z]{3}', 'type': 'email'})
+    input1.construct()
+    # <input type="email" pattern="[A-Za-z]{3}" >
+
 - placeholder (str): Specifies a short hint that describes the expected value
   of an <input> element. The placeholder attribute works with the following
   input types: text, search, url, tel, email, and password.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'placeholder': 'Full name', 'type': 'text'})
+    input1.construct()
+    # <input type="text" placeholder="Full name" >
+
 - readonly (bool): Specifies that an input field is read-only.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'readonly': True})
+    input1.construct()
+    # <input readonly >
 
 - required (bool): Specifies that an input field must be filled out before
   submitting the form. The required attribute works with the following input
   types: text, search, url, tel, email, password, date pickers, number,
   checkbox, radio, and file.
 
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'required': True, 'type': 'search'})
+    input1.construct()
+    # <input type="search" required >
+
 - size (int): Specifies the width, in characters, of an <input> element. The
   size attribute works with the following input types: text, search, tel, url,
   email, and password.
-
-- src (str): Specifies the URL of the image to use as a submit button. The src
-  attribute is required for <input type="image">, and can only be used with
-  <input type="image">.
-
-- step (int): Specifies the legal number intervals for an input field. The step
-  attribute works with the following input types: number, range, date, datetime,
-  datetime-local, month, time and week.
-
-- type (str): Specifies the type <input> element to display.
-
-- value (str): Specifies the value of an <input> element. The value attribute
-  cannot be used with <input type="file">.
-
-- width (int/float): Specifies the width of an <input> element. The width
-  attribute is used only with <input type="image">.
-
-
-Korona can help you build ``<input>`` tag.
 
 .. code-block:: python
 
     from korona.html.tags import Input
 
-    attributes = {'height': '30', 'width': '30', 'type': 'image', 'src': 'img_submit.jpeg'}
+    input1 = Input(**{'size': '10', 'type': 'password'})
+    input1.construct()
+    # <input type="password" size="10" >
 
-    # You can pass in the attributes in the form of a dictionary.
-    input1 = Input(**attributes)
-    # You can also pass in the attributes as args.
-    input2 = Input(height='30', width='30', type='image', src='img_submit.jpeg')
+- src (str): Specifies the URL of the image to use as a submit button. The src
+  attribute is required for <input type="image">, and can only be used with
+  <input type="image">.
 
-    input_tag1 = input1.construct()
-    input_tag2 = input2.construct()
+.. code-block:: python
 
-    assert input_tag1 == '<input type="image" src="img_submit.jpeg" width="30" height="30" >'
-    assert input_tag1 == input_tag2
+    from korona.html.tags import Input
+
+    input1 = Input(**{'src': 'demo.asp', 'type': 'image'})
+    input1.construct()
+    # <input type="image" src="demo.asp" >
+
+- step (int): Specifies the legal number intervals for an input field. The step
+  attribute works with the following input types: number, range, date, datetime,
+  datetime-local, month, time and week.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'step': 1, 'type': 'range'})
+    input1.construct()
+    # <input type="range" step="1" >
+
+- type (str): Specifies the type <input> element to display.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'type': 'submit'})
+    input1.construct()
+    # <input type="submit" >
+
+- value (str): Specifies the value of an <input> element. The value attribute
+  cannot be used with <input type="file">.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'value': 'value1'})
+    input1.construct()
+    # <input value="value1" >
+
+- width (int/float): Specifies the width of an <input> element. The width
+  attribute is used only with <input type="image">.
+
+.. code-block:: python
+
+    from korona.html.tags import Input
+
+    input1 = Input(**{'width': '100', 'type': 'image'})
+    input1.construct()
+    # <input type="image" width="100" >
 
