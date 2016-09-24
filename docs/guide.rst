@@ -1074,109 +1074,109 @@ Korona can help you build ``<img>`` tag.
 Korona supports input tag attributes like:
 
 - accept(str): Specifies the types of files that the server accepts. The
-    accept attribute can only be used with <input type="file">.
+  accept attribute can only be used with <input type="file">.
 
 - align (str): Specifies the alignment of an image input. The align attribute
-    is only used with <input type="image">.
+  is only used with <input type="image">.
 
 - alt (str): Specifies an alternate text for images. The alt attribute can only
-    be used with <input type="image">.
+  be used with <input type="image">.
 
 - autocomplete (str): Specifies whether an <input> element should have
-    autocomplete enabled. The autocomplete attribute works with the following
-    <input> types: text, search, url, tel, email, password, datepickers, range,
-    and color.
+  autocomplete enabled. The autocomplete attribute works with the following
+  <input> types: text, search, url, tel, email, password, datepickers, range,
+  and color.
 
 - autofocus (bool): Specifies that an <input> element should automatically get
-    focus when the page loads.
+  focus when the page loads.
 
 - checked (bool): Specifies that an <input> element should be pre-selected
-    when the page loads. The checked attribute can be used with <input
-    type="checkbox"> and <input type="radio">.
+  when the page loads. The checked attribute can be used with <input
+  type="checkbox"> and <input type="radio">.
 
 - dirname (str): Specifies that the text direction will be submitted. The
-    dirname attribute's value is always the name of the input field, followed by
-    ".dir".
+  dirname attribute's value is always the name of the input field, followed by
+  ".dir".
 
 - disabled (bool): Specifies that an <input> element should be disabled.
 
 - form (str): Specifies one or more forms the <input> element belongs to.
 
 - formaction (str): Specifies the URL of the file that will process the input
-    control when the form is submitted. The formaction attribute is used with
-    type="submit" and type="image".
+  control when the form is submitted. The formaction attribute is used with
+  type="submit" and type="image".
 
 - formenctype (str): Specifies how the form-data should be encoded when
-    submitting it to the server. The formenctype attribute is used with
-    type="submit" and type="image".
+  submitting it to the server. The formenctype attribute is used with
+  type="submit" and type="image".
 
 - formmethod (str): Defines the HTTP method for sending data to the action URL.
-    The formmethod attribute can be used with type="submit" and type="image".
+  The formmethod attribute can be used with type="submit" and type="image".
 
 - formnovalidate (bool): Defines that form elements should not be validated
-    when submitted. The formnovalidate attribute can be used with type="submit".
+  when submitted. The formnovalidate attribute can be used with type="submit".
 
 - formtarget (str): Specifies where to display the response that is received
-    after submitting the form. The formtarget attribute can be used with
-    type="submit" and type="image".
+  after submitting the form. The formtarget attribute can be used with
+  type="submit" and type="image".
 
 - height (int/float): Specifies the height of an <input> element. The height
-    attribute is used only with <input type="image">.
+  attribute is used only with <input type="image">.
 
 - list (str): Refers to a <datalist> element that contains pre-defined options
-    for an <input> element.
+  for an <input> element.
 
 - max (int/date/time): Specifies the maximum value for an <input> element. The
-    max attribute works with the following input types: number, range, date,
-    datetime, datetime-local, month, time and week.
+  max attribute works with the following input types: number, range, date,
+  datetime, datetime-local, month, time and week.
 
 - maxlength (int): Specifies the maximum number of characters allowed in an
-    <input> element.
+  <input> element.
 
 - min (int/date/time): Specifies a minimum value for an <input> element. The
-    min attribute works with the following input types: number, range, date,
-    datetime, datetime-local, month, time and week.
+  min attribute works with the following input types: number, range, date,
+  datetime, datetime-local, month, time and week.
 
 - multiple (bool): Specifies that a user can enter more than one value in an
-    <input> element. The multiple attribute works with the following input types:
-    email, and file.
+  <input> element. The multiple attribute works with the following input types:
+  email, and file.
 
 - name (str): Specifies the name of an <input> element.
 
 - pattern (str): Specifies a regular expression that an <input> element's
-    value is checked against. The pattern attribute works with the following input
-    types: text, date, search, url, tel, email, and password.
+  value is checked against. The pattern attribute works with the following input
+  types: text, date, search, url, tel, email, and password.
 
 - placeholder (str): Specifies a short hint that describes the expected value
-    of an <input> element. The placeholder attribute works with the following
-    input types: text, search, url, tel, email, and password.
+  of an <input> element. The placeholder attribute works with the following
+  input types: text, search, url, tel, email, and password.
 
 - readonly (bool): Specifies that an input field is read-only.
 
 - required (bool): Specifies that an input field must be filled out before
-    submitting the form. The required attribute works with the following input
-    types: text, search, url, tel, email, password, date pickers, number,
-    checkbox, radio, and file.
+  submitting the form. The required attribute works with the following input
+  types: text, search, url, tel, email, password, date pickers, number,
+  checkbox, radio, and file.
 
 - size (int): Specifies the width, in characters, of an <input> element. The
-    size attribute works with the following input types: text, search, tel, url,
-    email, and password.
+  size attribute works with the following input types: text, search, tel, url,
+  email, and password.
 
 - src (str): Specifies the URL of the image to use as a submit button. The src
-    attribute is required for <input type="image">, and can only be used with
-    <input type="image">.
+  attribute is required for <input type="image">, and can only be used with
+  <input type="image">.
 
 - step (int): Specifies the legal number intervals for an input field. The step
-    attribute works with the following input types: number, range, date, datetime,
-    datetime-local, month, time and week.
+  attribute works with the following input types: number, range, date, datetime,
+  datetime-local, month, time and week.
 
 - type (str): Specifies the type <input> element to display.
 
 - value (str): Specifies the value of an <input> element. The value attribute
-    cannot be used with <input type="file">.
+  cannot be used with <input type="file">.
 
 - width (int/float): Specifies the width of an <input> element. The width
-    attribute is used only with <input type="image">.
+  attribute is used only with <input type="image">.
 
 
 Korona can help you build ``<input>`` tag.
