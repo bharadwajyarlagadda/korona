@@ -41,3 +41,4 @@ from .html import html
 from .iframe import iframe
 from .italics import italics
 from .image import img
+from .input import input
