@@ -217,7 +217,7 @@ class Input(object):
         width (int/float): Specifies the width of an <input> element (only for
             type="image").
 
-    .. versionadded:: 0.4.2-dev
+    .. versionadded:: 0.4.2
     """
     def __init__(self,
                  accept=None,
