@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# pylint: disable=e1123
 """Module for warnings to be used in Korona."""
 
 import warnings
