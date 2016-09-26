@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import warnings
+
 import pytest
 
 from ..fixtures import parametrize
 
+from korona.exceptions import TagAttributeError, AttributeValueError
 from korona.html.tags import A
 from korona.templates.html.tags import anchor
 
@@ -12,7 +15,7 @@ from korona.templates.html.tags import anchor
     ({'href': 'www.google.com'}),
     ({'href': 'www.google.com', 'rel': 'nofollow'}),
     ({'charset': 'utf-8',
-      'download': 'abc',
+      'download': '/abc/images.jpeg',
       'href': 'www.google.com',
       'hreflang': 'en',
       'name': 'C4',
@@ -53,39 +56,41 @@ def test_construct_anchor_tag_coords(attributes):
 
 
 @parametrize('attributes,exception,error_msg', [
-    ({'rel': 1}, AttributeError, 'only used when href attribute is set.'),
-    ({'type': 1}, AttributeError, 'only used when href attribute is set.'),
-    ({'charset': 1}, ValueError, 'should be a string'),
-    ({'rel': 1, 'href': 'www.google.com'}, ValueError, 'should be a string'),
+    ({'rel': 1}, TagAttributeError, 'only used when href attribute is set.'),
+    ({'type': 1}, TagAttributeError, 'only used when href attribute is set.'),
+    ({'charset': 1}, AttributeValueError, 'should be a string'),
+    ({'rel': 1, 'href': 'www.google.com'},
+     AttributeValueError,
+     'should be a string'),
     ({'shape': 'circle', 'coords': [1, 2, 3, 4]},
-     ValueError,
+     TagAttributeError,
      'coordinates should be given for circle shape'),
     ({'shape': 'rect', 'coords': [1, 2, 3, 4, 5]},
-     ValueError,
+     TagAttributeError,
      'coordinates should be given for rectangle shape'),
     ({'shape': 'circle', 'coords': [1, 2]},
-     ValueError,
+     TagAttributeError,
      'coordinates should be given for circle shape'),
     ({'shape': 'rect', 'coords': [1, 2, 3]},
-     ValueError,
+     TagAttributeError,
      'coordinates should be given for rectangle shape'),
     ({'shape': 'rect', 'coords': {'x': 1, 'y': 2}},
-     ValueError,
+     AttributeValueError,
      'should be either list/tuple/str not a dictionary'),
     ({'coords': [1, 2, 3]},
-     AttributeError,
+     TagAttributeError,
      'shape attribute should be present when coords are specified'),
     ({'download': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'only used when href attribute is set.'),
     ({'href': 'www.google.com', 'rel': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'rev': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'shape': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'href': 532},
      ValueError,
@@ -97,3 +102,18 @@ def test_construct_anchor_tag_error(attributes, exception, error_msg):
         A(**attributes)
 
     assert error_msg in str(exc)
+
+
+@parametrize('attributes,warning', [
+    ({'charset': 'temp'}, 'Common character sets used are')
+])
+def test_charsets_attribute_warning(attributes, warning):
+    """Validates the warning message displayed for charset attribute in
+    anchor tag.
+    """
+    with warnings.catch_warnings(record=True) as expected_warning:
+        A(**attributes)
+
+    assert len(expected_warning) == 1
+    assert issubclass(expected_warning[-1].category, UserWarning)
+    assert warning in str(expected_warning[-1].message)

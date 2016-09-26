@@ -2,6 +2,29 @@ Changelog
 =========
 
 
+v0.4.3-dev
+----------
+
+Added
+^^^^^
+
+- Added custom exceptions for korona package.
+- Added warnings for korona package.
+
+Changed
+^^^^^^^
+
+- Moved all the ``anchor`` tag attributes from ``html/root/attributes.py`` to
+  ``html/tags/anchor.py``
+
+- In the classs for constructing ```anchor`` tag:
+
+  - The user can be displayed with warnings for charset attribute.
+  - Used custom exceptions for all the attributes.
+  - Changed the name of the method from ``validate_values()`` to
+    ``validate_attribute_values()``.
+
+
 v0.4.2 (2016-09-24)
 -------------------
 
