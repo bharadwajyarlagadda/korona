@@ -17,7 +17,7 @@ Changed
 - Moved all the ``anchor`` tag attributes from ``html/root/attributes.py`` to
   ``html/tags/anchor.py``
 
-- In the classs for constructing ```anchor`` tag:
+- In the classs for constructing ``anchor`` tag:
 
   - The user can be displayed with warnings for charset attribute.
   - Used custom exceptions for all the attributes.
