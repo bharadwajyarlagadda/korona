@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 from ...exceptions import TagAttributeError, AttributeValueError
-from ...warnings import warn
+from ...warning import warn
 from ...lib.utils import validate_url
 from ...templates.html.tags import anchor
 
