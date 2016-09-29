@@ -15,8 +15,8 @@ Added
 Changed
 ^^^^^^^
 
-- Moved all the ``anchor`` tag attributes from ``html/root/attributes.py`` to
-  ``html/tags/anchor.py``.
+- Moved all the HTML tag attributes from ``html/root/attributes.py`` to their
+  respective tag files.
 - Moved all the global attributes from ``html/root/attributes.py`` to
   ``html/root/global_attributes.py``.
 
@@ -27,6 +27,12 @@ Changed
   - Changed the name of the method from ``validate_values()`` to
     ``validate_attribute_values()``.
 
+Removed
+^^^^^^^
+
+- Removed ``html/root/attributes.py``.
+- Removed ``validate_values()`` method from both ``html.tags.anchor.A`` and
+  ``html.tags.button.Button()`` classes.
 
 v0.4.2 (2016-09-24)
 -------------------
