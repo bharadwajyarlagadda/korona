@@ -15,7 +15,7 @@ class Abbr(object):
     .. versionadded:: 0.1.0
 
     .. versionchanged:: 0.2.0
-        Renamed :func:`construct_tag()` to :func:`construct()`.
+        Renamed :func:`construct_tag` to :func:`construct`.
     """
     def __init__(self, text=None):
         self.tag = 'abbr'

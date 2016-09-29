@@ -131,7 +131,7 @@ class A(object):
     .. versionchanged:: 0.4.3-dev
         Now the user can be displayed with warnings for charset attribute.
         Used custom exceptions for all the attributes. Removed the method
-        :func:`validate_values()`.
+        :func:`validate_values`.
     """
     def __init__(self,
                  charset=None,

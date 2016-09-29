@@ -20,7 +20,7 @@ Changed
 - Moved all the global attributes from ``html/root/attributes.py`` to
   ``html/root/global_attributes.py``.
 
-- In the classs for constructing ``anchor`` tag:
+- In the class for constructing ``anchor`` tag:
 
   - The user can be displayed with warnings for charset attribute.
   - Used custom exceptions for all the attributes.
@@ -31,7 +31,7 @@ Removed
 ^^^^^^^
 
 - Removed ``html/root/attributes.py``.
-- Removed ``validate_values()`` method from both ``html.tags.anchor.A`` and
+- Removed ``validate_values()`` method from both ``html.tags.anchor.A()`` and
   ``html.tags.button.Button()`` classes.
 
 v0.4.2 (2016-09-24)
