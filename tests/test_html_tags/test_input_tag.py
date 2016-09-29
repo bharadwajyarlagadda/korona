@@ -8,7 +8,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Input
 from korona.templates.html.tags import input as tag
-from korona.exceptions import TagAttributeError
+from korona.exceptions import TagAttributeError, AttributeValueError
 
 
 @parametrize('attributes', [
@@ -267,7 +267,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'height attribute is used only with'),
     ({'height': 'temp', 'type': 'image'},
-     AttributeError,
+     AttributeValueError,
      'height attribute should be an integer or float value'),
 
     # max attribute
@@ -278,7 +278,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'max attribute works with the following'),
     ({'max': date.today(), 'type': 'number'},
-     AttributeError,
+     AttributeValueError,
      'attribute should be an integer or float value'),
     ({'max': '5', 'type': 'date'},
      AttributeError,
@@ -289,7 +289,7 @@ def test_construct_input_tag(attributes):
 
     # maxlength attribute
     ({'maxlength': 'temp'},
-     AttributeError,
+     AttributeValueError,
      'attribute should be an integer or float value'),
 
     # min attribute
@@ -300,7 +300,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'min attribute works with the following'),
     ({'min': date.today(), 'type': 'number'},
-     AttributeError,
+     AttributeValueError,
      'attribute should be an integer or float value'),
     ({'min': '5', 'type': 'date'},
      AttributeError,
@@ -354,7 +354,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'size attribute works with the following'),
     ({'size': 'temp', 'type': 'email'},
-     AttributeError,
+     AttributeValueError,
      'should be an integer or float value'),
 
     # src attribute
@@ -373,7 +373,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'step attribute works with the following'),
     ({'step': 'temp', 'type': 'range'},
-     AttributeError,
+     AttributeValueError,
      'should be an integer or float value'),
 
     # type attribute
@@ -394,7 +394,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'width attribute is used only with'),
     ({'width': 'temp', 'type': 'image'},
-     AttributeError,
+     AttributeValueError,
      'should be an integer or float value')
 ])
 def test_construct_input_tag_error(attributes, exception, error_msg):

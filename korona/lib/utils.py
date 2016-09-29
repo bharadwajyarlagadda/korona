@@ -80,16 +80,16 @@ def validate_number_attribute(tag, attribute_name, attribute_value):
             try:
                 return float(attribute_value)
             except ValueError:
-                raise AttributeError('<{tag}>: {attribute} attribute should '
-                                     'be an integer or float value'
-                                     .format(tag=tag,
-                                             attribute=attribute_name))
+                raise AttributeValueError('<{tag}>: {attribute} attribute '
+                                          'should be an integer or float value'
+                                          .format(tag=tag,
+                                                  attribute=attribute_name))
     else:
-        # In rest all the cases, the attirbute value is not a valid int/float
+        # In rest all the cases, the attribute value is not a valid int/float
         # value.
-        raise AttributeError('<{tag}>: {attribute} attribute should be an '
-                             'integer or float value'
-                             .format(tag=tag, attribute=attribute_name))
+        raise AttributeValueError('<{tag}>: {attribute} attribute should be an'
+                                  ' integer or float value'
+                                  .format(tag=tag, attribute=attribute_name))
 
 
 def validate_date_attribute(tag, attribute_name, attribute_value):

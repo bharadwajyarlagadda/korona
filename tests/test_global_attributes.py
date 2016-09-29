@@ -66,7 +66,7 @@ def test_construct_global_attributes(data):
      TagAttributeError,
      'attribute values should be one of these'),
     ({'tabindex': 'temp'},
-     AttributeError,
+     AttributeValueError,
      'should be an integer'),
     ({'translate': 'temp'},
      TagAttributeError,
