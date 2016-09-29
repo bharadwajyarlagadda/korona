@@ -3,12 +3,73 @@
 
 from __future__ import absolute_import
 
-from ..root.attributes import TAG_ATTRIBUTES
 from ...lib.utils import validate_url
 from ...templates.html.tags import area
 
 RECTANGLE_SHAPE_COORDINATES = 4
 CIRCLE_SHAPE_COORDINATES = 3
+
+ATTRIBUTES = {
+    'alt': {
+        'description': 'Specifies an alternate text for the area. '
+                       'Required if the href attribute is present',
+        'values': None
+    },
+    'coords': {
+        'description': 'Specifies the coordinates of the area',
+        'values': None
+    },
+    'download': {
+        'description': 'Specifies that the target will be downloaded '
+                       'when a user clicks on the hyperlink',
+        'values': None
+    },
+    'href': {
+        'description': 'Specifies the hyperlink target for the area',
+        'values': None
+    },
+    'hreflang': {
+        'description': 'Specifies the language of the target URL',
+        'values': None
+    },
+    'media': {
+        'description': 'Specifies what media/device the target URL is '
+                       'optimized for',
+        'values': None
+    },
+    'nohref': {
+        'description': 'Specifies that an area has no associated link',
+        'values': None
+    },
+    'rel': {
+        'description': 'Specifies the relationship between the current'
+                       ' document and the target URL',
+        'values': ['alternate',
+                   'author',
+                   'bookmark',
+                   'help',
+                   'license',
+                   'next',
+                   'nofollow',
+                   'noreferrer',
+                   'prefetch',
+                   'prev',
+                   'search',
+                   'tag']
+    },
+    'shape': {
+        'description': 'Specifies the shape of the area',
+        'values': ['default', 'rect', 'circle', 'poly']
+    },
+    'target': {
+        'description': 'Specifies where to open the target URL',
+        'values': None
+    },
+    'type': {
+        'description': 'Specifies the media type of the target URL',
+        'values': None
+    }
+}
 
 
 class Area(object):
@@ -159,7 +220,7 @@ class Area(object):
             raise ValueError('<area>: {0} should be a string value.'
                              .format(attribute_name))
 
-        attribute_values = TAG_ATTRIBUTES[self.tag][attribute_name]['values']
+        attribute_values = ATTRIBUTES[attribute_name]['values']
 
         if value not in attribute_values:
             raise AttributeError('<area>: {attribute_name} attribute values '

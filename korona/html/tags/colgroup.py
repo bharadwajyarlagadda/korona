@@ -6,6 +6,37 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import colgroup
 
+ATTRIBUTES = {
+    'align': {
+        'description': 'Aligns the content in a column group',
+        'values': ['left', 'right', 'center', 'justify', 'char']
+    },
+    'char': {
+        'description': 'Aligns the content in a column group to a '
+                       'character',
+        'values': None
+    },
+    'charoff': {
+        'description': 'Sets the number of characters the content '
+                       'will be aligned from the character specified '
+                       'by the char attribute',
+        'values': None
+    },
+    'span': {
+        'description': 'Specifies the number of columns a column '
+                       'group should span',
+        'values': None
+    },
+    'valign': {
+        'description': 'Vertical aligns the content in a column group',
+        'values': ['top', 'middle', 'bottom', 'baseline']
+    },
+    'width': {
+        'description': 'Specifies the width of a column group',
+        'values': None
+    }
+}
+
 
 class ColGroup(object):
     """Class for constructing colgroup tag.
@@ -31,12 +62,15 @@ class ColGroup(object):
         self.tag = 'colgroup'
         validate_attribute_values(tag=self.tag,
                                   attribute_name='align',
-                                  value=align)
+                                  attribute_value=align,
+                                  default_values=ATTRIBUTES['align']['values'])
         self.validate_char_attribute(align=align, value=char)
         self.validate_charoff_attribute(align=align, char=char, value=charoff)
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='valign',
-                                  value=valign)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='valign',
+            attribute_value=valign,
+            default_values=ATTRIBUTES['valign']['values'])
         self.values = {'align': align,
                        'char': char,
                        'charoff': charoff,

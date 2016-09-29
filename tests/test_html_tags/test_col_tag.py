@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Col
 from korona.templates.html.tags import col
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [

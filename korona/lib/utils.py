@@ -3,10 +3,8 @@
 from future.moves.urllib.parse import urlparse
 import datetime
 
-from ..html.root.attributes import TAG_ATTRIBUTES
+from ..exceptions import AttributeValueError, TagAttributeError
 from ..html.root.tags import TAGS
-
-from ..exceptions import AttributeValueError
 
 
 def validate_tag(tag=None):
@@ -30,26 +28,23 @@ def validate_string_attribute(tag, attribute_name, attribute_value):
                                           attribute_name=attribute_name))
 
 
-def validate_attribute_values(tag, attribute_name, value):
+def validate_attribute_values(tag,
+                              attribute_name,
+                              attribute_value,
+                              default_values):
     """Validates whether the given attribute value is a valid value or not.
     Some of the attributes have confined values. Even if we give some
     other value, the html output would not be correct.
     """
-    if not value:
+    if not attribute_value:
         return
 
-    if not isinstance(value, str):
-        raise ValueError('<{tag}>: {attribute} should be a string value.'
-                         .format(tag=tag, attribute=attribute_name))
-
-    attribute_values = TAG_ATTRIBUTES[tag][attribute_name]['values']
-
-    if value not in attribute_values:
-        raise AttributeError('<{tag}>: {attribute_name} attribute '
-                             'values should be one of these: {values}'
-                             .format(tag=tag,
-                                     attribute_name=attribute_name,
-                                     values=','.join(attribute_values)))
+    if attribute_value not in default_values:
+        raise TagAttributeError('<{tag}>: {attribute_name} attribute '
+                                'values should be one of these: {values}'
+                                .format(tag=tag,
+                                        attribute_name=attribute_name,
+                                        values=','.join(default_values)))
 
 
 def validate_boolean_attribute(tag, attribute_name, attribute_value):

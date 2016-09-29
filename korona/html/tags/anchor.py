@@ -3,9 +3,15 @@
 
 from __future__ import absolute_import
 
-from ...exceptions import TagAttributeError, AttributeValueError
 from ...warning import warn
-from ...lib.utils import validate_url
+from ...exceptions import TagAttributeError, AttributeValueError
+
+from ..root.global_attributes import GlobalAttributes
+from ...lib.utils import (
+    validate_url,
+    validate_string_attribute,
+    validate_attribute_values
+)
 from ...templates.html.tags import anchor
 
 RECTANGLE_SHAPE_COORDINATES = 4
@@ -140,8 +146,12 @@ class A(object):
                  shape=None,
                  target=None,
                  type=None,
-                 text=None):
+                 text=None,
+                 **kwargs):
         self.tag = 'a'
+
+        kwargs.update({'tag': self.tag})
+        print(GlobalAttributes(**kwargs).construct())
 
         self.validate_charset(charset)
         coordinates = self.get_coords(shape=shape, coords=coords)
@@ -150,12 +160,30 @@ class A(object):
         validate_url(attribute_name='href', url=href)
         self.pre_validate(href=href, attribute_name='hreflang', value=hreflang)
         self.pre_validate(href=href, attribute_name='rel', value=rel)
-        self.validate_attribute_values(attribute_name='rel',
-                                       attribute_value=rel)
-        self.validate_attribute_values(attribute_name='rev',
-                                       attribute_value=rev)
-        self.validate_attribute_values(attribute_name='shape',
-                                       attribute_value=shape)
+        validate_string_attribute(tag=self.tag,
+                                  attribute_name='rel',
+                                  attribute_value=rel)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='rel',
+            attribute_value=rel,
+            default_values=ATTRIBUTES['rel']['values'])
+        validate_string_attribute(tag=self.tag,
+                                  attribute_name='rev',
+                                  attribute_value=rev)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='rev',
+            attribute_value=rev,
+            default_values=ATTRIBUTES['rev']['values'])
+        validate_string_attribute(tag=self.tag,
+                                  attribute_name='shape',
+                                  attribute_value=shape)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='shape',
+            attribute_value=shape,
+            default_values=ATTRIBUTES['shape']['values'])
         self.pre_validate(href=href, attribute_name='type', value=type)
 
         self.values = {'charset': charset,
@@ -239,24 +267,3 @@ class A(object):
             raise TagAttributeError('<a>: {attribute_name} attribute is only '
                                     'used when href attribute is set.'
                                     .format(attribute_name=attribute_name))
-
-    def validate_attribute_values(self, attribute_name, attribute_value):
-        """Validates whether the given attribute value is a valid value or not.
-        Some of the attributes have confined values. Even if we give some
-        other value, the html output would not be correct.
-        """
-        if not attribute_value:
-            return
-
-        if not isinstance(attribute_value, str):
-            raise AttributeValueError('<a>: {attribute_name} should be a '
-                                      'string value.'
-                                      .format(attribute_name=attribute_name))
-
-        attribute_values = ATTRIBUTES[attribute_name]['values']
-
-        if attribute_value not in attribute_values:
-            raise TagAttributeError('<a>: {attribute_name} attribute values '
-                                    'should be one of these: {values}'
-                                    .format(attribute_name=attribute_name,
-                                            values=','.join(attribute_values)))

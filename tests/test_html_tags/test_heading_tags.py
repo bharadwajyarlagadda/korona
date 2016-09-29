@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import H1, H2, H3, H4, H5, H6
 from korona.templates.html.tags import h1, h2, h3, h4, h5, h6
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -20,7 +21,7 @@ def test_construct_h1_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h1_tag_error(attributes, exception, error_msg):
@@ -43,7 +44,7 @@ def test_construct_h2_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h2_tag_error(attributes, exception, error_msg):
@@ -66,7 +67,7 @@ def test_construct_h3_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h3_tag_error(attributes, exception, error_msg):
@@ -89,7 +90,7 @@ def test_construct_h4_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h4_tag_error(attributes, exception, error_msg):
@@ -112,7 +113,7 @@ def test_construct_h5_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h5_tag_error(attributes, exception, error_msg):
@@ -135,7 +136,7 @@ def test_construct_h6_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_h6_tag_error(attributes, exception, error_msg):

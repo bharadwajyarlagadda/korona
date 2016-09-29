@@ -3,8 +3,66 @@
 
 from __future__ import absolute_import
 
-from ..root.attributes import TAG_ATTRIBUTES
+from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import button
+
+ATTRIBUTES = {
+    'autofocus': {
+        'description': 'Specifies that a button should automatically '
+                       'get focus when the page loads',
+        'values': None
+    },
+    'disabled': {
+        'description': 'Specifies that a button should be disabled',
+        'values': None
+    },
+    'form': {
+        'description': 'Specifies one or more forms the button '
+                       'belongs to',
+        'values': None
+    },
+    'formaction': {
+        'description': 'Specifies where to send the form-data when a '
+                       'form is submitted. Only for type "submit"',
+        'values': None
+    },
+    'formenctype': {
+        'description': 'Specifies how form-data should be encoded '
+                       'before sending it to a server. Only for '
+                       'type "submit"',
+        'values': ['application/x-www-form-urlencoded',
+                   'multipart/form-data',
+                   'text/plain']
+    },
+    'formmethod': {
+        'description': 'Specifies how to send the form-data (which '
+                       'HTTP method to use). Only for type "submit"',
+        'values': ['get', 'post']
+    },
+    'formnovalidate': {
+        'description': 'Specifies that the form-data should not be '
+                       'validated on submission. Only for type '
+                       '"submit"',
+        'values': None
+    },
+    'formtarget': {
+        'description': 'Specifies where to display the response after '
+                       'submitting the form. Only for type "submit"',
+        'values': None
+    },
+    'name': {
+        'description': 'Specifies a name for the button',
+        'values': None
+    },
+    'type': {
+        'description': 'Specifies the type of button',
+        'values': ['button', 'reset', 'submit']
+    },
+    'value': {
+        'descirption': 'Specifies an initial value for the button',
+        'values': None
+    }
+}
 
 
 class Button(object):
@@ -33,6 +91,9 @@ class Button(object):
 
     .. versionchanged:: 0.2.0
         Renamed the method construct_tag to construct.
+
+    .. versionchanged:: 0.4.3-dev
+        Removed :func:`validate_values` method.
     """
     def __init__(self,
                  autofocus=False,
@@ -55,18 +116,29 @@ class Button(object):
         self.pre_validate(type=type,
                           attribute_name='formenctype',
                           value=formenctype)
-        self.validate_values(attribute_name='formenctype', value=formenctype)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='formenctype',
+            attribute_value=formenctype,
+            default_values=ATTRIBUTES['formenctype']['values'])
         self.pre_validate(type=type,
                           attribute_name='formmethod',
                           value=formmethod)
-        self.validate_values(attribute_name='formmethod', value=formmethod)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='formmethod',
+            attribute_value=formmethod,
+            default_values=ATTRIBUTES['formmethod']['values'])
         self.pre_validate(type=type,
                           attribute_name='formnovalidate',
                           value=formnovalidate)
         self.pre_validate(type=type,
                           attribute_name='formtarget',
                           value=formtarget)
-        self.validate_values(attribute_name='type', value=type)
+        validate_attribute_values(tag=self.tag,
+                                  attribute_name='type',
+                                  attribute_value=type,
+                                  default_values=ATTRIBUTES['type']['values'])
 
         self.values = {'autofocus': autofocus,
                        'disabled': disabled,
@@ -104,19 +176,3 @@ class Button(object):
             raise AttributeError('<button>: The {attribute_name} attribute is '
                                  'only used for buttons with type "submit"'
                                  .format(attribute_name=attribute_name))
-
-    def validate_values(self, attribute_name, value):
-        """Validates whether the given attribute value is a valid value or not.
-        Some of the attributes have confined values. Even if we give some
-        other value, the html output would not be correct.
-        """
-        if not value:
-            return
-
-        attribute_values = TAG_ATTRIBUTES[self.tag][attribute_name]['values']
-
-        if value not in attribute_values:
-            raise AttributeError('<button>: {attribute_name} attribute '
-                                 'values should be one of these: {values}'
-                                 .format(attribute_name=attribute_name,
-                                         values=','.join(attribute_values)))

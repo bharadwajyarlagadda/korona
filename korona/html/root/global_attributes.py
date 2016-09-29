@@ -4,7 +4,8 @@ from ...exceptions import AttributeValueError, TagAttributeError
 from ...lib.utils import (
     validate_string_attribute,
     validate_boolean_attribute,
-    validate_number_attribute
+    validate_number_attribute,
+    validate_attribute_values
 )
 from ...templates.html.global_attributes import global_attributes
 
@@ -143,22 +144,26 @@ class GlobalAttributes(object):
         validate_string_attribute(tag=self.tag,
                                   attribute_name='contenteditable',
                                   attribute_value=contenteditable)
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='contenteditable',
             attribute_value=contenteditable,
             default_values=GLOBAL_ATTRIBUTES['contenteditable']['values'])
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='dir',
             attribute_value=dir,
             default_values=GLOBAL_ATTRIBUTES['dir']['values'])
         validate_string_attribute(tag=self.tag,
                                   attribute_name='draggable',
                                   attribute_value=draggable)
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='draggable',
             attribute_value=draggable,
             default_values=GLOBAL_ATTRIBUTES['draggable']['values'])
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='dropzone',
             attribute_value=dropzone,
             default_values=GLOBAL_ATTRIBUTES['dropzone']['values'])
@@ -169,14 +174,16 @@ class GlobalAttributes(object):
         validate_string_attribute(tag=self.tag,
                                   attribute_name='spellcheck',
                                   attribute_value=spellcheck)
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='spellcheck',
             attribute_value=spellcheck,
             default_values=GLOBAL_ATTRIBUTES['spellcheck']['values'])
         validate_number_attribute(tag=self.tag,
                                   attribute_name='tabindex',
                                   attribute_value=tabindex)
-        self.validate_attribute_values(
+        validate_attribute_values(
+            tag=self.tag,
             attribute_name='translate',
             attribute_value=translate,
             default_values=GLOBAL_ATTRIBUTES['translate']['values'])
@@ -225,21 +232,3 @@ class GlobalAttributes(object):
         if not any(i.isalpha() for i in id):
             raise AttributeValueError('id attribute value must contain at '
                                       'least one character')
-
-    def validate_attribute_values(self,
-                                  attribute_name,
-                                  attribute_value,
-                                  default_values):
-        """Validates whether the given attribute value is a valid value or not.
-        Some of the attributes have confined values. Even if we give some
-        other value, the html output would not be correct.
-        """
-        if not attribute_value:
-            return
-
-        if attribute_value not in default_values:
-            raise TagAttributeError('<{tag}>: {attribute_name} attribute '
-                                    'values should be one of these: {values}'
-                                    .format(tag=self.tag,
-                                            attribute_name=attribute_name,
-                                            values=','.join(default_values)))

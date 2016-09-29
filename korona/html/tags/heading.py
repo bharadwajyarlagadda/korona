@@ -6,6 +6,48 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import h1, h2, h3, h4, h5, h6
 
+H1_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
+H2_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
+H3_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
+H4_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
+H5_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
+H6_ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of a heading',
+        'values': ['left', 'center', 'right', 'justify']
+    }
+}
+
 
 class H1(object):
     """Class for constructing <h1> tag.
@@ -18,9 +60,11 @@ class H1(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h1'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H1_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):
@@ -39,9 +83,11 @@ class H2(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h2'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H2_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):
@@ -60,9 +106,11 @@ class H3(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h3'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H3_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):
@@ -81,9 +129,11 @@ class H4(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h4'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H4_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):
@@ -102,9 +152,11 @@ class H5(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h5'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H5_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):
@@ -123,9 +175,11 @@ class H6(object):
     """
     def __init__(self, align=None, text=None):
         self.tag = 'h6'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=H6_ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):

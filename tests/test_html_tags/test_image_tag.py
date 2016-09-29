@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Img
 from korona.templates.html.tags import img
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -24,7 +25,7 @@ def test_construct_img_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'left-top'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'longdesc': 123}, ValueError, 'is not a valid url'),
     ({'src': 123}, ValueError, 'is not a valid url')

@@ -6,6 +6,14 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import div
 
+ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of the content inside '
+                       'a <div> element',
+        'values': ['left', 'right', 'center', 'justify']
+    }
+}
+
 
 class Div(object):
     """Class for constructing div tag.
@@ -21,7 +29,8 @@ class Div(object):
         self.tag = 'div'
         validate_attribute_values(tag=self.tag,
                                   attribute_name='align',
-                                  value=align)
+                                  attribute_value=align,
+                                  default_values=ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):

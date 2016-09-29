@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Frame
 from korona.templates.html.tags import frame
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -29,13 +30,13 @@ def test_construct_frame_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'scrolling': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'noresize': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'frameborder': '2'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'src': 123},
      ValueError,

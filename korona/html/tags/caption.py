@@ -6,6 +6,13 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import caption
 
+ATTRIBUTES = {
+    'align': {
+        'description': 'Defines the alignment of the caption',
+        'values': ['left', 'right', 'top', 'bottom']
+    }
+}
+
 
 class Caption(object):
     """Class for constructing caption tag.
@@ -23,7 +30,8 @@ class Caption(object):
         self.tag = 'caption'
         validate_attribute_values(tag=self.tag,
                                   attribute_name='align',
-                                  value=align)
+                                  attribute_value=align,
+                                  default_values=ATTRIBUTES['align']['values'])
         self.values = {'align': align, 'text': text}
 
     def construct(self):

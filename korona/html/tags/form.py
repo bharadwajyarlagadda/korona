@@ -6,6 +6,27 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import form
 
+ATTRIBUTES = {
+    'autocomplete': {
+        'description': 'Specifies whether a form should have '
+                       'autocomplete on or off',
+        'values': ['on', 'off']
+    },
+    'enctype': {
+        'description': 'Specifies how the form-data should be encoded '
+                       'when submitting it to the server (only for '
+                       'method="post")',
+        'values': ['application/x-www-form-urlencoded',
+                   'multipart/form-data',
+                   'text/plain']
+    },
+    'method': {
+        'description': 'Specifies the HTTP method to use when sending '
+                       'form-data',
+        'values': ['get', 'post']
+    }
+}
+
 
 class Form(object):
     """Class for constructing <form> tag.
@@ -40,16 +61,22 @@ class Form(object):
                  target=None,
                  text=None):
         self.tag = 'form'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='autocomplete',
-                                  value=autocomplete)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='autocomplete',
+            attribute_value=autocomplete,
+            default_values=ATTRIBUTES['autocomplete']['values'])
         self.validate_enctype_attribute(method=method, enctype=enctype)
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='enctype',
-                                  value=enctype)
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='method',
-                                  value=method)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='enctype',
+            attribute_value=enctype,
+            default_values=ATTRIBUTES['enctype']['values'])
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='method',
+            attribute_value=method,
+            default_values=ATTRIBUTES['method']['values'])
         self.values = {'accept': accept,
                        'action': action,
                        'autocomplete': autocomplete,

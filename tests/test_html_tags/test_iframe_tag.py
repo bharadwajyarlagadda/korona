@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import IFrame
 from korona.templates.html.tags import iframe
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -26,22 +27,22 @@ def test_construct_iframe_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'frameborder': '4'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'align': 'left-center'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'sandbox': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'sandbox': 'allow-forms abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'scrolling': 'mount'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'sandbox': 'allow-forms allow-pointer-lock abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'longdesc': 123}, ValueError, 'is not a valid url'),
     ({'src': 123}, ValueError, 'is not a valid url')

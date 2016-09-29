@@ -6,6 +6,19 @@ from __future__ import absolute_import
 from ...lib.utils import validate_url
 from ...templates.html.tags import base
 
+ATTRIBUTES = {
+    'href': {
+        'description': 'Specifies the base URL for all relative URLs '
+                       'in the page',
+        'values': None
+    },
+    'target': {
+        'description': 'Specifies the default target for all '
+                       'hyperlinks and forms in the page',
+        'values': None
+    }
+}
+
 
 class Base(object):
     """Class for constructing base tag.

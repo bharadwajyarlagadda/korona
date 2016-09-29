@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Form
 from korona.templates.html.tags import form
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -30,13 +31,13 @@ def test_construct_form_tag(attributes):
      AttributeError,
      'enctype attribute can be used/set only if method'),
     ({'method': 'post', 'enctype': 'plain'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'autocomplete': 'false'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'method': 'PUT'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_form_tag_error(attributes, exception, error_msg):

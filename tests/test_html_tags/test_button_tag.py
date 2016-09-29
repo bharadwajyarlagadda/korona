@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Button
 from korona.templates.html.tags import button
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -48,13 +49,13 @@ def test_construct_button_tag(attributes):
      AttributeError,
      'attribute is only used for buttons with type "submit"'),
     ({'type': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'type': 'submit', 'formenctype': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
     ({'type': 'submit', 'formmethod': 'abc'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these'),
 
 ])

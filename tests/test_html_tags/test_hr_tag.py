@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import HR
 from korona.templates.html.tags import hr
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -22,7 +23,7 @@ def test_construct_hr_tag(attributes):
 
 @parametrize('attributes,exception,error_msg', [
     ({'align': 'top-right'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_hr_tag_error(attributes, exception, error_msg):

@@ -8,6 +8,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Input
 from korona.templates.html.tags import input as tag
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -150,7 +151,7 @@ def test_construct_input_tag(attributes):
 
     # align attribute
     ({'align': 'abcd', 'type': 'image'},
-     AttributeError,
+     TagAttributeError,
      'align attribute values should be one of these:'),
     ({'align': 'top'},
      AttributeError,
@@ -169,7 +170,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'autocomplete attribute works with the following <input> types:'),
     ({'autocomplete': 'n/a', 'type': 'email'},
-     AttributeError,
+     TagAttributeError,
      'autocomplete attribute values should be one of these:'),
     ({'autocomplete': 'on'},
      AttributeError,
@@ -219,7 +220,7 @@ def test_construct_input_tag(attributes):
 
     # formenctype attribute
     ({'formenctype': 'temp', 'type': 'submit'},
-     AttributeError,
+     TagAttributeError,
      'formenctype attribute values should be one of these'),
     ({'formenctype': 'text/plain', 'type': 'email'},
      AttributeError,
@@ -236,7 +237,7 @@ def test_construct_input_tag(attributes):
      AttributeError,
      'formmethod attribute can be used with type'),
     ({'formmethod': 'PUT', 'type': 'submit'},
-     AttributeError,
+     TagAttributeError,
      'formmethod attribute values should be one of these'),
 
     # formnovalidate attribute
@@ -377,7 +378,7 @@ def test_construct_input_tag(attributes):
 
     # type attribute
     ({'type': 'temp'},
-     AttributeError,
+     TagAttributeError,
      'type attribute values should be one of these'),
 
     # value attribute

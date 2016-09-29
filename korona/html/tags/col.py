@@ -6,6 +6,39 @@ from __future__ import absolute_import
 from ...lib.utils import validate_attribute_values
 from ...templates.html.tags import col
 
+ATTRIBUTES = {
+    'align': {
+        'description': 'Specifies the alignment of the content related'
+                       ' to a <col> element',
+        'values': ['left', 'right', 'center', 'justify', 'char']
+    },
+    'char': {
+        'description': 'Specifies the alignment of the content related'
+                       ' to a <col> element to a character',
+        'values': None
+    },
+    'charoff': {
+        'description': 'Specifies the number of characters the content'
+                       ' will be aligned from the character specified '
+                       'by the char attribute',
+        'values': None
+    },
+    'span': {
+        'description': 'Specifies the number of columns a <col> '
+                       'element should span',
+        'values': None
+    },
+    'valign': {
+        'description': 'Specifies the vertical alignment of the '
+                       'content related to a <col> element',
+        'values': ['top', 'middle', 'bottom', 'baseline']
+    },
+    'width': {
+        'description': 'Specifies the width of a <col> element',
+        'values': None
+    }
+}
+
 
 class Col(object):
     """Class for constructing col tag.
@@ -33,14 +66,18 @@ class Col(object):
                  valign=None,
                  width=None):
         self.tag = 'col'
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='align',
-                                  value=align)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='align',
+            attribute_value=align,
+            default_values=ATTRIBUTES['align']['values'])
         self.validate_char_attribute(align=align, value=char)
         self.validate_charoff_attribute(align=align, char=char, value=charoff)
-        validate_attribute_values(tag=self.tag,
-                                  attribute_name='valign',
-                                  value=valign)
+        validate_attribute_values(
+            tag=self.tag,
+            attribute_name='valign',
+            attribute_value=valign,
+            default_values=ATTRIBUTES['valign']['values'])
         self.values = {'align': align,
                        'char': char,
                        'charoff': charoff,

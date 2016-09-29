@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Caption
 from korona.templates.html.tags import caption
+from korona.exceptions import TagAttributeError
 
 
 @parametrize('attributes', [
@@ -22,9 +23,11 @@ def test_construct_caption_tag(attributes):
 
 
 @parametrize('attributes,exception,error_msg', [
-    ({'align': 123}, ValueError, 'should be a string'),
+    ({'align': 123},
+     TagAttributeError,
+     'attribute values should be one of these'),
     ({'align': 'abcd', 'text': 'abcd'},
-     AttributeError,
+     TagAttributeError,
      'attribute values should be one of these')
 ])
 def test_construct_caption_tag_error(attributes, exception, error_msg):
