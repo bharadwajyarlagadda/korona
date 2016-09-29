@@ -6,6 +6,7 @@ from ..fixtures import parametrize
 
 from korona.html.tags import Canvas
 from korona.templates.html.tags import canvas
+from korona.exceptions import AttributeValueError
 
 
 @parametrize('attributes', [
@@ -22,10 +23,10 @@ def test_construct_canvas_tag(attributes):
 
 
 @parametrize('attributes,exception,error_msg', [
-    ({'height': 123}, ValueError, 'should be a string'),
-    ({'width': 123}, ValueError, 'should be a string'),
+    ({'height': 123}, AttributeValueError, 'should be a string'),
+    ({'width': 123}, AttributeValueError, 'should be a string'),
     ({'height': None, 'width': 123},
-     ValueError,
+     AttributeValueError,
      'should be a string')
 ])
 def test_construct_canvas_tag_error(attributes, exception, error_msg):

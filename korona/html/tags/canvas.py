@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-from ...lib.utils import validate_tag_attribute_value
+from ...lib.utils import validate_string_attribute
 from ...templates.html.tags import canvas
 
 
@@ -22,8 +22,12 @@ class Canvas(object):
     def __init__(self, height=None, width=None):
         # TODO: Possible add the canvas text attribute.
         self.tag = 'canvas'
-        validate_tag_attribute_value(tag=self.tag, value=height)
-        validate_tag_attribute_value(tag=self.tag, value=width)
+        validate_string_attribute(tag=self.tag,
+                                  attribute_name='height',
+                                  attribute_value=height)
+        validate_string_attribute(tag=self.tag,
+                                  attribute_name='width',
+                                  attribute_value=width)
         self.values = {'height': height, 'width': width}
 
     def construct(self):

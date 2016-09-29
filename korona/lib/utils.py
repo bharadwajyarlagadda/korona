@@ -6,6 +6,8 @@ import datetime
 from ..html.root.attributes import TAG_ATTRIBUTES
 from ..html.root.tags import TAGS
 
+from ..exceptions import AttributeValueError
+
 
 def validate_tag(tag=None):
     """Validates whether the given tag is supported by korona or not."""
@@ -16,15 +18,16 @@ def validate_tag(tag=None):
         raise ValueError('{0} tag is not supported')
 
 
-def validate_tag_attribute_value(tag, value):
+def validate_string_attribute(tag, attribute_name, attribute_value):
     """Validates whether the given value is a string or not."""
-    if not value:
+    if not attribute_value:
         return
 
-    # If the attribute value is not a string raise a ValueError.
-    if not isinstance(value, str):
-        raise ValueError('<{tag}>: {value} should be a string'
-                         .format(tag=tag, value=value))
+    if not isinstance(attribute_value, str):
+        raise AttributeValueError('<{tag}>: {attribute_name} should be a '
+                                  'string value.'
+                                  .format(tag=tag,
+                                          attribute_name=attribute_name))
 
 
 def validate_attribute_values(tag, attribute_name, value):
