@@ -10,12 +10,15 @@ Added
 
 - Added custom exceptions for korona package.
 - Added warnings for korona package.
+- Added class ``GlobalAttributes()`` for constructing HTML global attributes.
 
 Changed
 ^^^^^^^
 
 - Moved all the ``anchor`` tag attributes from ``html/root/attributes.py`` to
-  ``html/tags/anchor.py``
+  ``html/tags/anchor.py``.
+- Moved all the global attributes from ``html/root/attributes.py`` to
+  ``html/root/global_attributes.py``.
 
 - In the classs for constructing ``anchor`` tag:
 
