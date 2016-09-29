@@ -402,6 +402,10 @@ class Input(object):
             type="image").
 
     .. versionadded:: 0.4.2
+
+    .. versionchanged:: 0.4.3-dev
+        Renamed the method :func:`validate_value` to
+        :func:`validate_value_attribute`.
     """
     def __init__(self,
                  accept=None,
@@ -609,7 +613,7 @@ class Input(object):
             default_values=ATTRIBUTES['type']['values'])
 
         # Validation method for 'value' attribute.
-        self.validate_value(type=type, value=value)
+        self.validate_value_attribute(type=type, value=value)
 
         # Validation method for 'width' attribute.
         self.validate_input_attribute(type=type,
@@ -728,7 +732,7 @@ class Input(object):
                                     attribute_name=attribute_name,
                                     attribute_value=attribute_value)
 
-    def validate_value(self, type, value):
+    def validate_value_attribute(self, type, value):
         """Validates the value attribute for <input> tag. The value attribute
         cannot be used with <input type="file">.
         """
