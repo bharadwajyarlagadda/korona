@@ -146,12 +146,8 @@ class A(object):
                  shape=None,
                  target=None,
                  type=None,
-                 text=None,
-                 **kwargs):
+                 text=None):
         self.tag = 'a'
-
-        kwargs.update({'tag': self.tag})
-        print(GlobalAttributes(**kwargs).construct())
 
         self.validate_charset(charset)
         coordinates = self.get_coords(shape=shape, coords=coords)
