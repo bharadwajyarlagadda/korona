@@ -8,5 +8,5 @@ Sphinx==1.4.6
 sphinx-rtd-theme==0.1.9
 tox==2.3.1
 twine==1.8.1
-wheel==0.29.0
+wheel==0.38.1
 -r requirements.txt
